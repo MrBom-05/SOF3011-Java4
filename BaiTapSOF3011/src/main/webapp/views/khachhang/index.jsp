@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Danh Sách Khách Hàng</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 <div class="col-10 offset-1 mt-3">
-    <a href="" class="btn btn-success">Add Khách Hàng</a>
+    <a href="/khachhang/create" class="btn btn-success">Add Khách Hàng</a>
 
     <table class="table mt-5">
         <thead>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="BaiTapSOF3011:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83b43dc4-95b1-4fd9-a1e0-4576a6b5ea3e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e5edee506a2d3c4cc4bd519506a970af464302d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/481432c9919adfa89d522d4c8424f6077a41fc1b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5c44ceca6a04818971184e0fa990dc80e524373c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a748695527294a159c03fa5c3c9be7de44f92db7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef683d7081b391667520bbf00d7230629a89a7e8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/e/0e5edee506a2d3c4cc4bd519506a970af464302d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/8/481432c9919adfa89d522d4c8424f6077a41fc1b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/c/5c44ceca6a04818971184e0fa990dc80e524373c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/7/a748695527294a159c03fa5c3c9be7de44f92db7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/f/ef683d7081b391667520bbf00d7230629a89a7e8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/KhachHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/KhachHangController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/catalina.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/catalina.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/ciphers.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/ciphers.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/configtest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/configtest.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/daemon.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/daemon.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/digest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/digest.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/makebase.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/makebase.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/migrate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/migrate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/setclasspath.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/setclasspath.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/shutdown.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/shutdown.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/startup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/tool-wrapper.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/tool-wrapper.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/version.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/version.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/views/khachhang/index.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MojtOjWWEBQS5GwsaQXPelDOzI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SOF3011-Java4/BaiTapSOF3011/src/main/webapp/index.jsp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Tomcat 10.1.6" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.6" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/BaiTapSOF3011_war_exploded/index.jsp" />
+      <deployment>
+        <artifact name="BaiTapSOF3011:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/BaiTapSOF3011_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="c80f5b6d-bb9c-45e3-a9b1-9e580cf16085" />
+        <option name="DEPLOY_TOMCAT_APPS" value="true" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52652" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="BaiTapSOF3011:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83b43dc4-95b1-4fd9-a1e0-4576a6b5ea3e" name="Changes" comment="" />
+      <created>1678441043033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678441043033</updated>
+      <workItem from="1678441044273" duration="553000" />
+      <workItem from="1678443931151" duration="84000" />
+      <workItem from="1678444630358" duration="38000" />
+      <workItem from="1678445451368" duration="113000" />
+      <workItem from="1678445740333" duration="76000" />
+      <workItem from="1678450213204" duration="119000" />
+      <workItem from="1678451889030" duration="359000" />
+      <workItem from="1678453107164" duration="721000" />
+      <workItem from="1678453835762" duration="397000" />
+      <workItem from="1678454273621" duration="118000" />
+      <workItem from="1678460630152" duration="66000" />
+      <workItem from="1678463289818" duration="125000" />
+      <workItem from="1678464468851" duration="98000" />
+      <workItem from="1678487553677" duration="1102000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

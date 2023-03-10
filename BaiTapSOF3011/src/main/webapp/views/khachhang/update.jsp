@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Sửa Khách Hàng</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 <form class="row g-3 needs-validation col-10 offset-1 mt-5" novalidate>

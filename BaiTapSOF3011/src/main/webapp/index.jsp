@@ -2,17 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quản Lý Khách Hàng</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>JSP - Hello World</title>
 </head>
 <body>
-
-
-<h1 class="text-center">Hello</h1>
-
-
-<script src="bootstrap/js/jquery.min.js"></script>
-<script src="bootstrap/js/popper.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<h1><%= "Hello World!" %>
+</h1>
+<br/>
+<a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>

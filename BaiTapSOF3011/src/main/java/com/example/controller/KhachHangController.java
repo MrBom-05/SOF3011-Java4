@@ -1,16 +1,18 @@
 package com.example.controller;
 
+import com.example.model.KhachHang;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet({
-        "khachhang/index",
-        "khachhang/create",
-        "khachhang/edit"
-})
+        "/khachhang/index",
+        "/khachhang/create",
+        "/khachhang/edit"})
 public class KhachHangController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,10 +39,15 @@ public class KhachHangController extends HttpServlet {
         request.getRequestDispatcher("/views/khachhang/update.jsp").forward(request, response);
     }
 
+    List<KhachHang> khachHang = new ArrayList<>();
+
+
+
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<SinhVien> ds = this.svRepo.getAll();
-//        request.setAttribute("ds", ds);
-        String view = "/views/khachhang/index.jsp";
-        request.getRequestDispatcher(view).forward(request, response);
+        khachHang.add(new KhachHang("1", "PH27937", "Kỳ", "2003/11/27", "0962894271", "Khu 8, Đại Phạm", "Việt Trì", "Việt Nam", "kynnph27937@fpt.edu.vn", "123"));
+
+//        request.setAttribute("khachHang", khachHang);
+        request.getRequestDispatcher("/views/khachhang/index.jsp").forward(request, response);
     }
+
 }
