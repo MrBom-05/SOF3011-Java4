@@ -1,0 +1,5 @@
+
+¤
+java:S1598"This file "HoaDon.java" should be located in "com\Models" directory, not in "D:\SOF3011-Java4\Assignment\src\main\java\com\example\entities".(îÐ’È
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(îÐ’È
+W	java:S107>"BConstructor has 13 parameters, which is greater than 7 authorized.(þ‘¦ä

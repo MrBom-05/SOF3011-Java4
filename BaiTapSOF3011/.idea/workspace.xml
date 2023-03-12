@@ -10,14 +10,85 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83b43dc4-95b1-4fd9-a1e0-4576a6b5ea3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Demo-IT17321/src/main/java/com/example/controller/KhachHangServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Demo-IT17321/src/main/webapp/views/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/KhachHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/admin/KhachHangController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/KhachHang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/update.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/ChiTietSPServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/ChucVuServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/CuaHangServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/DongSPServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/HoaDonServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/KhachHangServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/MauSacServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/NSXServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/NhanVienServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/admin/SanPhamServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/webapp/views/admin/chucvu/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/webapp/views/admin/chucvu/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment/src/main/webapp/views/admin/chucvu/update.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/brands.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/brands.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/fontawesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/regular.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/regular.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/solid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/solid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/svg-with-js.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/svg-with-js.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/v4-font-face.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/v4-font-face.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/v4-shims.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/v4-shims.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/v5-font-face.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/v5-font-face.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/angular-route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/angular.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.esm.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.esm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.esm.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/popper.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +265,7 @@
       <workItem from="1678488946527" duration="477000" />
       <workItem from="1678489475214" duration="347000" />
       <workItem from="1678502074406" duration="6368000" />
+      <workItem from="1678585308924" duration="28000" />
     </task>
     <servers />
   </component>
