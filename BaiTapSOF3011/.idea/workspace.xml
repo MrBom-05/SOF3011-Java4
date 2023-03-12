@@ -10,43 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83b43dc4-95b1-4fd9-a1e0-4576a6b5ea3e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/e/0e5edee506a2d3c4cc4bd519506a970af464302d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/481432c9919adfa89d522d4c8424f6077a41fc1b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5c44ceca6a04818971184e0fa990dc80e524373c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e6d3b70c9f5b02570779b0441540d45eceb0ded" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a748695527294a159c03fa5c3c9be7de44f92db7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef683d7081b391667520bbf00d7230629a89a7e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/e/0e5edee506a2d3c4cc4bd519506a970af464302d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/8/481432c9919adfa89d522d4c8424f6077a41fc1b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/c/5c44ceca6a04818971184e0fa990dc80e524373c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/7/a748695527294a159c03fa5c3c9be7de44f92db7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/f/ef683d7081b391667520bbf00d7230629a89a7e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/KhachHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/KhachHangController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-IT17321/src/main/java/com/example/controller/KhachHangServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-IT17321/src/main/webapp/views/hello.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/KhachHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/admin/KhachHangController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/KhachHang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/khachhang/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/khachhang/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/catalina.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/catalina.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/ciphers.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/ciphers.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/configtest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/configtest.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/daemon.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/daemon.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/digest.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/digest.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/makebase.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/makebase.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/migrate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/migrate.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/setclasspath.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/setclasspath.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/shutdown.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/shutdown.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/startup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/tool-wrapper.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/tool-wrapper.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/version.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-10.1.6/bin/version.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +48,12 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -93,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SOF3011-Java4/BaiTapSOF3011/src/main/webapp/index.jsp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SOF3011-Java4/BaiTapSOF3011&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -104,6 +81,7 @@
   <component name="RunManager">
     <configuration name="Tomcat 10.1.6" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.6" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/BaiTapSOF3011_war_exploded/index.jsp" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="BaiTapSOF3011:war exploded">
           <settings>
@@ -213,6 +191,9 @@
       <workItem from="1678463289818" duration="125000" />
       <workItem from="1678464468851" duration="98000" />
       <workItem from="1678487553677" duration="1102000" />
+      <workItem from="1678488946527" duration="477000" />
+      <workItem from="1678489475214" duration="347000" />
+      <workItem from="1678502074406" duration="6368000" />
     </task>
     <servers />
   </component>

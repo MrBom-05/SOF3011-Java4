@@ -1,33 +1,33 @@
 package com.example.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class KhachHang {
-    private String idKhachHang;
+    private String ma;
 
-    private String maKhachHang;
+    private String ten;
 
-    private String tenKhachHang;
+    private String tenDem;
 
-    private String ngaySinhKhachHang;
+    private String ho;
 
-    private String sdtKhachHang;
+    private String ngaySinh;
 
-    private String diaChiKhachHang;
+    private String sdt;
 
-    private String thanhPhoKhachHang;
+    private String diaChi;
 
-    private String quocGiaKhachHang;
+    private String thanhPho;
 
-    private String emailKhachHang;
+    private String quocGia;
 
-    private String matKhauKhachHang;
+    private String email;
+
+    private String matKhau;
 
 }

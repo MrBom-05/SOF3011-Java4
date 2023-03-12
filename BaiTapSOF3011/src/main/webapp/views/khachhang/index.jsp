@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Danh Sách Khách Hàng</title>
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/BaiTapSOF3011_war_exploded/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 <div class="col-10 offset-1 mt-3">
-    <a href="/khachhang/create" class="btn btn-success">Add Khách Hàng</a>
+    <a href="/BaiTapSOF3011_war_exploded/khachhang/create" class="btn btn-success">Add Khách Hàng</a>
 
     <table class="table mt-5">
         <thead>
@@ -34,29 +34,26 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <c:forEach var="khachHang" items="${ listKhachHang }">
-        <tr>
-            <td>${ index }</td>
-            <td>${ khachHang.ma }</td>
-            <td>${ khachHang.ten }</td>
-            <td>${ khachHang.tenDem }</td>
-            <td>${ khachHang.ho }</td>
-            <td>${ khachHang.ngaySinh }</td>
-            <td>${ khachHang.sdt }</td>
-            <td>${ khachHang.diaChi }</td>
-            <td>${ khachHang.thanhPho }</td>
-            <td>${ khachHang.quocGia }</td>
-            <td>${ khachHang.email }</td>
-            <td>${ khachHang.matKhau }</td>
+        <c:forEach var="kh" items="${ list }">
+            <tr>
+                <td>${ kh.ten }</td>
+                <td>${ kh.ten }</td>
+                <td>${ kh.tenDem }</td>
+<%--                <td>${ khachHang.ho }</td>--%>
+<%--                <td>${ khachHang.ngaySinh }</td>--%>
+<%--                <td>${ khachHang.sdt }</td>--%>
+<%--                <td>${ khachHang.diaChi }</td>--%>
+<%--                <td>${ khachHang.thanhPho }</td>--%>
+<%--                <td>${ khachHang.quocGia }</td>--%>
+<%--                <td>${ khachHang.email }</td>--%>
+<%--                <td>${ khachHang.matKhau }</td>--%>
 
-            <td>
-                <a href="/IT17202/admin/sinh-vien/edit?id=${ sv.id }" class="btn btn-primary">Cập nhật</a>
-                <a href="/IT17202/admin/sinh-vien/delete?id=${ sv.id }" class="btn btn-danger">Xóa</a>
-            </td>
-        </tr>
+<%--                <td>--%>
+<%--                    <a href="/IT17202/admin/sinh-vien/edit?id=${ sv.id }" class="btn btn-primary">Cập nhật</a>--%>
+<%--                    <a href="/IT17202/admin/sinh-vien/delete?id=${ sv.id }" class="btn btn-danger">Xóa</a>--%>
+<%--                </td>--%>
+            </tr>
         </c:forEach>
-        </tr>
         </tbody>
     </table>
 </div>
