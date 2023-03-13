@@ -13,9 +13,9 @@
 </head>
 <body class="col-10 offset-1">
 
-<h2 class="mt-3">Quản Lý Dòng Sản Phẩm</h2>
+<h2 class="mt-3">Quản Lý Cửa Hàng</h2>
 
-<a href="/Assignment_war_exploded/admin/dongsp/create" class="btn btn-success mt-3">Add</a>
+<a href="/Assignment_war_exploded/admin/cua-hang/create" class="btn btn-success mt-3">Add</a>
 
 <table class="table table-bordered mt-5">
     <thead>
@@ -23,12 +23,18 @@
         <th>STT</th>
         <th>Mã</th>
         <th>Tên</th>
+        <th>Địa Chỉ</th>
+        <th>Thành Phố</th>
+        <th>Quốc Gia</th>
         <th class="col-2 text-center">Action</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="kh" items="${ list }">
         <tr>
+            <td>${ kh.ten }</td>
+            <td>${ kh.ten }</td>
+            <td>${ kh.tenDem }</td>
             <td>${ kh.ten }</td>
             <td>${ kh.ten }</td>
             <td>${ kh.tenDem }</td>

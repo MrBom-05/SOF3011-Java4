@@ -11,12 +11,12 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet({
-        "/admin/chucvu/index",
-        "/admin/chucvu/create",
-        "/admin/chucvu/edit",
-        "/admin/chucvu/delete",
-        "/admin/chucvu/update",
-        "/admin/chucvu/store"
+        "/admin/chuc-vu/index",
+        "/admin/chuc-vu/create",
+        "/admin/chuc-vu/edit",
+        "/admin/chuc-vu/delete",
+        "/admin/chuc-vu/update",
+        "/admin/chuc-vu/store"
 })
 public class ChucVuServlet extends HttpServlet {
 
@@ -44,22 +44,22 @@ public class ChucVuServlet extends HttpServlet {
         } else if (uri.contains("update")) {
             update(request, response);
         } else {
-            response.sendRedirect("/Assignment_war_exploded/admin/sinh-vien/index");
+            response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
         }
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<ChucVu> list = chucVuService.getListChucVu();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/chucvu/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/chuc-vu/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/chucvu/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/chuc-vu/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/chucvu/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/chuc-vu/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -78,7 +78,7 @@ public class ChucVuServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("/Assignment_war_exploded/admin/chucvu/index");
+        response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

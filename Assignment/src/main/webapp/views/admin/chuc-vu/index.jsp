@@ -17,7 +17,7 @@
 
 <h2 class="mt-3">Quản Lý Chức Vụ</h2>
 
-<a href="/Assignment_war_exploded/admin/chucvu/create" class="btn btn-success mt-3">Add</a>
+<a href="/Assignment_war_exploded/admin/chuc-vu/create" class="btn btn-success mt-3">Add</a>
 
 <table class="table table-bordered mt-5">
     <thead>
@@ -37,8 +37,8 @@
             <td>${ cv.ten }</td>
 
             <td class="text-center">
-                <a href="/Assignment_war_exploded/admin/chucvu/edit?ma=${ cv.ma }" class="btn btn-primary">Update</a>
-                <a href="/Assignment_war_exploded/admin/chucvu/delete?ma=${ cv.ma }" class="btn btn-danger">Delete</a>
+                <a href="/Assignment_war_exploded/admin/chuc-vu/edit?ma=${ cv.ma }" class="btn btn-primary">Update</a>
+                <a href="/Assignment_war_exploded/admin/chuc-vu/delete?ma=${ cv.ma }" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>

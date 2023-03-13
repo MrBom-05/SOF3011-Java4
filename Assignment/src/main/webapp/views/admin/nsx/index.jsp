@@ -34,8 +34,8 @@
             <td>${ kh.tenDem }</td>
 
             <td class="text-center">
-                <a href="/IT17202/admin/sinh-vien/edit?id=${ sv.id }" class="btn btn-primary">Update</a>
-                <a href="/IT17202/admin/sinh-vien/delete?id=${ sv.id }" class="btn btn-danger">Delete</a>
+                <a href="/Assignment_war_exploded/admin/nsx/edit?id=${ sv.id }" class="btn btn-primary">Update</a>
+                <a href="/Assignment_war_exploded/admin/nsx/delete?id=${ sv.id }" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>

@@ -13,9 +13,9 @@
 </head>
 <body class="col-10 offset-1">
 
-<h2 class="mt-3">Quản Lý Màu Sắc</h2>
+<h2 class="mt-3">Quản Lý Sản Phẩm</h2>
 
-<a href="/Assignment_war_exploded/admin/mausac/create" class="btn btn-success mt-3">Add</a>
+<a href="/Assignment_war_exploded/admin/san-pham/create" class="btn btn-success mt-3">Add</a>
 
 <table class="table table-bordered mt-5">
     <thead>
@@ -34,8 +34,8 @@
             <td>${ kh.tenDem }</td>
 
             <td class="text-center">
-                <a href="/IT17202/admin/sinh-vien/edit?id=${ sv.id }" class="btn btn-primary">Update</a>
-                <a href="/IT17202/admin/sinh-vien/delete?id=${ sv.id }" class="btn btn-danger">Delete</a>
+                <a href="/Assignment_war_exploded/admin/san-pham/edit?id=${ sv.id }" class="btn btn-primary">Update</a>
+                <a href="/Assignment_war_exploded/admin/san-pham/delete?id=${ sv.id }" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>

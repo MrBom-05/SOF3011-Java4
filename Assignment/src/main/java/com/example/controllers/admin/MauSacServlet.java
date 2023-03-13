@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/admin/mausac/index",
-        "/admin/mausac/create",
-        "/admin/mausac/edit",
-        "/admin/mausac/delete",
-        "/admin/mausac/update",
-        "/admin/mausac/store"
+        "/admin/mau-sac/index",
+        "/admin/mau-sac/create",
+        "/admin/mau-sac/edit",
+        "/admin/mau-sac/delete",
+        "/admin/mau-sac/update",
+        "/admin/mau-sac/store"
 })
 public class MauSacServlet extends HttpServlet {
     @Override
@@ -35,15 +35,15 @@ public class MauSacServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/mausac/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/mau-sac/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/mausac/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/mau-sac/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/mausac/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/mau-sac/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/admin/nhanvien/index",
-        "/admin/nhanvien/create",
-        "/admin/nhanvien/edit",
-        "/admin/nhanvien/delete",
-        "/admin/nhanvien/update",
-        "/admin/nhanvien/store"
+        "/admin/nhan-vien/index",
+        "/admin/nhan-vien/create",
+        "/admin/nhan-vien/edit",
+        "/admin/nhan-vien/delete",
+        "/admin/nhan-vien/update",
+        "/admin/nhan-vien/store"
 })
 public class NhanVienServlet extends HttpServlet {
     @Override
@@ -35,15 +35,15 @@ public class NhanVienServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/nhanvien/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/nhan-vien/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/nhanvien/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/nhan-vien/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/nhanvien/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/nhan-vien/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

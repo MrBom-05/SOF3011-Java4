@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,21 +17,21 @@
     </div>
 
     <div class="row mt-5 offset-2">
-        <a href="/Assignment_war_exploded/admin/chucvu/index" class="btn btn-primary col-3">Quản lý chức vụ</a>
-        <a href="/Assignment_war_exploded/admin/cuahang/index" class="btn btn-primary col-3 ms-2">Quản lý cửa hàng</a>
-        <a href="/Assignment_war_exploded/admin/nhanvien/index" class="btn btn-primary col-3 ms-2">Quản lý nhân viên</a>
+        <a href="/Assignment_war_exploded/admin/chuc-vu/index" class="btn btn-primary col-3">Quản lý chức vụ</a>
+        <a href="/Assignment_war_exploded/admin/cua-hang/index" class="btn btn-primary col-3 ms-2">Quản lý cửa hàng</a>
+        <a href="/Assignment_war_exploded/admin/nhan-vien/index" class="btn btn-primary col-3 ms-2">Quản lý nhân viên</a>
     </div>
 
     <div class="row mt-5 offset-2">
-        <a href="/Assignment_war_exploded/admin/chitietsp/index" class="btn btn-primary col-3">Quản lý chi tiết SP</a>
-        <a href="/Assignment_war_exploded/admin/sanpham/index" class="btn btn-primary col-3 ms-2">Quản lý sản phẩm</a>
-        <a href="/Assignment_war_exploded/admin/mausac/index" class="btn btn-primary col-3 ms-2">Quản lý màu sắc</a>
+        <a href="/Assignment_war_exploded/admin/chi-tiet-sp/index" class="btn btn-primary col-3">Quản lý chi tiết SP</a>
+        <a href="/Assignment_war_exploded/admin/san-pham/index" class="btn btn-primary col-3 ms-2">Quản lý sản phẩm</a>
+        <a href="/Assignment_war_exploded/admin/mau-sac/index" class="btn btn-primary col-3 ms-2">Quản lý màu sắc</a>
     </div>
 
     <div class="row mt-5 offset-2">
         <a href="/Assignment_war_exploded/admin/nsx/index" class="btn btn-primary col-3">Quản lý NSX</a>
-        <a href="/Assignment_war_exploded/admin/dongsp/index" class="btn btn-primary col-3 ms-2">Quản lý dòng SP</a>
-        <a href="/Assignment_war_exploded/admin/khachhang/index" class="btn btn-primary col-3 ms-2">Quản lý khách hàng</a>
+        <a href="/Assignment_war_exploded/admin/dong-sp/index" class="btn btn-primary col-3 ms-2">Quản lý dòng SP</a>
+        <a href="/Assignment_war_exploded/admin/khach-hang/index" class="btn btn-primary col-3 ms-2">Quản lý khách hàng</a>
     </div>
 
 </div>

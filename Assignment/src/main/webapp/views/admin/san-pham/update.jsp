@@ -8,12 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Thêm mới</title>
+    <title>Cập nhật</title>
     <link rel="stylesheet" href="/Assignment_war_exploded/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 <form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/sanpham/store" id="form">
+      action="/Assignment_war_exploded/admin/san-pham/store" id="form">
 
     <div class="col-12">
         <label class="form-label">Mã</label>
@@ -25,7 +25,7 @@
         <input type="text" class="form-control" name="ten" required>
     </div>
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit">Add</button>
+        <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>
     </div>
 
 </form>

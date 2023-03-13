@@ -13,7 +13,7 @@
 </head>
 <body>
 <form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/dongsp/store" id="form">
+      action="/Assignment_war_exploded/admin/mau-sac/store" id="form">
 
     <div class="col-12">
         <label class="form-label">Mã</label>

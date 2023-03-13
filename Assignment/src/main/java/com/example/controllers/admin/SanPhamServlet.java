@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/admin/sanpham/index",
-        "/admin/sanpham/create",
-        "/admin/sanpham/edit",
-        "/admin/sanpham/delete",
-        "/admin/sanpham/update",
-        "/admin/sanpham/store"
+        "/admin/san-pham/index",
+        "/admin/san-pham/create",
+        "/admin/san-pham/edit",
+        "/admin/san-pham/delete",
+        "/admin/san-pham/update",
+        "/admin/san-pham/store"
 })
 public class SanPhamServlet extends HttpServlet {
     @Override
@@ -35,15 +35,15 @@ public class SanPhamServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/sanpham/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/san-pham/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/sanpham/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/san-pham/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/sanpham/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/san-pham/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/admin/cuahang/index",
-        "/admin/cuahang/create",
-        "/admin/cuahang/edit",
-        "/admin/cuahang/delete",
-        "/admin/cuahang/update",
-        "/admin/cuahang/store"})
+        "/admin/cua-hang/index",
+        "/admin/cua-hang/create",
+        "/admin/cua-hang/edit",
+        "/admin/cua-hang/delete",
+        "/admin/cua-hang/update",
+        "/admin/cua-hang/store"})
 public class CuaHangServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,15 +34,15 @@ public class CuaHangServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/cuahang/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/cua-hang/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/cuahang/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/cua-hang/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/cuahang/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/cua-hang/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

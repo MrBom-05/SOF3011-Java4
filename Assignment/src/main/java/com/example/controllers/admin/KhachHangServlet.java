@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/admin/khachhang/index",
-        "/admin/khachhang/create",
-        "/admin/khachhang/edit",
-        "/admin/khachhang/delete",
-        "/admin/khachhang/update",
-        "/admin/khachhang/store"
+        "/admin/khach-hang/index",
+        "/admin/khach-hang/create",
+        "/admin/khach-hang/edit",
+        "/admin/khach-hang/delete",
+        "/admin/khach-hang/update",
+        "/admin/khach-hang/store"
 })
 public class KhachHangServlet extends HttpServlet {
     @Override
@@ -35,15 +35,15 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/khachhang/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/khach-hang/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/khachhang/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/khach-hang/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/khachhang/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/khach-hang/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

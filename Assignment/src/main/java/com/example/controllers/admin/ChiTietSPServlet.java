@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/admin/chitietsp/index",
-        "/admin/chitietsp/create",
-        "/admin/chitietsp/edit",
-        "/admin/chitietsp/delete",
-        "/admin/chitietsp/update",
-        "/admin/chitietsp/store"
+        "/admin/chi-tiet-sp/index",
+        "/admin/chi-tiet-sp/create",
+        "/admin/chi-tiet-sp/edit",
+        "/admin/chi-tiet-sp/delete",
+        "/admin/chi-tiet-sp/update",
+        "/admin/chi-tiet-sp/store"
 })
 public class ChiTietSPServlet extends HttpServlet {
     @Override
@@ -35,15 +35,15 @@ public class ChiTietSPServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/chitietsp/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/chi-tiet-sp/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/chitietsp/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/chi-tiet-sp/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/chitietsp/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/chi-tiet-sp/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

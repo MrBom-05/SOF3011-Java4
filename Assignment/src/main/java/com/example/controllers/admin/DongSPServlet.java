@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/admin/dongsp/index",
-        "/admin/dongsp/create",
-        "/admin/dongsp/edit",
-        "/admin/dongsp/delete",
-        "/admin/dongsp/update",
-        "/admin/dongsp/store"
+        "/admin/dong-sp/index",
+        "/admin/dong-sp/create",
+        "/admin/dong-sp/edit",
+        "/admin/dong-sp/delete",
+        "/admin/dong-sp/update",
+        "/admin/dong-sp/store"
 })
 public class DongSPServlet extends HttpServlet {
     @Override
@@ -35,15 +35,15 @@ public class DongSPServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/dongsp/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/dong-sp/index.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/dongsp/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/dong-sp/create.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/dongsp/update.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/dong-sp/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
