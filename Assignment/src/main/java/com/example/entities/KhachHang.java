@@ -1,6 +1,8 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class KhachHang implements Serializable {
@@ -59,43 +63,4 @@ public class KhachHang implements Serializable {
 
     @OneToMany(mappedBy = "khachHang", fetch = FetchType.EAGER)
     private List<HoaDon> listHoaDon;
-
-    public KhachHang(String id, String ma, String ten, String tenDem, String ho, Date ngaySinh, String diaChi, String thanhPho, String quocGia, String sdt, String matKhau, String email, List<GioHang> listGioHang, List<HoaDon> listHoaDon) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.tenDem = tenDem;
-        this.ho = ho;
-        this.ngaySinh = ngaySinh;
-        this.diaChi = diaChi;
-        this.thanhPho = thanhPho;
-        this.quocGia = quocGia;
-        this.sdt = sdt;
-        this.matKhau = matKhau;
-        this.email = email;
-        this.listGioHang = listGioHang;
-        this.listHoaDon = listHoaDon;
-    }
-
-    public KhachHang(String id, String ma, String ten, String tenDem, String ho, Date ngaySinh, String diaChi, String thanhPho, String quocGia, String sdt, String matKhau, String email) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.tenDem = tenDem;
-        this.ho = ho;
-        this.ngaySinh = ngaySinh;
-        this.diaChi = diaChi;
-        this.thanhPho = thanhPho;
-        this.quocGia = quocGia;
-        this.sdt = sdt;
-        this.matKhau = matKhau;
-        this.email = email;
-    }
-
-    public KhachHang(String id) {
-        this.id = id;
-    }
-
-    public KhachHang() {
-    }
 }

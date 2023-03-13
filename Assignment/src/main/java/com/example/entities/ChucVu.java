@@ -1,16 +1,17 @@
 package com.example.entities;
 
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table
 public class ChucVu implements Serializable {
@@ -30,28 +31,9 @@ public class ChucVu implements Serializable {
     @OneToMany(mappedBy = "chucVu", fetch = FetchType.EAGER)
     private List<NhanVien> listNhanVien;
 
-    public ChucVu(String id, String ma, String ten, List<NhanVien> listNhanVien) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.listNhanVien = listNhanVien;
-    }
-
     public ChucVu(String id, String ma, String ten) {
         this.id = id;
         this.ma = ma;
         this.ten = ten;
-    }
-
-    public ChucVu(String id) {
-        this.id = id;
-    }
-
-    public ChucVu() {
-    }
-
-    @Override
-    public String toString() {
-        return ten;
     }
 }

@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Danh sách</title>
@@ -27,15 +29,16 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="kh" items="${ list }">
+
+    <c:forEach var="cv" items="${ list }" varStatus="status">
         <tr>
-            <td>${ kh.ten }</td>
-            <td>${ kh.ten }</td>
-            <td>${ kh.tenDem }</td>
+            <td>${status.index + 1}</td>
+            <td>${ cv.ma }</td>
+            <td>${ cv.ten }</td>
 
             <td class="text-center">
-                <a href="/IT17202/admin/sinh-vien/edit?id=${ sv.id }" class="btn btn-primary">Update</a>
-                <a href="/IT17202/admin/sinh-vien/delete?id=${ sv.id }" class="btn btn-danger">Delete</a>
+                <a href="/Assignment_war_exploded/admin/chucvu/edit?ma=${ cv.ma }" class="btn btn-primary">Update</a>
+                <a href="/Assignment_war_exploded/admin/chucvu/delete?ma=${ cv.ma }" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>

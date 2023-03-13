@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/Assignment_war_exploded/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-<form class="col-6 offset-3 mt-5" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/chucvu/store">
+<form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
+      action="/Assignment_war_exploded/admin/chucvu/store" id="form">
 
     <div class="row">
         <div class="col-4">
@@ -60,5 +60,20 @@
 <script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function (event) {
+        const ma = document.querySelector('input[name="ma"]');
+        const ten = document.querySelector('input[name="ten"]');
+        const diaChi = document.querySelector('input[name="diaChi"]');
+        const thanhPho = document.querySelector('input[name="thanhPho"]');
+        const quocGia = document.querySelector('input[name="quocGia"]');
+        if (!ma.value || !ten.value || !diaChi.value || !thanhPho.value || !quocGia.value) {
+            alert("Không được để trống!");
+            event.preventDefault(); // Ngăn chặn gửi form
+        }
+    });
+
+</script>
 </body>
 </html>

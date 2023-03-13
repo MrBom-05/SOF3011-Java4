@@ -4,12 +4,16 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class SanPham implements Serializable {
@@ -27,29 +31,4 @@ public class SanPham implements Serializable {
     private String ten;
     @OneToMany(mappedBy = "sanPham", fetch = FetchType.EAGER)
     private List<ChiTietSP> listChiTietSP;
-
-    public SanPham(String id, String ma, String ten, List<ChiTietSP> listChiTietSP) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.listChiTietSP = listChiTietSP;
-    }
-
-    public SanPham(String id, String ma, String ten) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-    }
-
-    public SanPham(String id) {
-        this.id = id;
-    }
-
-    public SanPham() {
-    }
-
-    @Override
-    public String toString() {
-        return ten;
-    }
 }

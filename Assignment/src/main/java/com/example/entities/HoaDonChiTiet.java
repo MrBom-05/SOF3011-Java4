@@ -1,6 +1,8 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,6 +10,8 @@ import java.io.Serializable;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class HoaDonChiTiet implements Serializable {
@@ -27,14 +31,4 @@ public class HoaDonChiTiet implements Serializable {
 
     @Column(name = "DonGia", columnDefinition = "Decimal(20,0)")
     private Float donGia;
-
-    public HoaDonChiTiet(HoaDon hoaDon, ChiTietSP chiTietSP, int soLuongTon, Float donGia) {
-        this.hoaDon = hoaDon;
-        this.chiTietSP = chiTietSP;
-        this.soLuongTon = soLuongTon;
-        this.donGia = donGia;
-    }
-
-    public HoaDonChiTiet() {
-    }
 }

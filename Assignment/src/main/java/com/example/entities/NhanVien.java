@@ -1,6 +1,8 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class NhanVien implements Serializable {
@@ -69,27 +73,4 @@ public class NhanVien implements Serializable {
     @OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
     private List<HoaDon> listHoaDon;
 
-    public NhanVien(String id, String ma, String ten, String tenDem, String ho, String gioiTinh, Date ngaySinh, String diaChi, String sdt, String matKhau, String email, CuaHang cuaHang, ChucVu chucVu, int trangThai) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.tenDem = tenDem;
-        this.ho = ho;
-        this.gioiTinh = gioiTinh;
-        this.ngaySinh = ngaySinh;
-        this.diaChi = diaChi;
-        this.sdt = sdt;
-        this.matKhau = matKhau;
-        this.email = email;
-        this.cuaHang = cuaHang;
-        this.chucVu = chucVu;
-        this.trangThai = trangThai;
-    }
-
-    public NhanVien(String id) {
-        this.id = id;
-    }
-
-    public NhanVien() {
-    }
 }

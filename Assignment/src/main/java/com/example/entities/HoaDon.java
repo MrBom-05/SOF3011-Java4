@@ -1,6 +1,8 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class HoaDon implements Serializable {
@@ -58,50 +62,4 @@ public class HoaDon implements Serializable {
 
     @OneToMany(mappedBy = "hoaDon", fetch = FetchType.EAGER)
     private List<HoaDonChiTiet> listHoaDonChiTiet;
-
-    public HoaDon(String id, KhachHang khachHang, NhanVien nhanVien, String ma, Date ngayTao, Date ngayThanhToan, Date ngayShip, Date ngayNhan, int trangThai, String tenNguoiNhan, String diaChi, String sdt, List<HoaDonChiTiet> listHoaDonChiTiet) {
-        this.id = id;
-        this.khachHang = khachHang;
-        this.nhanVien = nhanVien;
-        this.ma = ma;
-        this.ngayTao = ngayTao;
-        this.ngayThanhToan = ngayThanhToan;
-        this.ngayShip = ngayShip;
-        this.ngayNhan = ngayNhan;
-        this.trangThai = trangThai;
-        this.tenNguoiNhan = tenNguoiNhan;
-        this.diaChi = diaChi;
-        this.sdt = sdt;
-        this.listHoaDonChiTiet = listHoaDonChiTiet;
-    }
-
-    public HoaDon(String id, KhachHang khachHang, String ma, Date ngayTao, int trangThai) {
-        this.id = id;
-        this.khachHang = khachHang;
-        this.ma = ma;
-        this.ngayTao = ngayTao;
-        this.trangThai = trangThai;
-    }
-
-    public HoaDon(String id, NhanVien nhanVien, String ma, Date ngayTao, int trangThai) {
-        this.id = id;
-        this.nhanVien = nhanVien;
-        this.ma = ma;
-        this.ngayTao = ngayTao;
-        this.trangThai = trangThai;
-    }
-
-    public HoaDon(String id, NhanVien nhanVien, Date ngayThanhToan, int trangThai) {
-        this.id = id;
-        this.nhanVien = nhanVien;
-        this.ngayThanhToan = ngayThanhToan;
-        this.trangThai = trangThai;
-    }
-
-    public HoaDon(String id) {
-        this.id = id;
-    }
-
-    public HoaDon() {
-    }
 }

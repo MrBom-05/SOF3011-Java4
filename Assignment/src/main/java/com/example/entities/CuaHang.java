@@ -1,6 +1,8 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -10,6 +12,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class CuaHang implements Serializable {
@@ -37,35 +41,4 @@ public class CuaHang implements Serializable {
 
     @OneToMany(mappedBy = "chucVu", fetch = FetchType.EAGER)
     private List<NhanVien> listNhanVien;
-
-    public CuaHang(String id, String ma, String ten, String diaChi, String thanhPho, String quocGia, List<NhanVien> listNhanVien) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.diaChi = diaChi;
-        this.thanhPho = thanhPho;
-        this.quocGia = quocGia;
-        this.listNhanVien = listNhanVien;
-    }
-
-    public CuaHang(String id, String ma, String ten, String diaChi, String thanhPho, String quocGia) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.diaChi = diaChi;
-        this.thanhPho = thanhPho;
-        this.quocGia = quocGia;
-    }
-
-    public CuaHang(String id) {
-        this.id = id;
-    }
-
-    public CuaHang() {
-    }
-
-    @Override
-    public String toString() {
-        return ten;
-    }
 }

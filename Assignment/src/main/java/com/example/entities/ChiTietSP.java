@@ -1,5 +1,7 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,6 +12,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class ChiTietSP implements Serializable {
@@ -56,39 +60,4 @@ public class ChiTietSP implements Serializable {
 
     @OneToMany(mappedBy = "chiTietSP", fetch = FetchType.EAGER)
     private List<HoaDonChiTiet> listHoaDonChiTiet;
-
-    public ChiTietSP(String id, SanPham sanPham, NSX nsx, MauSac mauSac, DongSP dongSP, int namBH, String moTa, int soLuongTon, Float giaNhap, Float giaBan, List<GioHangChiTiet> listGioHangChiTiet, List<HoaDonChiTiet> listHoaDonChiTiet) {
-        this.id = id;
-        this.sanPham = sanPham;
-        this.nsx = nsx;
-        this.mauSac = mauSac;
-        this.dongSP = dongSP;
-        this.namBH = namBH;
-        this.moTa = moTa;
-        this.soLuongTon = soLuongTon;
-        this.giaNhap = giaNhap;
-        this.giaBan = giaBan;
-        this.listGioHangChiTiet = listGioHangChiTiet;
-        this.listHoaDonChiTiet = listHoaDonChiTiet;
-    }
-
-    public ChiTietSP(String id, SanPham sanPham, NSX nsx, MauSac mauSac, DongSP dongSP, int namBH, String moTa, int soLuongTon, Float giaNhap, Float giaBan) {
-        this.id = id;
-        this.sanPham = sanPham;
-        this.nsx = nsx;
-        this.mauSac = mauSac;
-        this.dongSP = dongSP;
-        this.namBH = namBH;
-        this.moTa = moTa;
-        this.soLuongTon = soLuongTon;
-        this.giaNhap = giaNhap;
-        this.giaBan = giaBan;
-    }
-
-    public ChiTietSP(String id) {
-        this.id = id;
-    }
-
-    public ChiTietSP() {
-    }
 }

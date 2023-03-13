@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/Assignment_war_exploded/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-<form class="col-6 offset-3 mt-5" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/dongsp/store">
+<form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
+      action="/Assignment_war_exploded/admin/dongsp/store" id="form">
 
     <div class="col-12">
         <label class="form-label">Mã</label>
@@ -32,5 +32,17 @@
 <script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function (event) {
+        const ma = document.querySelector('input[name="ma"]');
+        const ten = document.querySelector('input[name="ten"]');
+        if (!ma.value || !ten.value) {
+            alert("Không được để trống!");
+            event.preventDefault(); // Ngăn chặn gửi form
+        }
+    });
+
+</script>
 </body>
 </html>

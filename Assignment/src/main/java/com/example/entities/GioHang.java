@@ -1,6 +1,8 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class GioHang implements Serializable {
@@ -51,41 +55,4 @@ public class GioHang implements Serializable {
 
     @OneToMany(mappedBy = "gioHang", fetch = FetchType.EAGER)
     private List<GioHangChiTiet> listGioHangChiTiet;
-
-    public GioHang(String id, KhachHang khachHang, String idNV, String ma, Date ngayTao, Date ngayThanhToan, String tenNguoiNhan, String diaChi, String sdt, int trangThai, List<GioHangChiTiet> listGioHangChiTiet) {
-        this.id = id;
-        this.khachHang = khachHang;
-        this.idNV = idNV;
-        this.ma = ma;
-        this.ngayTao = ngayTao;
-        this.ngayThanhToan = ngayThanhToan;
-        this.tenNguoiNhan = tenNguoiNhan;
-        this.diaChi = diaChi;
-        this.sdt = sdt;
-        this.trangThai = trangThai;
-        this.listGioHangChiTiet = listGioHangChiTiet;
-    }
-
-    public GioHang(String id, KhachHang khachHang, String ma, Date ngayTao, int trangThai) {
-        this.id = id;
-        this.khachHang = khachHang;
-        this.ma = ma;
-        this.ngayTao = ngayTao;
-        this.trangThai = trangThai;
-    }
-
-    public GioHang(String id, String idNV, String ma, Date ngayTao, int trangThai) {
-        this.id = id;
-        this.idNV = idNV;
-        this.ma = ma;
-        this.ngayTao = ngayTao;
-        this.trangThai = trangThai;
-    }
-
-    public GioHang(String id) {
-        this.id = id;
-    }
-
-    public GioHang() {
-    }
 }

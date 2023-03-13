@@ -1,6 +1,8 @@
 package com.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -10,6 +12,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class NSX implements Serializable {
@@ -28,29 +32,4 @@ public class NSX implements Serializable {
 
     @OneToMany(mappedBy = "nsx", fetch = FetchType.EAGER)
     private List<ChiTietSP> listChiTietSP;
-
-    public NSX(String id, String ma, String ten, List<ChiTietSP> listChiTietSP) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-        this.listChiTietSP = listChiTietSP;
-    }
-
-    public NSX(String id, String ma, String ten) {
-        this.id = id;
-        this.ma = ma;
-        this.ten = ten;
-    }
-
-    public NSX(String id) {
-        this.id = id;
-    }
-
-    public NSX() {
-    }
-
-    @Override
-    public String toString() {
-        return ten;
-    }
 }
