@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/nsx/index",
-        "/nsx/create",
-        "/nsx/edit",
-        "/nsx/delete",
-        "/nsx/update",
-        "/nsx/store"
+        "/admin/nsx/index",
+        "/admin/nsx/create",
+        "/admin/nsx/edit",
+        "/admin/nsx/delete",
+        "/admin/nsx/update",
+        "/admin/nsx/store"
 })
 public class NSXServlet extends HttpServlet {
     @Override

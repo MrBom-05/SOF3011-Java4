@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/sanpham/index",
-        "/sanpham/create",
-        "/sanpham/edit",
-        "/sanpham/delete",
-        "/sanpham/update",
-        "/sanpham/store"
+        "/admin/sanpham/index",
+        "/admin/sanpham/create",
+        "/admin/sanpham/edit",
+        "/admin/sanpham/delete",
+        "/admin/sanpham/update",
+        "/admin/sanpham/store"
 })
 public class SanPhamServlet extends HttpServlet {
     @Override

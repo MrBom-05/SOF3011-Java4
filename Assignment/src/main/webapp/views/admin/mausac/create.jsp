@@ -13,7 +13,7 @@
 </head>
 <body>
 <form class="col-6 offset-3 mt-5" novalidate method="POST"
-      action="/BaiTapSOF3011_war_exploded/khachhang/store">
+      action="/Assignment_war_exploded/admin/mausac/store">
 
     <div class="col-12">
         <label class="form-label">Mã</label>

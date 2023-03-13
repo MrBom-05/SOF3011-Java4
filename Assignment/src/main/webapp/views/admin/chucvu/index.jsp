@@ -15,7 +15,7 @@
 
 <h2 class="mt-3">Quản Lý Chức Vụ</h2>
 
-<a href="/Assignment_war_exploded/khachhang/create" class="btn btn-success mt-3">Add</a>
+<a href="/Assignment_war_exploded/admin/chucvu/create" class="btn btn-success mt-3">Add</a>
 
 <table class="table table-bordered mt-5">
     <thead>

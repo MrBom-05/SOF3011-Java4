@@ -6,15 +6,55 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "ChiTietSPServlet", value = "/ChiTietSPServlet")
+@WebServlet({
+        "/admin/chitietsp/index",
+        "/admin/chitietsp/create",
+        "/admin/chitietsp/edit",
+        "/admin/chitietsp/delete",
+        "/admin/chitietsp/update",
+        "/admin/chitietsp/store"
+})
 public class ChiTietSPServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String url = request.getRequestURI();
+        if (url.contains("create")) {
+            create(request, response);
+        } else if (url.contains("edit")) {
+            edit(request, response);
+        } else if (url.contains("delete")) {
+            delete(request, response);
+        } else {
+            index(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/views/admin/chitietsp/index.jsp").forward(request, response);
+    }
+
+    public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/views/admin/chitietsp/create.jsp").forward(request, response);
+    }
+
+    public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/views/admin/chitietsp/update.jsp").forward(request, response);
+    }
+
+    public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }

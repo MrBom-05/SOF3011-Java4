@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/mausac/index",
-        "/mausac/create",
-        "/mausac/edit",
-        "/mausac/delete",
-        "/mausac/update",
-        "/mausac/store"
+        "/admin/mausac/index",
+        "/admin/mausac/create",
+        "/admin/mausac/edit",
+        "/admin/mausac/delete",
+        "/admin/mausac/update",
+        "/admin/mausac/store"
 })
 public class MauSacServlet extends HttpServlet {
     @Override

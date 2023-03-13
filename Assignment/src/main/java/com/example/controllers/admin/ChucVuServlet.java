@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/chucvu/index",
-        "/chucvu/create",
-        "/chucvu/edit",
-        "/chucvu/delete",
-        "/chucvu/update",
-        "/chucvu/store"
+        "/admin/chucvu/index",
+        "/admin/chucvu/create",
+        "/admin/chucvu/edit",
+        "/admin/chucvu/delete",
+        "/admin/chucvu/update",
+        "/admin/chucvu/store"
 })
 public class ChucVuServlet extends HttpServlet {
     @Override

@@ -7,12 +7,12 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet({
-        "/dongsp/index",
-        "/dongsp/create",
-        "/dongsp/edit",
-        "/dongsp/delete",
-        "/dongsp/update",
-        "/dongsp/store"
+        "/admin/dongsp/index",
+        "/admin/dongsp/create",
+        "/admin/dongsp/edit",
+        "/admin/dongsp/delete",
+        "/admin/dongsp/update",
+        "/admin/dongsp/store"
 })
 public class DongSPServlet extends HttpServlet {
     @Override
