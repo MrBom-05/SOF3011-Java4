@@ -64,7 +64,6 @@ public class KhachHangController extends HttpServlet {
 
         KhachHang khachHang = new KhachHang(ma, ten, tenDem, ho, ngaySinh, sdt, diaChi, thanhPho, quocGia, email, matKhau);
         list.add(khachHang);
-        System.out.println(list);
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
