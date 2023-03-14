@@ -11,14 +11,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet({
-        "/admin/chuc-vu/index",
-        "/admin/chuc-vu/create",
-        "/admin/chuc-vu/edit",
-        "/admin/chuc-vu/delete",
-        "/admin/chuc-vu/update",
-        "/admin/chuc-vu/store"
-})
+@WebServlet({"/admin/chuc-vu/index", "/admin/chuc-vu/create", "/admin/chuc-vu/edit", "/admin/chuc-vu/delete", "/admin/chuc-vu/update", "/admin/chuc-vu/store"})
 public class ChucVuServlet extends HttpServlet {
 
     private ChucVuService chucVuService = new ChucVuServiceImplement();
@@ -68,7 +61,6 @@ public class ChucVuServlet extends HttpServlet {
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         try {
             ChucVu chucVu = new ChucVu();
             BeanUtils.populate(chucVu, request.getParameterMap());
@@ -76,7 +68,6 @@ public class ChucVuServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
     }
 

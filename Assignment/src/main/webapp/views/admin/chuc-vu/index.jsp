@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="f" uri="jakarta.tags.functions" %>
 
 <html>
 <head>
@@ -19,32 +20,40 @@
 
 <a href="/Assignment_war_exploded/admin/chuc-vu/create" class="btn btn-success mt-3">Add</a>
 
-<table class="table table-bordered mt-5">
-    <thead>
-    <tr>
-        <th>STT</th>
-        <th>Mã</th>
-        <th>Tên</th>
-        <th class="col-2 text-center">Action</th>
-    </tr>
-    </thead>
-    <tbody>
+<c:if test="${ f:length(list) == 0 }">
+    <h4 class="text-center">Không có dữ liệu</h4>
+</c:if>
 
-    <c:forEach var="cv" items="${ list }" varStatus="status">
+<c:if test="${ f:length(list) != 0 }">
+
+    <table class="table table-bordered mt-5">
+        <thead>
         <tr>
-            <td>${status.index + 1}</td>
-            <td>${ cv.ma }</td>
-            <td>${ cv.ten }</td>
-
-            <td class="text-center">
-                <a href="/Assignment_war_exploded/admin/chuc-vu/edit?ma=${ cv.ma }" class="btn btn-primary">Update</a>
-                <a href="/Assignment_war_exploded/admin/chuc-vu/delete?ma=${ cv.ma }" class="btn btn-danger">Delete</a>
-            </td>
+            <th>STT</th>
+            <th>Mã</th>
+            <th>Tên</th>
+            <th class="col-2 text-center">Action</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
 
+        <c:forEach var="cv" items="${ list }" varStatus="status">
+            <tr>
+                <td>${status.index + 1}</td>
+                <td>${ cv.ma }</td>
+                <td>${ cv.ten }</td>
+
+                <td class="text-center">
+                    <a href="/Assignment_war_exploded/admin/chuc-vu/edit?ma=${ cv.ma }"
+                       class="btn btn-primary">Update</a>
+                    <a href="/Assignment_war_exploded/admin/chuc-vu/delete?ma=${ cv.ma }"
+                       class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
 <script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
