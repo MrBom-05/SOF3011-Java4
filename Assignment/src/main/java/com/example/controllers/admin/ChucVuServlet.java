@@ -6,6 +6,7 @@ import com.example.services.implement.ChucVuServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -67,12 +68,10 @@ public class ChucVuServlet extends HttpServlet {
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String ma = request.getParameter("ma");
-        String ten = request.getParameter("ten");
-
-        ChucVu chucVu = new ChucVu("", ma, ten);
 
         try {
+            ChucVu chucVu = new ChucVu();
+            BeanUtils.populate(chucVu, request.getParameterMap());
             chucVuService.insert(chucVu);
         } catch (Exception e) {
             e.printStackTrace();
