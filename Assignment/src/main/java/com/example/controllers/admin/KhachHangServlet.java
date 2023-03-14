@@ -1,20 +1,20 @@
 package com.example.controllers.admin;
 
+import com.example.entities.KhachHang;
+import com.example.services.KhachHangService;
+import com.example.services.implement.KhachHangServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet({
-        "/admin/khach-hang/index",
-        "/admin/khach-hang/create",
-        "/admin/khach-hang/edit",
-        "/admin/khach-hang/delete",
-        "/admin/khach-hang/update",
-        "/admin/khach-hang/store"
-})
+@WebServlet({"/admin/khach-hang/index", "/admin/khach-hang/create", "/admin/khach-hang/edit", "/admin/khach-hang/delete", "/admin/khach-hang/update", "/admin/khach-hang/store"})
 public class KhachHangServlet extends HttpServlet {
+
+    private KhachHangService khachHangService = new KhachHangServiceImplement();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURI();
@@ -31,10 +31,19 @@ public class KhachHangServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String uri = request.getRequestURI();
+        if (uri.contains("store")) {
+            store(request, response);
+        } else if (uri.contains("update")) {
+            update(request, response);
+        } else {
+            response.sendRedirect("/Assignment_war_exploded/admin/khach-hang/index");
+        }
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<KhachHang> list = khachHangService.getListKhachHang();
+        request.setAttribute("list", list);
         request.getRequestDispatcher("/views/admin/khach-hang/index.jsp").forward(request, response);
     }
 

@@ -12,14 +12,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet({
-        "/admin/mau-sac/index",
-        "/admin/mau-sac/create",
-        "/admin/mau-sac/edit",
-        "/admin/mau-sac/delete",
-        "/admin/mau-sac/update",
-        "/admin/mau-sac/store"
-})
+@WebServlet({"/admin/mau-sac/index", "/admin/mau-sac/create", "/admin/mau-sac/edit", "/admin/mau-sac/delete", "/admin/mau-sac/update", "/admin/mau-sac/store"})
 public class MauSacServlet extends HttpServlet {
 
     private MauSacService mauSacService = new MauSacServiceImplement();

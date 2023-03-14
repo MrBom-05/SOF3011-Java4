@@ -36,16 +36,16 @@
         </thead>
         <tbody>
 
-        <c:forEach var="san-pham" items="${ list }" varStatus="status">
+        <c:forEach var="sanPham" items="${ list }" varStatus="status">
             <tr>
                 <td>${status.index + 1}</td>
-                <td>${ san-pham.ma }</td>
-                <td>${ san-pham.ten }</td>
+                <td>${ sanPham.ma }</td>
+                <td>${ sanPham.ten }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/san-pham/edit?ma=${ san-pham.ma }"
+                    <a href="/Assignment_war_exploded/admin/san-pham/edit?ma=${ sanPham.ma }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/san-pham/delete?ma=${ san-pham.ma }"
+                    <a href="/Assignment_war_exploded/admin/san-pham/delete?ma=${ sanPham.ma }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>

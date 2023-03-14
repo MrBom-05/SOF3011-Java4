@@ -6,14 +6,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet({
-        "/admin/nhan-vien/index",
-        "/admin/nhan-vien/create",
-        "/admin/nhan-vien/edit",
-        "/admin/nhan-vien/delete",
-        "/admin/nhan-vien/update",
-        "/admin/nhan-vien/store"
-})
+@WebServlet({"/admin/nhan-vien/index", "/admin/nhan-vien/create", "/admin/nhan-vien/edit", "/admin/nhan-vien/delete", "/admin/nhan-vien/update", "/admin/nhan-vien/store"})
 public class NhanVienServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,7 +24,14 @@ public class NhanVienServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String uri = request.getRequestURI();
+        if (uri.contains("store")) {
+            store(request, response);
+        } else if (uri.contains("update")) {
+            update(request, response);
+        } else {
+            response.sendRedirect("/Assignment_war_exploded/admin/nhan-vien/index");
+        }
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

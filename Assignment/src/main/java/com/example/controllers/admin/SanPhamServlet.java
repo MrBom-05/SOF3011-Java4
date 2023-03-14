@@ -11,14 +11,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet({
-        "/admin/san-pham/index",
-        "/admin/san-pham/create",
-        "/admin/san-pham/edit",
-        "/admin/san-pham/delete",
-        "/admin/san-pham/update",
-        "/admin/san-pham/store"
-})
+@WebServlet({"/admin/san-pham/index", "/admin/san-pham/create", "/admin/san-pham/edit", "/admin/san-pham/delete", "/admin/san-pham/update", "/admin/san-pham/store"})
 public class SanPhamServlet extends HttpServlet {
 
     private SanPhamService sanPhamService = new SanPhamServiceImplement();
@@ -73,7 +66,7 @@ public class SanPhamServlet extends HttpServlet {
             SanPham sanPham = new SanPham();
             BeanUtils.populate(sanPham, request.getParameterMap());
             sanPhamService.insert(sanPham);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         response.sendRedirect("/Assignment_war_exploded/admin/san-pham/index");
