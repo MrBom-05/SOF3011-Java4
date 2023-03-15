@@ -81,10 +81,6 @@ a
 1src/main/webapp/views/admin/khach-hang/update.jsp,8\8\887e0de6e790320a5cf55252b655e758a580691e
 o
 ?src/main/java/com/example/repositories/KhachHangRepository.java,1\e\1e43cc91c47c0159094268e93f42a23642930fab
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-q
-Asrc/main/java/com/example/controllers/admin/KhachHangServlet.java,6\a\6a256fb15a635c2fb85c1f275f688cf86ced37d1
 ^
 .src/main/java/com/example/entities/ChucVu.java,a\c\acb5c71831c380abd225aeeb014ac575e90622c7
 _
@@ -115,10 +111,6 @@ z
 Jsrc/main/java/com/example/services/implement/NhanVienServiceImplement.java,e\9\e993ec8d37970c5519d5c524504c36aa73af8813
 d
 4src/main/java/com/example/models/NhanVienCustom.java,1\f\1feaf01b799d56c35b7de392b7dbf7bc93f81a55
-_
-/src/main/webapp/views/admin/nhan-vien/index.jsp,0\5\057fc97811e2eaff2b7e408ac8234a0839838a9a
-`
-0src/main/webapp/views/admin/nhan-vien/create.jsp,e\e\eec2f055c097415e115318ec3b2c7f4d6317b60e
 a
 1src/main/webapp/views/admin/chi-tiet-sp/index.jsp,4\8\485e15b0713a294e5266d70ad6311379b3ab7e61
 l
@@ -143,8 +135,6 @@ _
 /src/main/webapp/views/admin/cua-hang/create.jsp,e\8\e84030617788691bf26d09ca1d2f5c5b868b023d
 `
 0src/main/webapp/views/admin/nhan-vien/update.jsp,e\c\ec1583e167e192e2657b1c479da7153efef9eb0e
-p
-@src/main/java/com/example/controllers/admin/NhanVienServlet.java,3\5\35336bb7459c12415ada23031ccb1e2a9032b17f
 n
 >src/main/java/com/example/controllers/admin/MauSacServlet.java,9\a\9af0dbc395a8529d8f0d6d3c4fe2ebcbccd61657
 k
@@ -163,3 +153,13 @@ b
 2src/main/webapp/views/admin/chi-tiet-sp/create.jsp,1\e\1e3ddfc1318f5b6d477e7321fdf2f2bdfe797613
 b
 2src/main/webapp/views/admin/chi-tiet-sp/update.jsp,f\0\f03be1e3d8516fac5cc2e99c6fecfb6333a4ff1c
+`
+0src/main/webapp/views/admin/nhan-vien/create.jsp,e\e\eec2f055c097415e115318ec3b2c7f4d6317b60e
+q
+Asrc/main/java/com/example/controllers/admin/KhachHangServlet.java,6\a\6a256fb15a635c2fb85c1f275f688cf86ced37d1
+_
+/src/main/webapp/views/admin/nhan-vien/index.jsp,0\5\057fc97811e2eaff2b7e408ac8234a0839838a9a
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+p
+@src/main/java/com/example/controllers/admin/NhanVienServlet.java,3\5\35336bb7459c12415ada23031ccb1e2a9032b17f

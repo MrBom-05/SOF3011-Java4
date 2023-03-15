@@ -2,6 +2,7 @@ package com.example.controllers.admin;
 
 import com.example.entities.ChucVu;
 import com.example.entities.CuaHang;
+import com.example.entities.NhanVien;
 import com.example.models.NhanVienCustom;
 import com.example.services.ChucVuService;
 import com.example.services.CuaHangService;
@@ -12,8 +13,13 @@ import com.example.services.implement.NhanVienServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
+import org.apache.commons.beanutils.converters.DateTimeConverter;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet({"/admin/nhan-vien/index", "/admin/nhan-vien/create", "/admin/nhan-vien/edit", "/admin/nhan-vien/delete", "/admin/nhan-vien/update", "/admin/nhan-vien/store"})
@@ -75,7 +81,18 @@ public class NhanVienServlet extends HttpServlet {
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
+            dateTimeConverter.setPattern("yyyy-MM-dd");
+            ConvertUtils.register(dateTimeConverter, Date.class);
 
+            NhanVien nhanVien = new NhanVien();
+            BeanUtils.populate(nhanVien, request.getParameterMap());
+            nhanVienService.insert(nhanVien);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/nhan-vien/index");
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

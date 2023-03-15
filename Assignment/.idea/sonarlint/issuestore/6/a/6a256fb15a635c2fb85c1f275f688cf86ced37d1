@@ -1,19 +1,9 @@
 
 ž
-java:S1186?"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ßÔ¼8ÄÄÄžî0
+java:S1186?"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ßÔ¼8ÇÂ¡°î0
 ž
-java:S1186R"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÉºö8ÅÄÄžî0
+java:S1186R"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÉºö8ÈÂ¡°î0
 T
-java:S1948"2Make "khachHangService" transient or serializable.(ÂÌÑµþÿÿÿÿ8ÈÄÄžî0
+java:S1948"2Make "khachHangService" transient or serializable.(ÂÌÑµþÿÿÿÿ8ËÂ¡°î0
 –
-java:S1130C"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(Ã°ÿÆ8ð«Åžî0
-]	java:S125E"<This block of commented-out lines of code should be removed.(©˜Úÿüÿÿÿÿ8²­îžî0
-h
-java:S1128
-"FRemove this unused import 'org.apache.commons.beanutils.ConvertUtils'.(Ì…šÁüÿÿÿÿ8·­îžî0
-t
-java:S1128"RRemove this unused import 'org.apache.commons.beanutils.converters.DateConverter'.(•Ó–ßûÿÿÿÿ8·­îžî0
-s
-java:S1128"VRemove this unused import 'org.apache.commons.beanutils.converters.DateTimeConverter'.(ÈÅó¦8·­îžî0
-G
-java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8¸­îžî0
+java:S1130C"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(Ã°ÿÆ8÷©¤°î0

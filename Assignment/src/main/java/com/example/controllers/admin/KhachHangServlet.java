@@ -12,7 +12,7 @@ import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.commons.beanutils.converters.DateTimeConverter;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet({"/admin/khach-hang/index", "/admin/khach-hang/create", "/admin/khach-hang/edit", "/admin/khach-hang/delete", "/admin/khach-hang/update", "/admin/khach-hang/store"})
@@ -66,9 +66,9 @@ public class KhachHangServlet extends HttpServlet {
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-//            DateTimeConverter dateTimeConverter = new DateConverter();
-//            dateTimeConverter.setPattern("yyyy/MM/dd");
-//            ConvertUtils.register(dateTimeConverter, Date.class);
+            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
+            dateTimeConverter.setPattern("yyyy-MM-dd");
+            ConvertUtils.register(dateTimeConverter, Date.class);
 
             KhachHang khachHang = new KhachHang();
             BeanUtils.populate(khachHang, request.getParameterMap());
