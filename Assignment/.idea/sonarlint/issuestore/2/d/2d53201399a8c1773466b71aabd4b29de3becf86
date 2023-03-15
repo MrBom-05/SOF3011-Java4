@@ -1,0 +1,25 @@
+
+
+java:S1186O"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ßÔ¼8¡™¤î0
+
+java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ã°ÿÆ8¡™¤î0
+
+java:S1186W"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÉºö8¢™¤î0
+T
+java:S1948"2Make "chiTietSPService" transient or serializable.(Ÿ©Í¹ûÿÿÿÿ8£™¤î0
+M
+java:S1948"0Make "sanPhamService" transient or serializable.(ÔÆÊã8£™¤î0
+L
+java:S1948"/Make "mauSacService" transient or serializable.(¸ëé“8£™¤î0
+I
+java:S1948",Make "nsxService" transient or serializable.(€ãÔ£8£™¤î0
+L
+java:S1948"/Make "dongSPService" transient or serializable.(”ŞˆÃ8£™¤î0
+E
+java:S1948"(Make "listSanPham" private or transient.(“ÁÎĞ8³î¤î0
+D
+java:S1948"'Make "listMauSac" private or transient.(êöÜ“8²„¤î0
+A
+java:S1948"$Make "listNSX" private or transient.(éğ˜Ó8•°¤î0
+I
+java:S1948"'Make "listDongSP" private or transient.(ÿÃ–½şÿÿÿÿ8•°¤î0

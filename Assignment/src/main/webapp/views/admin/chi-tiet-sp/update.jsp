@@ -88,24 +88,16 @@
 <script>
     const form = document.getElementById('form');
     form.addEventListener('submit', function (event) {
-        const ma = document.querySelector('input[name="ma"]');
-        const ten = document.querySelector('input[name="ten"]');
-        const tenDem = document.querySelector('input[name="tenDem"]');
-        const ho = document.querySelector('input[name="ho"]');
-        const ngaySinh = document.querySelector('input[name="ngaySinh"]');
-        const sdt = document.querySelector('input[name="sdt"]');
-        const email = document.querySelector('input[name="email"]');
-        const diaChi = document.querySelector('input[name="diaChi"]');
-        const thanhPho = document.querySelector('input[name="thanhPho"]');
-        const quocGia = document.querySelector('input[name="quocGia"]');
-        const matKhau = document.querySelector('input[name="matKhau"]');
-        if (!ma.value || !ten.value || !tenDem.value || !ho.value || !ngaySinh.value || !sdt.value || !email.value || !diaChi.value
-            || !thanhPho.value || !quocGia.value || !matKhau.value) {
+        const namSX = document.querySelector('input[name="namSX"]');
+        const soLuongTon = document.querySelector('input[name="soLuongTon"]');
+        const giaNhap = document.querySelector('input[name="giaNhap"]');
+        const giaBan = document.querySelector('input[name="giaBan"]');
+        const moTa = document.querySelector('input[name="moTa"]');
+        if (!namSX.value || !soLuongTon.value || !giaNhap.value || !giaBan.value || !moTa.value) {
             alert("Không được để trống!");
             event.preventDefault(); // Ngăn chặn gửi form
         }
     });
-
 </script>
 </body>
 </html>
