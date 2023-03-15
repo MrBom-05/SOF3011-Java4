@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="f" uri="jakarta.tags.functions" %>
 <html>
 <head>
     <title>Cập nhật</title>
@@ -44,25 +46,46 @@
         <input type="text" class="form-control" id="validationCustom07" name="diaChi" required>
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Thành Phố</label>
-        <input type="text" class="form-control" id="validationCustom08" name="thanhPho" required>
+        <label for="validationCustom02" class="form-label">Cửa Hàng</label>
+        <select class="form-select" name="cuaHang">
+            <option value="" disabled selected>-- Chọn Của Hàng --</option>
+            <c:forEach var="cuaHang" items="${listCuaHang}" varStatus="status">
+                <option value="${cuaHang.id}">${cuaHang.ten}</option>
+            </c:forEach>
+        </select>
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Quốc Gia</label>
-        <input type="text" class="form-control" id="validationCustom09" name="quocGia" required>
+        <label for="validationCustom02" class="form-label">Chức Vụ</label>
+        <select class="form-select" name="cuaHang">
+            <option value="" disabled selected>-- Chọn Chức Vụ --</option>
+            <c:forEach var="chucVu" items="${listChucVu}" varStatus="status">
+                <option value="${chucVu.id}">${chucVu.ten}</option>
+            </c:forEach>
+        </select>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Mật Khẩu</label>
         <input type="password" class="form-control" id="validationCustom10" name="matKhau" required>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Mã</label>
         <input type="text" class="form-control" id="validationCustom011" name="ma" required>
     </div>
-    <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>
+
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Giới Tính</label>
+        <div class="row mt-1">
+            <div class="form-check col-6">
+                <input class="form-check-input ms-5" value="Nam" type="radio" name="flexRadioDefault" id="rdoTrue" checked required>
+                <label class="form-check-label ms-2">Nam</label>
+            </div>
+            <div class="form-check col-6">
+                <input class="form-check-input" value="Nữ" type="radio" name="flexRadioDefault" id="rdoFalse" required>
+                <label class="form-check-label">Nữ</label>
+            </div>
+        </div>
     </div>
 
 </form>

@@ -30,6 +30,6 @@ public class NSX implements Serializable {
     @Column(name = "Ten", columnDefinition = "Nvarchar(30)")
     private String ten;
 
-    @OneToMany(mappedBy = "nsx", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "nsx", fetch = FetchType.LAZY)
     private List<ChiTietSP> listChiTietSP;
 }

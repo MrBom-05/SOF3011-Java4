@@ -70,7 +70,7 @@ public class NhanVien implements Serializable {
     @Column(name = "TrangThai")
     private int trangThai;
 
-    @OneToMany(mappedBy = "nhanVien", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "nhanVien", fetch = FetchType.LAZY)
     private List<HoaDon> listHoaDon;
 
 }

@@ -60,6 +60,6 @@ public class HoaDon implements Serializable {
     @Column(name = "Sdt", columnDefinition = "Varchar(30)")
     private String sdt;
 
-    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> listHoaDonChiTiet;
 }

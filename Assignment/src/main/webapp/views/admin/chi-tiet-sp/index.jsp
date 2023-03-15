@@ -15,9 +15,9 @@
 </head>
 <body class="col-10 offset-1">
 
-<h2 class="mt-3">Quản Lý Nhân Viên</h2>
+<h2 class="mt-3">Quản Lý Chi Tiết Sản Phẩm</h2>
 
-<a href="/Assignment_war_exploded/admin/nhan-vien/create" class="btn btn-success mt-3">Add</a>
+<a href="/Assignment_war_exploded/admin/chi-tiet-sp/create" class="btn btn-success mt-3">Add</a>
 
 <c:if test="${ f:length(list) == 0 }">
     <h4 class="text-center">Không có dữ liệu</h4>
@@ -31,43 +31,37 @@
             <th>STT</th>
             <th>Mã</th>
             <th>Tên</th>
-            <th>Tên Đệm</th>
-            <th>Họ</th>
-            <th>Giới Tính</th>
-            <th>Ngày Sinh</th>
-            <th>SDT</th>
-            <th>Địa Chỉ</th>
-            <th>Cửa Hàng</th>
-            <th>Chức Vụ</th>
-            <th>Email</th>
-            <th>Mật Khẩu</th>
-            <th>Trạng Thái</th>
+            <th>NSX</th>
+            <th>Màu Sắc</th>
+            <th>Dòng SP</th>
+            <th>Năm SX</th>
+            <th>Mô Tả</th>
+            <th>Số Lượng</th>
+            <th>Giá Nhập</th>
+            <th>Giá Bán</th>
             <th class="col-2 text-center">Action</th>
         </tr>
         </thead>
         <tbody>
 
-        <c:forEach var="nhanVien" items="${ list }" varStatus="status">
+        <c:forEach var="chiTietSP" items="${ list }" varStatus="status">
             <tr>
                 <td>${status.index + 1}</td>
-                <td>${ nhanVien.ma }</td>
-                <td>${ nhanVien.ten }</td>
-                <td>${ nhanVien.tenDem }</td>
-                <td>${ nhanVien.ho }</td>
-                <td>${ nhanVien.gioiTinh }</td>
-                <td>${ nhanVien.ngaySinh }</td>
-                <td>${ nhanVien.sdt }</td>
-                <td>${ nhanVien.diaChi }</td>
-                <td>${ nhanVien.cuaHang }</td>
-                <td>${ nhanVien.chucVu }</td>
-                <td>${ nhanVien.email }</td>
-                <td>${ nhanVien.matKhau }</td>
-                <td>${ nhanVien.trangThai == 1 ? "Đang Làm" : "Đã Nghỉ" }</td>
+                <td>${ chiTietSP.ma }</td>
+                <td>${ chiTietSP.ten }</td>
+                <td>${ chiTietSP.nsx }</td>
+                <td>${ chiTietSP.mauSac }</td>
+                <td>${ chiTietSP.dongSP }</td>
+                <td>${ chiTietSP.namSX }</td>
+                <td>${ chiTietSP.moTa }</td>
+                <td>${ chiTietSP.soLuongTon }</td>
+                <td>${ chiTietSP.giaNhap }</td>
+                <td>${ chiTietSP.giaBan }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/nhan-vien/edit?ma=${ nhanVien.ma }"
+                    <a href="/Assignment_war_exploded/admin/chi-tiet-sp/edit?ma=${ chiTietSP.ma }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/nhan-vien/delete?ma=${ nhanVien.ma }"
+                    <a href="/Assignment_war_exploded/admin/chi-tiet-sp/delete?ma=${ chiTietSP.ma }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>

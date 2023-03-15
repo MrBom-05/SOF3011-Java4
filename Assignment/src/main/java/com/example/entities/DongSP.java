@@ -30,6 +30,6 @@ public class DongSP implements Serializable {
     @Column(name = "Ten", columnDefinition = "Nvarchar(30)")
     private String ten;
 
-    @OneToMany(mappedBy = "dongSP", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "dongSP", fetch = FetchType.LAZY)
     private List<ChiTietSP> listChiTietSP;
 }

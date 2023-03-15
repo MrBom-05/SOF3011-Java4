@@ -29,6 +29,6 @@ public class SanPham implements Serializable {
 
     @Column(name = "Ten", columnDefinition = "Nvarchar(30)")
     private String ten;
-    @OneToMany(mappedBy = "sanPham", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sanPham", fetch = FetchType.LAZY)
     private List<ChiTietSP> listChiTietSP;
 }

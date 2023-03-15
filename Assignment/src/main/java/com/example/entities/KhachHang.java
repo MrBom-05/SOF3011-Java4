@@ -58,9 +58,9 @@ public class KhachHang implements Serializable {
     @Column(name = "Email", columnDefinition = "Varchar(MAX)")
     private String email;
 
-    @OneToMany(mappedBy = "khachHang", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "khachHang", fetch = FetchType.LAZY)
     private List<GioHang> listGioHang;
 
-    @OneToMany(mappedBy = "khachHang", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "khachHang", fetch = FetchType.LAZY)
     private List<HoaDon> listHoaDon;
 }

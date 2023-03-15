@@ -28,7 +28,7 @@ public class ChucVu implements Serializable {
     @Column(name = "Ten", columnDefinition = "Nvarchar(30)")
     private String ten;
 
-    @OneToMany(mappedBy = "chucVu", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "chucVu", fetch = FetchType.LAZY)
     private List<NhanVien> listNhanVien;
 
 }

@@ -30,6 +30,6 @@ public class MauSac implements Serializable {
     @Column(name = "Ten", columnDefinition = "Nvarchar(30)")
     private String ten;
 
-    @OneToMany(mappedBy = "mauSac", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "mauSac", fetch = FetchType.LAZY)
     private List<ChiTietSP> listChiTietSP;
 }

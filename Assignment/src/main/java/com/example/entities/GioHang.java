@@ -53,6 +53,6 @@ public class GioHang implements Serializable {
     @Column(name = "TrangThai")
     private int trangThai;
 
-    @OneToMany(mappedBy = "gioHang", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "gioHang", fetch = FetchType.LAZY)
     private List<GioHangChiTiet> listGioHangChiTiet;
 }

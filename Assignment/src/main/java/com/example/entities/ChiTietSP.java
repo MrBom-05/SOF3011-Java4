@@ -40,8 +40,8 @@ public class ChiTietSP implements Serializable {
     @JoinColumn(name = "idDongSP")
     private DongSP dongSP;
 
-    @Column(name = "NamBH")
-    private int namBH;
+    @Column(name = "NamSX")
+    private int namSX;
 
     @Column(name = "MoTa", columnDefinition = "Nvarchar(MAX)")
     private String moTa;
@@ -55,9 +55,9 @@ public class ChiTietSP implements Serializable {
     @Column(name = "GiaBan", columnDefinition = "Decimal(20,0)")
     private Float giaBan;
 
-    @OneToMany(mappedBy = "chiTietSP", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "chiTietSP", fetch = FetchType.LAZY)
     private List<GioHangChiTiet> listGioHangChiTiet;
 
-    @OneToMany(mappedBy = "chiTietSP", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "chiTietSP", fetch = FetchType.LAZY)
     private List<HoaDonChiTiet> listHoaDonChiTiet;
 }
