@@ -29,8 +29,6 @@ x
 Hsrc/main/java/com/example/services/implement/ChucVuServiceImplement.java,d\5\d581187563fa11cf4c25e62e4feca45fce5604d9
 ^
 .src/main/java/com/example/entities/ChucVu.java,a\c\acb5c71831c380abd225aeeb014ac575e90622c7
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 l
 <src/main/java/com/example/repositories/ChucVuRepository.java,e\a\ea472ada9423b0357aabecc48dd25ce06b58309c
 x
@@ -102,8 +100,6 @@ n
 o
 ?src/main/java/com/example/controllers/admin/CuaHangServlet.java,5\a\5a7da488a82885fbdc98d9cf667348d12527caf0
 n
->src/main/java/com/example/controllers/admin/DongSPServlet.java,2\7\273d93769d4bfa47596411de51ac065f607eb0e1
-n
 >src/main/java/com/example/controllers/admin/MauSacServlet.java,9\a\9af0dbc395a8529d8f0d6d3c4fe2ebcbccd61657
 p
 @src/main/java/com/example/controllers/admin/NhanVienServlet.java,3\5\35336bb7459c12415ada23031ccb1e2a9032b17f
@@ -121,8 +117,6 @@ h
 Ksrc/main/java/com/example/services/implement/KhachHangServiceImplement.java,8\6\867f642aa2871c6e9793145172fe1fae7acf3b7e
 I
 src/main/webapp/index.jsp,8\e\8e6d3b70c9f5b02570779b0441540d45eceb0ded
-q
-Asrc/main/java/com/example/controllers/admin/KhachHangServlet.java,6\a\6a256fb15a635c2fb85c1f275f688cf86ced37d1
 `
 0src/main/webapp/views/admin/khach-hang/index.jsp,a\f\aff326474af4f77adf11effa1b5b2b71a28d3f9d
 f
@@ -135,3 +129,15 @@ a
 1src/main/webapp/views/admin/khach-hang/create.jsp,c\7\c77c6467f06c153a0723eb12d93fcd4fdbe77f69
 o
 ?src/main/java/com/example/repositories/KhachHangRepository.java,1\e\1e43cc91c47c0159094268e93f42a23642930fab
+n
+>src/main/java/com/example/controllers/admin/DongSPServlet.java,2\7\273d93769d4bfa47596411de51ac065f607eb0e1
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+`
+0src/main/webapp/views/admin/nhan-vien/create.jsp,e\e\eec2f055c097415e115318ec3b2c7f4d6317b60e
+q
+Asrc/main/java/com/example/controllers/admin/KhachHangServlet.java,6\a\6a256fb15a635c2fb85c1f275f688cf86ced37d1
+_
+/src/main/webapp/views/admin/nhan-vien/index.jsp,0\5\057fc97811e2eaff2b7e408ac8234a0839838a9a
+d
+4src/main/java/com/example/models/NhanVienCustom.java,1\f\1feaf01b799d56c35b7de392b7dbf7bc93f81a55

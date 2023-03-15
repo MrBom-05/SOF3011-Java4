@@ -6,8 +6,13 @@ import com.example.services.implement.KhachHangServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
+import org.apache.commons.beanutils.converters.DateTimeConverter;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 @WebServlet({"/admin/khach-hang/index", "/admin/khach-hang/create", "/admin/khach-hang/edit", "/admin/khach-hang/delete", "/admin/khach-hang/update", "/admin/khach-hang/store"})
@@ -60,7 +65,18 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+//            DateTimeConverter dateTimeConverter = new DateConverter();
+//            dateTimeConverter.setPattern("yyyy/MM/dd");
+//            ConvertUtils.register(dateTimeConverter, Date.class);
 
+            KhachHang khachHang = new KhachHang();
+            BeanUtils.populate(khachHang, request.getParameterMap());
+            khachHangService.insert(khachHang);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/khach-hang/index");
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
