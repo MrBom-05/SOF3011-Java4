@@ -19,61 +19,65 @@
 
     <div class="col-md-6">
         <label class="form-label">Sản Phẩm</label>
-        <select class="form-select" name="sanPham">
+        <select class="form-select" name="idSanPham">
             <option value="" disabled selected>-- Chọn Sản Phẩm --</option>
-            <c:forEach var="sanPham" items="${listSanPham}" varStatus="status">
-                <option value="${sanPham.id}">${sanPham.ten}</option>
+            <c:forEach var="sanPham" items="${listSanPham}">
+                <option value="${sanPham.id}" ${sanPham.id == idSanPham ? "selected" : ""}>${sanPham.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-6">
         <label class="form-label">Màu Sắc</label>
-        <select class="form-select" name="mauSac">
+        <select class="form-select" name="idMauSac">
             <option value="" disabled selected>-- Chọn Màu Sắc --</option>
-            <c:forEach var="mauSac" items="${listMauSac}" varStatus="status">
-                <option value="${mauSac.id}">${mauSac.ten}</option>
+            <c:forEach var="mauSac" items="${listMauSac}">
+                <option value="${mauSac.id}" ${mauSac.id == idMauSac ? "selected" : ""}>${mauSac.ten}</option>
             </c:forEach>
         </select>
     </div>
 
     <div class="col-md-6">
         <label class="form-label">Dòng SP</label>
-        <select class="form-select" name="dongSP">
+        <select class="form-select" name="idDongSP">
             <option value="" disabled selected>-- Chọn Dòng SP --</option>
-            <c:forEach var="dongSP" items="${listDongSP}" varStatus="status">
-                <option value="${dongSP.id}">${dongSP.ten}</option>
+            <c:forEach var="dongSP" items="${listDongSP}">
+                <option value="${dongSP.id}" ${dongSP.id == idDongSP ? "selected" : ""}>${dongSP.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-6">
         <label class="form-label">Nhà Sản Xuất</label>
-        <select class="form-select" name="nsx">
+        <select class="form-select" name="idNSX">
             <option value="" disabled selected>-- Chọn Nhà Sản Xuất --</option>
-            <c:forEach var="nsx" items="${listNSX}" varStatus="status">
-                <option value="${nsx.id}">${nsx.ten}</option>
+            <c:forEach var="nsx" items="${listNSX}">
+                <option value="${nsx.id}" ${nsx.id == idNSX ? "selected" : ""}>${nsx.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-3">
         <label class="form-label">Năm Sản Xuất</label>
-        <input type="number" class="form-control" id="validationCustom04" name="namSX" required>
+        <input type="number" class="form-control" id="validationCustom04" name="namSX" value="${chiTietSP.namSX}"
+               required>
     </div>
     <div class="col-md-3">
         <label class="form-label">Số Lượng</label>
-        <input type="number" class="form-control" id="validationCustom05" name="soLuongTon" required>
+        <input type="number" class="form-control" id="validationCustom05" name="soLuongTon"
+               value="${chiTietSP.soLuongTon}" required>
     </div>
     <div class="col-md-3">
         <label for="validationCustom05" class="form-label">Giá Nhập</label>
-        <input type="number" class="form-control" id="validationCustom06" name="giaNhap" required>
+        <input type="number" class="form-control" id="validationCustom06" name="giaNhap" value="${chiTietSP.giaNhap}"
+               required>
     </div>
     <div class="col-md-3">
         <label class="form-label">Giá Bán</label>
-        <input type="number" class="form-control" id="validationCustom07" name="giaBan" required>
+        <input type="number" class="form-control" id="validationCustom07" name="giaBan" value="${chiTietSP.giaBan}"
+               required>
     </div>
 
     <div class="col-12">
         <span class="form-label">Mô Tả</span>
-        <textarea class="form-control" aria-label="With textarea" name="moTa"></textarea>
+        <textarea class="form-control" aria-label="With textarea" name="moTa">${chiTietSP.moTa}</textarea>
     </div>
 
 

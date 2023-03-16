@@ -54,11 +54,22 @@ public class MauSacServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+
+        MauSac mauSac = mauSacService.getById(id);
+        request.setAttribute("mauSac", mauSac);
+
         request.getRequestDispatcher("/views/admin/mau-sac/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        try {
+            String id = request.getParameter("id");
+            mauSacService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/mau-sac/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

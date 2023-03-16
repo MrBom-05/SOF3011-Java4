@@ -59,10 +59,10 @@
                 <td>${ chiTietSP.giaBan }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/chi-tiet-sp/edit?ma=${ chiTietSP.ma }"
+                    <a href="/Assignment_war_exploded/admin/chi-tiet-sp/edit?id=${ chiTietSP.id }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/chi-tiet-sp/delete?ma=${ chiTietSP.ma }"
-                       class="btn btn-danger">Delete</a>
+                    <a href="/Assignment_war_exploded/admin/chi-tiet-sp/delete?id=${ chiTietSP.id }"
+                       class="btn btn-danger delete">Delete</a>
                 </td>
             </tr>
         </c:forEach>
@@ -73,5 +73,23 @@
 <script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    const deleteButton = document.querySelector(".delete");
+    deleteButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default behavior of the link
+
+        // Display a confirmation dialog
+        const confirmed = confirm("Bạn có muốn xóa không?");
+
+        if (confirmed) {
+            // If the user confirmed, redirect to the delete URL
+            const deleteUrl = this.href;
+            window.location.href = deleteUrl;
+        } else {
+            // If the user cancelled, do nothing
+            return false;
+        }
+    });
+</script>
 </body>
 </html>

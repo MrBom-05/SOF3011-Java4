@@ -43,9 +43,9 @@
                 <td>${ sanPham.ten }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/san-pham/edit?ma=${ sanPham.ma }"
+                    <a href="/Assignment_war_exploded/admin/san-pham/edit?id=${ sanPham.id }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/san-pham/delete?ma=${ sanPham.ma }"
+                    <a href="/Assignment_war_exploded/admin/san-pham/delete?id=${ sanPham.id }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>

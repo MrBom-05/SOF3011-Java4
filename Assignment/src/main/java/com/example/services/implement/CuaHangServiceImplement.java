@@ -20,4 +20,14 @@ public class CuaHangServiceImplement implements CuaHangService {
     public boolean insert(CuaHang cuaHang) {
         return cuaHangRepository.insert(cuaHang);
     }
+
+    @Override
+    public boolean delete(String id) {
+        return cuaHangRepository.delete(id);
+    }
+
+    @Override
+    public CuaHang getById(String id) {
+        return cuaHangRepository.getById(id);
+    }
 }

@@ -1,6 +1,5 @@
 package com.example.repositories;
 
-
 import com.example.entities.DongSP;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
@@ -16,7 +15,7 @@ public class DongSPRepository {
 
     public List<DongSP> getListDongSP() {
 
-        Query query = session.createQuery("FROM DongSP ");
+        Query query = session.createQuery("from DongSP ");
         List<DongSP> list = query.getResultList();
         return list;
     }
@@ -36,7 +35,7 @@ public class DongSPRepository {
     public boolean delete(String id) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM DongSP WHERE id =: id");
+            Query query = session.createQuery("delete from DongSP where id =: id");
             query.setParameter("id", id);
             query.executeUpdate();
             transaction.commit();
@@ -45,5 +44,12 @@ public class DongSPRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public DongSP getById(String id){
+        Query query = session.createQuery("from DongSP where id =: id");
+        query.setParameter("id", id);
+        DongSP dongSP = (DongSP) query.getSingleResult();
+        return dongSP;
     }
 }

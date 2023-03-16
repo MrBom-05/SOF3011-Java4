@@ -15,7 +15,7 @@ public class CuaHangRepository {
 
     public List<CuaHang> getListCuaHang() {
 
-        Query query = session.createQuery("FROM CuaHang");
+        Query query = session.createQuery("from CuaHang");
         List<CuaHang> list = query.getResultList();
         return list;
     }
@@ -35,7 +35,7 @@ public class CuaHangRepository {
     public boolean delete(String id) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM CuaHang WHERE id =: id");
+            Query query = session.createQuery("delete from CuaHang where id =: id");
             query.setParameter("id", id);
             query.executeUpdate();
             transaction.commit();
@@ -44,5 +44,12 @@ public class CuaHangRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public CuaHang getById(String id){
+        Query query = session.createQuery("from CuaHang where id =: id");
+        query.setParameter("id", id);
+        CuaHang cuaHang = (CuaHang) query.getSingleResult();
+        return cuaHang;
     }
 }

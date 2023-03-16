@@ -61,9 +61,9 @@
                 <td>${ khachHang.matKhau }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/dong-sp/edit?ma=${ khachHang.ma }"
+                    <a href="/Assignment_war_exploded/admin/khach-hang/edit?id=${ khachHang.id }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/dong-sp/delete?ma=${ khachHang.ma }"
+                    <a href="/Assignment_war_exploded/admin/khach-hang/delete?id=${ khachHang.id }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>

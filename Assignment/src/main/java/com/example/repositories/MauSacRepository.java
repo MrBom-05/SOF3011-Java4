@@ -15,7 +15,7 @@ public class MauSacRepository {
 
     public List<MauSac> getListMauSac() {
 
-        Query query = session.createQuery("FROM MauSac");
+        Query query = session.createQuery("from MauSac");
         List<MauSac> list = query.getResultList();
         return list;
     }
@@ -35,7 +35,7 @@ public class MauSacRepository {
     public boolean delete(String id) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM MauSac WHERE id =: id");
+            Query query = session.createQuery("delete from MauSac where id =: id");
             query.setParameter("id", id);
             query.executeUpdate();
             transaction.commit();
@@ -44,5 +44,12 @@ public class MauSacRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public MauSac getById(String id){
+        Query query = session.createQuery("from MauSac where id =: id");
+        query.setParameter("id", id);
+        MauSac mauSac = (MauSac) query.getSingleResult();
+        return mauSac;
     }
 }

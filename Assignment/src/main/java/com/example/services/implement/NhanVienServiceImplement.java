@@ -20,4 +20,24 @@ public class NhanVienServiceImplement implements NhanVienService {
     public boolean insert(NhanVien nhanVien) {
         return nhanVienRepository.insert(nhanVien);
     }
+
+    @Override
+    public boolean delete(String ma) {
+        return nhanVienRepository.delete(ma);
+    }
+
+    @Override
+    public String getIdCuaHangByMa(String ma) {
+        return nhanVienRepository.getIdByMa(ma, nhanVienRepository.getIdCuaHangByMa);
+    }
+
+    @Override
+    public String getIdChucVuByMa(String ma) {
+        return nhanVienRepository.getIdByMa(ma, nhanVienRepository.getIdChucVuByMa);
+    }
+
+    @Override
+    public NhanVien getByMa(String ma) {
+        return nhanVienRepository.getByMa(ma);
+    }
 }

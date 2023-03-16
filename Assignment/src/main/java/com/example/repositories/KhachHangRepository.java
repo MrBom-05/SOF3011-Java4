@@ -15,7 +15,7 @@ public class KhachHangRepository {
 
     public List<KhachHang> getListKhachHang() {
 
-        Query query = session.createQuery("FROM KhachHang");
+        Query query = session.createQuery("from KhachHang");
         List<KhachHang> list = query.getResultList();
         return list;
     }
@@ -35,7 +35,7 @@ public class KhachHangRepository {
     public boolean delete(String id) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM KhachHang WHERE id =: id");
+            Query query = session.createQuery("delete from KhachHang where id =: id");
             query.setParameter("id", id);
             query.executeUpdate();
             transaction.commit();
@@ -44,5 +44,12 @@ public class KhachHangRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public KhachHang getById(String id){
+        Query query = session.createQuery("from KhachHang where id =: id");
+        query.setParameter("id", id);
+        KhachHang khachHang = (KhachHang) query.getSingleResult();
+        return khachHang;
     }
 }

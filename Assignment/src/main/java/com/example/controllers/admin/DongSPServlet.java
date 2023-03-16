@@ -53,11 +53,22 @@ public class DongSPServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+
+        DongSP dongSP = dongSPService.getById(id);
+        request.setAttribute("dongSP", dongSP);
+
         request.getRequestDispatcher("/views/admin/dong-sp/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        try {
+            String id = request.getParameter("id");
+            dongSPService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/dong-sp/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

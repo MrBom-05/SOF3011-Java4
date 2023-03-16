@@ -19,18 +19,18 @@
 
     <div class="col-md-6">
         <label class="form-label">Sản Phẩm</label>
-        <select class="form-select" name="sanPham">
+        <select class="form-select" name="idSanPham">
             <option value="" disabled selected>-- Chọn Sản Phẩm --</option>
-            <c:forEach var="sanPham" items="${listSanPham}" varStatus="status">
+            <c:forEach var="sanPham" items="${listSanPham}">
                 <option value="${sanPham.id}">${sanPham.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-6">
         <label class="form-label">Màu Sắc</label>
-        <select class="form-select" name="mauSac">
+        <select class="form-select" name="idMauSac">
             <option value="" disabled selected>-- Chọn Màu Sắc --</option>
-            <c:forEach var="mauSac" items="${listMauSac}" varStatus="status">
+            <c:forEach var="mauSac" items="${listMauSac}">
                 <option value="${mauSac.id}">${mauSac.ten}</option>
             </c:forEach>
         </select>
@@ -38,18 +38,18 @@
 
     <div class="col-md-6">
         <label class="form-label">Dòng SP</label>
-        <select class="form-select" name="dongSP">
+        <select class="form-select" name="idDongSP">
             <option value="" disabled selected>-- Chọn Dòng SP --</option>
-            <c:forEach var="dongSP" items="${listDongSP}" varStatus="status">
+            <c:forEach var="dongSP" items="${listDongSP}">
                 <option value="${dongSP.id}">${dongSP.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-6">
         <label class="form-label">Nhà Sản Xuất</label>
-        <select class="form-select" name="nsx">
+        <select class="form-select" name="idNSX">
             <option value="" disabled selected>-- Chọn Nhà Sản Xuất --</option>
-            <c:forEach var="nsx" items="${listNSX}" varStatus="status">
+            <c:forEach var="nsx" items="${listNSX}">
                 <option value="${nsx.id}">${nsx.ten}</option>
             </c:forEach>
         </select>

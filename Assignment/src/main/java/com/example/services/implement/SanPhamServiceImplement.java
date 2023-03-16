@@ -19,4 +19,14 @@ public class SanPhamServiceImplement implements SanPhamService {
     public boolean insert(SanPham sanPham) {
         return sanPhamRepository.insert(sanPham);
     }
+
+    @Override
+    public boolean delete(String id) {
+        return sanPhamRepository.delete(id);
+    }
+
+    @Override
+    public SanPham getById(String id) {
+        return sanPhamRepository.getById(id);
+    }
 }

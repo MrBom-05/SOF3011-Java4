@@ -20,4 +20,14 @@ public class ChucVuServiceImplement implements ChucVuService {
     public boolean insert(ChucVu chucVu) {
         return chucVuRepository.insert(chucVu);
     }
+
+    @Override
+    public boolean delete(String id) {
+        return chucVuRepository.delete(id);
+    }
+
+    @Override
+    public ChucVu getById(String id) {
+        return chucVuRepository.getById(id);
+    }
 }

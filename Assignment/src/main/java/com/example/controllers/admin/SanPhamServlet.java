@@ -54,11 +54,22 @@ public class SanPhamServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+
+        SanPham sanPham = sanPhamService.getById(id);
+        request.setAttribute("sanPham", sanPham);
+
         request.getRequestDispatcher("/views/admin/san-pham/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        try {
+            String id = request.getParameter("id");
+            sanPhamService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/san-pham/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

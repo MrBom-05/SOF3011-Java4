@@ -53,11 +53,22 @@ public class CuaHangServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+
+        CuaHang cuaHang = cuaHangService.getById(id);
+        request.setAttribute("cuaHang", cuaHang);
+
         request.getRequestDispatcher("/views/admin/cua-hang/update.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        try {
+            String id = request.getParameter("id");
+            cuaHangService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/cua-hang/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

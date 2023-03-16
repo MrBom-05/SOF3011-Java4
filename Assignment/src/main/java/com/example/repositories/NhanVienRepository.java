@@ -1,6 +1,5 @@
 package com.example.repositories;
 
-import com.example.entities.ChucVu;
 import com.example.entities.NhanVien;
 import com.example.models.NhanVienCustom;
 import com.example.utilities.HibernateUtil;
@@ -17,7 +16,7 @@ public class NhanVienRepository {
 
     public List<NhanVienCustom> getListNhanVien() {
 
-        Query query = session.createQuery("SELECT new com.example.models.NhanVienCustom(nv.ma, nv.ten, nv.tenDem, nv.ho, nv.gioiTinh, nv.ngaySinh, nv.diaChi, nv.sdt, nv.cuaHang.ten, nv.chucVu.ten, nv.email, nv.matKhau, nv.trangThai) FROM com.example.entities.NhanVien nv");
+        Query query = session.createQuery("select new com.example.models.NhanVienCustom(nv.ma, nv.ten, nv.tenDem, nv.ho, nv.gioiTinh, nv.ngaySinh, nv.diaChi, nv.sdt, nv.cuaHang.ten, nv.chucVu.ten, nv.email, nv.matKhau, nv.trangThai) from com.example.entities.NhanVien nv");
         List<NhanVienCustom> list = query.getResultList();
         return list;
     }
@@ -34,11 +33,11 @@ public class NhanVienRepository {
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(String ma) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM NhanVien WHERE id =: id");
-            query.setParameter("id", id);
+            Query query = session.createQuery("delete from NhanVien where ma =: ma");
+            query.setParameter("ma", ma);
             query.executeUpdate();
             transaction.commit();
             return true;
@@ -46,5 +45,24 @@ public class NhanVienRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public String getIdCuaHangByMa = "select n.cuaHang.id from NhanVien n where ma =: ma";
+    public String getIdChucVuByMa = "select n.chucVu.id from NhanVien n where ma =: ma";
+
+    public String getIdByMa(String ma, String where){
+
+        Query query = session.createQuery(where);
+        query.setParameter("ma", ma);
+
+        return (String) query.getSingleResult();
+    }
+
+
+    public NhanVien getByMa(String ma){
+        Query query = session.createQuery("from NhanVien where ma =: ma");
+        query.setParameter("ma", ma);
+        NhanVien nhanVien = (NhanVien) query.getSingleResult();
+        return nhanVien;
     }
 }

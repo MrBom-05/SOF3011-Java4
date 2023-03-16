@@ -8,4 +8,8 @@ public interface CuaHangService {
     public List<CuaHang> getListCuaHang();
 
     public boolean insert(CuaHang cuaHang);
+
+    public boolean delete(String id);
+
+    public CuaHang getById(String id);
 }

@@ -19,4 +19,14 @@ public class MauSacServiceImplement implements MauSacService {
     public boolean insert(MauSac mauSac) {
         return mauSacRepository.insert(mauSac);
     }
+
+    @Override
+    public boolean delete(String id) {
+        return mauSacRepository.delete(id);
+    }
+
+    @Override
+    public MauSac getById(String id) {
+        return mauSacRepository.getById(id);
+    }
 }

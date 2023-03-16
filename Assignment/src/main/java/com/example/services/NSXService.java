@@ -8,4 +8,8 @@ public interface NSXService {
     public List<NSX> getListNSX();
 
     public boolean insert(NSX nsx);
+
+    public boolean delete(String id);
+
+    public NSX getById(String id);
 }

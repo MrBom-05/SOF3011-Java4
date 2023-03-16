@@ -8,4 +8,8 @@ public interface KhachHangService {
     public List<KhachHang> getListKhachHang();
 
     public boolean insert(KhachHang khachHang);
+
+    public boolean delete(String id);
+
+    public KhachHang getById(String id);
 }

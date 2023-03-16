@@ -8,4 +8,8 @@ public interface SanPhamService {
     public List<SanPham> getListSanPham();
 
     public boolean insert(SanPham sanPham);
+
+    public boolean delete(String id);
+
+    public SanPham getById(String id);
 }

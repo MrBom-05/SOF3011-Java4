@@ -19,4 +19,14 @@ public class DongSPServiceImplement implements DongSPService {
     public boolean insert(DongSP dongSP) {
         return dongSPRepository.insert(dongSP);
     }
+
+    @Override
+    public boolean delete(String id) {
+        return dongSPRepository.delete(id);
+    }
+
+    @Override
+    public DongSP getById(String id) {
+        return dongSPRepository.getById(id);
+    }
 }

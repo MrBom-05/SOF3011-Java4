@@ -19,4 +19,14 @@ public class NSXServiceImplement implements NSXService {
     public boolean insert(NSX nsx) {
         return nsxRepository.insert(nsx);
     }
+
+    @Override
+    public boolean delete(String id) {
+        return nsxRepository.delete(id);
+    }
+
+    @Override
+    public NSX getById(String id) {
+        return nsxRepository.getById(id);
+    }
 }

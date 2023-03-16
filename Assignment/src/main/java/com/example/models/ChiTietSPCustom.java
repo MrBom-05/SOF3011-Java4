@@ -10,6 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChiTietSPCustom {
+
+    private String id;
     private String ma;
     private String ten;
     private String nsx;

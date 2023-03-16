@@ -17,12 +17,12 @@
 
     <div class="col-12">
         <label class="form-label">Mã</label>
-        <input type="text" class="form-control" name="ma" required>
+        <input type="text" class="form-control" name="ma" required disabled value="${dongSP.ma}">
     </div>
 
     <div class="col-12 mt-3">
         <label class="form-label">Tên</label>
-        <input type="text" class="form-control" name="ten" required>
+        <input type="text" class="form-control" name="ten" required value="${dongSP.ten}">
     </div>
     <div class="col-12 mt-5">
         <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>

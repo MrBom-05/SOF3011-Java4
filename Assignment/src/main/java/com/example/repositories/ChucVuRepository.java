@@ -15,7 +15,7 @@ public class ChucVuRepository {
 
     public List<ChucVu> getListChucVu() {
 
-        Query query = session.createQuery("FROM ChucVu");
+        Query query = session.createQuery("from ChucVu");
         List<ChucVu> list = query.getResultList();
         return list;
     }
@@ -35,7 +35,7 @@ public class ChucVuRepository {
     public boolean delete(String id) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM ChucVu WHERE id =: id");
+            Query query = session.createQuery("delete from ChucVu where id =: id");
             query.setParameter("id", id);
             query.executeUpdate();
             transaction.commit();
@@ -44,5 +44,12 @@ public class ChucVuRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public ChucVu getById(String id){
+        Query query = session.createQuery("from ChucVu where id =: id");
+        query.setParameter("id", id);
+        ChucVu chucVu = (ChucVu) query.getSingleResult();
+        return chucVu;
     }
 }

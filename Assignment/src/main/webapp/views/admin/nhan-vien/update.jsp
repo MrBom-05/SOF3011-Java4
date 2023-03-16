@@ -19,70 +19,70 @@
 
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Tên</label>
-        <input type="text" class="form-control" id="validationCustom01" name="ten" required>
+        <input type="text" class="form-control" id="validationCustom01" name="ten" value="${nhanVien.ten}" required>
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Tên Đệm</label>
-        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required>
+        <input type="text" class="form-control" id="validationCustom02" name="tenDem" value="${nhanVien.tenDem}" required>
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Họ</label>
-        <input type="text" class="form-control" id="validationCustom03" name="ho" required>
+        <input type="text" class="form-control" id="validationCustom03" name="ho" value="${nhanVien.ho}" required>
     </div>
     <div class="col-md-4">
         <label for="validationCustom03" class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" required>
+        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" value="${nhanVien.ngaySinh}" required>
     </div>
     <div class="col-md-4">
         <label for="validationCustom03" class="form-label">SDT</label>
-        <input type="number" class="form-control" id="validationCustom05" name="sdt" required>
+        <input type="number" class="form-control" id="validationCustom05" name="sdt" value="${nhanVien.sdt}" required>
     </div>
     <div class="col-md-4">
         <label for="validationCustom05" class="form-label">Email</label>
-        <input type="text" class="form-control" id="validationCustom06" name="email" required>
+        <input type="text" class="form-control" id="validationCustom06" name="email" value="${nhanVien.email}" required>
     </div>
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Địa Chỉ</label>
-        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required>
+        <input type="text" class="form-control" id="validationCustom07" name="diaChi" value="${nhanVien.diaChi}" required>
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Cửa Hàng</label>
-        <select class="form-select" name="cuaHang">
+        <select class="form-select" name="idCuaHang">
             <option value="" disabled selected>-- Chọn Của Hàng --</option>
-            <c:forEach var="cuaHang" items="${listCuaHang}" varStatus="status">
-                <option value="${cuaHang.id}">${cuaHang.ten}</option>
+            <c:forEach var="cuaHang" items="${listCuaHang}">
+                <option value="${cuaHang.id}" ${cuaHang.id == idCuaHang ? "selected" : ""}>${cuaHang.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Chức Vụ</label>
-        <select class="form-select" name="cuaHang">
+        <select class="form-select" name="idChucVu">
             <option value="" disabled selected>-- Chọn Chức Vụ --</option>
-            <c:forEach var="chucVu" items="${listChucVu}" varStatus="status">
-                <option value="${chucVu.id}">${chucVu.ten}</option>
+            <c:forEach var="chucVu" items="${listChucVu}">
+                <option value="${chucVu.id}" ${chucVu.id == idChucVu ? "selected" : ""}>${chucVu.ten}</option>
             </c:forEach>
         </select>
     </div>
 
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Mật Khẩu</label>
-        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required>
+        <input type="password" class="form-control" id="validationCustom10" name="matKhau" value="${nhanVien.matKhau}" required>
     </div>
 
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Mã</label>
-        <input type="text" class="form-control" id="validationCustom011" name="ma" required>
+        <input type="text" class="form-control" id="validationCustom011" name="ma" value="${nhanVien.ma}" required disabled>
     </div>
 
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Giới Tính</label>
         <div class="row mt-1">
             <div class="form-check col-6">
-                <input class="form-check-input ms-5" value="Nam" type="radio" name="flexRadioDefault" id="rdoTrue" checked required>
+                <input ${nhanVien == "Nam" ? "checked" : ""} class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" id="rdoTrue" checked required>
                 <label class="form-check-label ms-2">Nam</label>
             </div>
             <div class="form-check col-6">
-                <input class="form-check-input" value="Nữ" type="radio" name="flexRadioDefault" id="rdoFalse" required>
+                <input ${nhanVien == "Nữ" ? "checked" : ""} class="form-check-input" value="Nữ" type="radio" name="gioiTinh" id="rdoFalse" required>
                 <label class="form-check-label">Nữ</label>
             </div>
         </div>

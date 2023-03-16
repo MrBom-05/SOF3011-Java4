@@ -17,49 +17,49 @@
 
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Tên</label>
-        <input type="text" class="form-control" id="validationCustom01" name="ten" required>
+        <input type="text" class="form-control" id="validationCustom01" name="ten" required value="${khachHang.ten}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Tên Đệm</label>
-        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required>
+        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required value="${khachHang.tenDem}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Họ</label>
-        <input type="text" class="form-control" id="validationCustom03" name="ho" required>
+        <input type="text" class="form-control" id="validationCustom03" name="ho" required value="${khachHang.ho}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom03" class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" required>
+        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" required value="${khachHang.ngaySinh}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom03" class="form-label">SDT</label>
-        <input type="number" class="form-control" id="validationCustom05" name="sdt" required>
+        <input type="number" class="form-control" id="validationCustom05" name="sdt" required value="${khachHang.sdt}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom05" class="form-label">Email</label>
-        <input type="text" class="form-control" id="validationCustom06" name="email" required>
+        <input type="text" class="form-control" id="validationCustom06" name="email" required value="${khachHang.email}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Địa Chỉ</label>
-        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required>
+        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required value="${khachHang.diaChi}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Thành Phố</label>
-        <input type="text" class="form-control" id="validationCustom08" name="thanhPho" required>
+        <input type="text" class="form-control" id="validationCustom08" name="thanhPho" required value="${khachHang.thanhPho}">
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Quốc Gia</label>
-        <input type="text" class="form-control" id="validationCustom09" name="quocGia" required>
+        <input type="text" class="form-control" id="validationCustom09" name="quocGia" required value="${khachHang.quocGia}">
     </div>
 
     <div class="col-md-6">
         <label for="validationCustom02" class="form-label">Mật Khẩu</label>
-        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required>
+        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required value="${khachHang.matKhau}">
     </div>
 
     <div class="col-md-6">
         <label for="validationCustom02" class="form-label">Mã</label>
-        <input type="text" class="form-control" id="validationCustom011" name="ma" required>
+        <input type="text" class="form-control" id="validationCustom011" name="ma" required value="${khachHang.ma}" disabled>
     </div>
     <div class="col-12 mt-5">
         <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>

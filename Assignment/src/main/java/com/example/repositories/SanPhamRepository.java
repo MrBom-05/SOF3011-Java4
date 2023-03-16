@@ -15,7 +15,7 @@ public class SanPhamRepository {
 
     public List<SanPham> getListSanPham() {
 
-        Query query = session.createQuery("FROM SanPham");
+        Query query = session.createQuery("from SanPham");
         List<SanPham> list = query.getResultList();
         return list;
     }
@@ -35,7 +35,7 @@ public class SanPhamRepository {
     public boolean delete(String id) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM SanPham WHERE id =: id");
+            Query query = session.createQuery("delete from SanPham where id =: id");
             query.setParameter("id", id);
             query.executeUpdate();
             transaction.commit();
@@ -44,5 +44,12 @@ public class SanPhamRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public SanPham getById(String id){
+        Query query = session.createQuery("from SanPham where id =: id");
+        query.setParameter("id", id);
+        SanPham sanPham = (SanPham) query.getSingleResult();
+        return sanPham;
     }
 }

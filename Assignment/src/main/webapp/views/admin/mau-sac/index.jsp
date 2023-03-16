@@ -36,16 +36,16 @@
         </thead>
         <tbody>
 
-        <c:forEach var="mausac" items="${ list }" varStatus="status">
+        <c:forEach var="mauSac" items="${ list }" varStatus="status">
             <tr>
                 <td>${status.index + 1}</td>
-                <td>${ mausac.ma }</td>
-                <td>${ mausac.ten }</td>
+                <td>${ mauSac.ma }</td>
+                <td>${ mauSac.ten }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/dong-sp/edit?ma=${ mausac.ma }"
+                    <a href="/Assignment_war_exploded/admin/mau-sac/edit?id=${ mauSac.id }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/dong-sp/delete?ma=${ mausac.ma }"
+                    <a href="/Assignment_war_exploded/admin/mau-sac/delete?id=${ mauSac.id }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>

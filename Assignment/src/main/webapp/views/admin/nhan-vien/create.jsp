@@ -46,19 +46,19 @@
         <input type="text" class="form-control" id="validationCustom07" name="diaChi" required>
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Cửa Hàng</label>
-        <select class="form-select" name="cuaHang">
+        <label class="form-label">Cửa Hàng</label>
+        <select class="form-select" name="idCuaHang">
             <option value="" disabled selected>-- Chọn Của Hàng --</option>
-            <c:forEach var="cuaHang" items="${listCuaHang}" varStatus="status">
+            <c:forEach var="cuaHang" items="${listCuaHang}">
                 <option value="${cuaHang.id}">${cuaHang.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Chức Vụ</label>
-        <select class="form-select" name="cuaHang">
+        <label class="form-label">Chức Vụ</label>
+        <select class="form-select" name="idChucVu">
             <option value="" disabled selected>-- Chọn Chức Vụ --</option>
-            <c:forEach var="chucVu" items="${listChucVu}" varStatus="status">
+            <c:forEach var="chucVu" items="${listChucVu}">
                 <option value="${chucVu.id}">${chucVu.ten}</option>
             </c:forEach>
         </select>
@@ -78,11 +78,11 @@
         <label for="validationCustom02" class="form-label">Giới Tính</label>
         <div class="row mt-1">
             <div class="form-check col-6">
-                <input class="form-check-input ms-5" value="Nam" type="radio" name="flexRadioDefault" id="rdoTrue" checked required>
+                <input class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" id="rdoTrue" checked required>
                 <label class="form-check-label ms-2">Nam</label>
             </div>
             <div class="form-check col-6">
-                <input class="form-check-input" value="Nữ" type="radio" name="flexRadioDefault" id="rdoFalse" required>
+                <input class="form-check-input" value="Nữ" type="radio" name="gioiTinh" id="rdoFalse" required>
                 <label class="form-check-label">Nữ</label>
             </div>
         </div>

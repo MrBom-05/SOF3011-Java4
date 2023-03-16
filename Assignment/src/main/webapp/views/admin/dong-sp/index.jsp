@@ -36,16 +36,16 @@
         </thead>
         <tbody>
 
-        <c:forEach var="dongsp" items="${ list }" varStatus="status">
+        <c:forEach var="dongSP" items="${ list }" varStatus="status">
             <tr>
                 <td>${status.index + 1}</td>
-                <td>${ dongsp.ma }</td>
-                <td>${ dongsp.ten }</td>
+                <td>${ dongSP.ma }</td>
+                <td>${ dongSP.ten }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/dong-sp/edit?ma=${ dongsp.ma }"
+                    <a href="/Assignment_war_exploded/admin/dong-sp/edit?id=${ dongSP.id }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/dong-sp/delete?ma=${ dongsp.ma }"
+                    <a href="/Assignment_war_exploded/admin/dong-sp/delete?id=${ dongSP.id }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>

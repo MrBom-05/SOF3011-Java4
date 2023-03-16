@@ -20,4 +20,14 @@ public class KhachHangServiceImplement implements KhachHangService {
     public boolean insert(KhachHang khachHang) {
         return khachHangRepository.insert(khachHang);
     }
+
+    @Override
+    public boolean delete(String id) {
+        return khachHangRepository.delete(id);
+    }
+
+    @Override
+    public KhachHang getById(String id) {
+        return khachHangRepository.getById(id);
+    }
 }

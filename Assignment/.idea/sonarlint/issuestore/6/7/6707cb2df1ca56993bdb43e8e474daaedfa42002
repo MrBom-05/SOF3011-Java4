@@ -1,9 +1,11 @@
 
+ã
+java:S1192*"nDefine a constant instead of duplicating this literal "/Assignment_war_exploded/admin/san-pham/index" 3 times.(öπÉ©8á“©‹Ó0
 û
-java:S1186<"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜ﬂ‘º8ﬂåóçÓ0
-û
-java:S1186K"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‡…∫ˆ8ﬂåóçÓ0
+java:S1186V"ÄAdd a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‡…∫ˆ8ëõ©‹Ó0
 M
-java:S1948"0Make "sanPhamService" transient or serializable.(‘∆ „8›æ∞çÓ0
+java:S1948"0Make "sanPhamService" transient or serializable.(‘∆ „8íõ©‹Ó0
 ñ
-java:S1130@"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(√∞ˇ∆8ıæ∞çÓ0
+java:S1130A"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(˜ﬂ‘º8ôõ©‹Ó0
+ñ
+java:S1130K"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(√∞ˇ∆8ù“©‹Ó0

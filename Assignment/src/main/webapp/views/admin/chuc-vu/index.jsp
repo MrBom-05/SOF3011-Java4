@@ -37,16 +37,16 @@
         </thead>
         <tbody>
 
-        <c:forEach var="cv" items="${ list }" varStatus="status">
+        <c:forEach var="chucVu" items="${ list }" varStatus="status">
             <tr>
                 <td>${status.index + 1}</td>
-                <td>${ cv.ma }</td>
-                <td>${ cv.ten }</td>
+                <td>${ chucVu.ma }</td>
+                <td>${ chucVu.ten }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/chuc-vu/edit?ma=${ cv.ma }"
+                    <a href="/Assignment_war_exploded/admin/chuc-vu/edit?id=${ chucVu.id }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/chuc-vu/delete?ma=${ cv.ma }"
+                    <a href="/Assignment_war_exploded/admin/chuc-vu/delete?id=${ chucVu.id }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>

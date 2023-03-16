@@ -43,9 +43,9 @@
                 <td>${ nsx.ten }</td>
 
                 <td class="text-center">
-                    <a href="/Assignment_war_exploded/admin/nsx/edit?ma=${ nsx.ma }"
+                    <a href="/Assignment_war_exploded/admin/nsx/edit?id=${ nsx.id }"
                        class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/nsx/delete?ma=${ nsx.ma }"
+                    <a href="/Assignment_war_exploded/admin/nsx/delete?id=${ nsx.id }"
                        class="btn btn-danger">Delete</a>
                 </td>
             </tr>
