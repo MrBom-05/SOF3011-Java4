@@ -1,13 +1,20 @@
 package com.example.controllers.admin;
 
+import com.example.models.HoaDonCustom;
+import com.example.services.HoaDonService;
+import com.example.services.implement.HoaDonServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet({"/admin/hoa-don/index", "/admin/hoa-don/detail", "/admin/hoa-don/edit", "/admin/hoa-don/update"})
 public class HoaDonServlet extends HttpServlet {
+
+    private HoaDonService hoaDonService = new HoaDonServiceImplement();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURI();
@@ -26,8 +33,8 @@ public class HoaDonServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//        request.setAttribute("list", listHoaDon);
+        List<HoaDonCustom> listHoaDon = hoaDonService.getListHoaDon();
+        request.setAttribute("listHoaDon", listHoaDon);
         request.getRequestDispatcher("/views/admin/hoa-don/index.jsp").forward(request, response);
     }
 

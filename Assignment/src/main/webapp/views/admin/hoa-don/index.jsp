@@ -50,7 +50,7 @@
                 <td>${ hoaDon.sdtKH }</td>
                 <td>${ hoaDon.diaChiKH }</td>
                 <td>${ hoaDon.ngayTao }</td>
-                <td>${ hoaDon. ngayShip}</td>
+                <td>${ hoaDon.ngayShip}</td>
                 <td>${ hoaDon.ngayNhan }</td>
                 <td>${ hoaDon.ngayThanhToan }</td>
                 <td>${ hoaDon.trangThai }</td>
@@ -58,6 +58,8 @@
                 <td class="text-center">
                     <a href="/Assignment_war_exploded/admin/hoa-don/detail?id=${ hoaDon.id }"
                        class="btn btn-danger">Detail</a>
+                    <a href="/Assignment_war_exploded/admin/hoa-don/edit?id=${ hoaDon.id }"
+                       class="btn btn-danger">Update</a>
                 </td>
             </tr>
         </c:forEach>
