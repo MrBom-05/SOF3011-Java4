@@ -13,7 +13,7 @@
 
 
     <div class="row mt-5">
-        <a href="" class="btn btn-primary col-4 offset-4">Quản lý hóa đơn</a>
+        <a href="/Assignment_war_exploded/admin/hoa-don/index" class="btn btn-primary col-4 offset-4">Quản lý hóa đơn</a>
     </div>
 
     <div class="row mt-5 offset-2">
