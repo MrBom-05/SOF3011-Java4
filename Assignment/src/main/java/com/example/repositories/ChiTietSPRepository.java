@@ -16,7 +16,7 @@ public class ChiTietSPRepository {
 
     public List<ChiTietSPCustom> getListChiTietSP() {
 
-        Query query = session.createQuery("select new com.example.models.ChiTietSPCustom(sp.id, sp.sanPham.ma, sp.sanPham.ten, sp.nsx.ten, sp.mauSac.ten, sp.dongSP.ten, sp.namSX, sp.moTa, sp.soLuongTon, sp.giaNhap, sp.giaBan) from com.example.entities.ChiTietSP sp");
+        Query query = session.createQuery("select new com.example.models.ChiTietSPCustom(sp.id, sp.sanPham.ma, sp.sanPham.ten, sp.nsx.ten, sp.mauSac.ten, sp.dongSP.ten, sp.namSX, sp.moTa, sp.soLuongTon, sp.giaNhap, sp.giaBan) from com.example.entities.ChiTietSP sp left join sp.sanPham spm left join sp.nsx nsx left join sp.mauSac ms left join sp.dongSP dsp");
         List<ChiTietSPCustom> list = query.getResultList();
         return list;
     }

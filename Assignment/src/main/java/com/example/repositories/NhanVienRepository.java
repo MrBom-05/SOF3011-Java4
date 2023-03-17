@@ -16,7 +16,7 @@ public class NhanVienRepository {
 
     public List<NhanVienCustom> getListNhanVien() {
 
-        Query query = session.createQuery("select new com.example.models.NhanVienCustom(nv.ma, nv.ten, nv.tenDem, nv.ho, nv.gioiTinh, nv.ngaySinh, nv.diaChi, nv.sdt, nv.cuaHang.ten, nv.chucVu.ten, nv.email, nv.matKhau, nv.trangThai) from com.example.entities.NhanVien nv");
+        Query query = session.createQuery("select new com.example.models.NhanVienCustom(nv.ma, nv.ten, nv.tenDem, nv.ho, nv.gioiTinh, nv.ngaySinh, nv.diaChi, nv.sdt, nv.cuaHang.ten, nv.chucVu.ten, nv.email, nv.matKhau, nv.trangThai) from com.example.entities.NhanVien nv left join nv.cuaHang ch left join nv.chucVu cv");
         List<NhanVienCustom> list = query.getResultList();
         return list;
     }
