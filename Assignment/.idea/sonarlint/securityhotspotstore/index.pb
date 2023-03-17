@@ -83,8 +83,6 @@ m
 =src/main/java/com/example/repositories/SanPhamRepository.java,6\d\6dffef8c2f90e1ac615ba3a5aec644b760e430e2
 h
 8src/main/java/com/example/services/ChiTietSPService.java,8\9\89d1815b4f6075f9181e0d9f66beeb17d03189bc
-x
-Hsrc/main/java/com/example/services/implement/ChucVuServiceImplement.java,d\5\d581187563fa11cf4c25e62e4feca45fce5604d9
 f
 6src/main/java/com/example/services/CuaHangService.java,b\d\bd491757b2a9fe41f3a2849b47b23f04086e0eed
 y
@@ -111,14 +109,6 @@ f
 6src/main/java/com/example/services/SanPhamService.java,9\f\9f9f599d8070e3f269c14976ee5235d5945ec7f5
 y
 Isrc/main/java/com/example/services/implement/SanPhamServiceImplement.java,e\b\eb404d8d4ef9ea07b5cc48a3c299b2d35cf313a1
-^
-.src/main/webapp/views/admin/chuc-vu/update.jsp,1\9\1992d6c23944186c5b08aa923129c723c7860e35
-l
-<src/main/java/com/example/repositories/ChucVuRepository.java,e\a\ea472ada9423b0357aabecc48dd25ce06b58309c
-e
-5src/main/java/com/example/services/ChucVuService.java,b\4\b482e9d47414563f7ec525e92a79c7cb76536cbd
-n
->src/main/java/com/example/controllers/admin/ChucVuServlet.java,d\8\d89e387affd7119a6a4557488352fa9901986371
 _
 /src/main/webapp/views/admin/cua-hang/update.jsp,9\0\904ccfaa329d2d1ddd20a4370eaf38db1b3ef085
 o
@@ -165,3 +155,13 @@ _
 -src/main/webapp/views/admin/mau-sac/index.jsp,f\7\f7a7d05ddc015795f0368114eaef28c3b0840ad2
 `
 0src/main/webapp/views/admin/khach-hang/index.jsp,a\f\aff326474af4f77adf11effa1b5b2b71a28d3f9d
+^
+.src/main/webapp/views/admin/chuc-vu/update.jsp,1\9\1992d6c23944186c5b08aa923129c723c7860e35
+e
+5src/main/java/com/example/services/ChucVuService.java,b\4\b482e9d47414563f7ec525e92a79c7cb76536cbd
+x
+Hsrc/main/java/com/example/services/implement/ChucVuServiceImplement.java,d\5\d581187563fa11cf4c25e62e4feca45fce5604d9
+l
+<src/main/java/com/example/repositories/ChucVuRepository.java,e\a\ea472ada9423b0357aabecc48dd25ce06b58309c
+n
+>src/main/java/com/example/controllers/admin/ChucVuServlet.java,d\8\d89e387affd7119a6a4557488352fa9901986371

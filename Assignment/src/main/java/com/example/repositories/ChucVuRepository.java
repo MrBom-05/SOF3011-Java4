@@ -46,6 +46,21 @@ public class ChucVuRepository {
         }
     }
 
+    public boolean update(String id, ChucVu chucVu){
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update ChucVu set ten =: ten where id =: id");
+            query.setParameter("id", id);
+            query.setParameter("ten", chucVu.getTen());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public ChucVu getById(String id){
         Query query = session.createQuery("from ChucVu where id =: id");
         query.setParameter("id", id);

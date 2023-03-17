@@ -27,6 +27,11 @@ public class ChucVuServiceImplement implements ChucVuService {
     }
 
     @Override
+    public boolean update(String id, ChucVu chucVu) {
+        return chucVuRepository.update(id, chucVu);
+    }
+
+    @Override
     public ChucVu getById(String id) {
         return chucVuRepository.getById(id);
     }

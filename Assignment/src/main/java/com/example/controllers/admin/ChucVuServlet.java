@@ -83,7 +83,17 @@ public class ChucVuServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
 
+            ChucVu chucVu = new ChucVu();
+            BeanUtils.populate(chucVu, request.getParameterMap());
+
+            chucVuService.update(id, chucVu);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
     }
 }
 

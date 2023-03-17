@@ -11,5 +11,7 @@ public interface ChucVuService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, ChucVu chucVu);
+
     public ChucVu getById(String id);
 }
