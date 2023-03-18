@@ -6,11 +6,13 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "SanPhamServlet", value = "/SanPhamServlet")
-public class SanPhamServlet extends HttpServlet {
+@WebServlet({
+        "/"
+})
+public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("/views/user/home.jsp").forward(request, response);
     }
 
     @Override

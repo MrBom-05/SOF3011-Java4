@@ -5,8 +5,6 @@ O
 .src/main/webapp/views/admin/chuc-vu/create.jsp,d\d\dd3dce58eeff1db941a11fa87904e9e821954bde
 ^
 .src/main/webapp/views/admin/mau-sac/create.jsp,2\b\2b3277e5aaa66f3dd4fa7811e507f194bc02aa62
-I
-src/main/webapp/index.jsp,8\e\8e6d3b70c9f5b02570779b0441540d45eceb0ded
 f
 6src/main/java/com/example/utilities/HibernateUtil.java,6\b\6ba3050970056a72ed8c2c8302e3cc8e59f94933
 ^
@@ -105,8 +103,6 @@ a
 .src/main/webapp/views/admin/cua-hang/index.jsp,4\a\4a5c97c281ece211ee7d55f8d2f8f7cfef0e113c
 ]
 -src/main/webapp/views/admin/chuc-vu/index.jsp,6\7\67155d11d796c497fb1ae17fde4708caca5a04eb
-a
-1src/main/webapp/views/admin/chi-tiet-sp/index.jsp,4\8\485e15b0713a294e5266d70ad6311379b3ab7e61
 ^
 .src/main/webapp/views/admin/mau-sac/update.jsp,3\8\3864bae14bb2e5f333602f2ebdfdf7ae655a835f
 _
@@ -175,8 +171,6 @@ Y
 )src/main/webapp/views/admin/nsx/index.jsp,e\3\e3df6cc658b04e7500fd3e61b3f380dc442550e8
 Z
 *src/main/webapp/views/admin/nsx/create.jsp,5\4\5458dd08a6fef26b87c6fb86cdf1987d8143f50d
-l
-<src/main/java/com/example/controllers/user/LoginServlet.java,2\8\288ac5113778acb47417908a49f30c623da7300c
 a
 1src/main/webapp/views/admin/khach-hang/create.jsp,c\7\c77c6467f06c153a0723eb12d93fcd4fdbe77f69
 g
@@ -203,5 +197,13 @@ o
 ?src/main/java/com/example/controllers/admin/SanPhamServlet.java,6\7\6707cb2df1ca56993bdb43e8e474daaedfa42002
 T
 $src/main/webapp/views/user/login.jsp,2\4\24b2458ed4c3195024a2b0a219d431072f625209
+l
+<src/main/java/com/example/controllers/user/LoginServlet.java,2\8\288ac5113778acb47417908a49f30c623da7300c
+k
+;src/main/java/com/example/controllers/user/HomeServlet.java,8\1\81e0f0719c690b9531de07a005bd363435db03a5
 V
 &src/main/webapp/views/user/sign-up.jsp,c\e\ceee4b0405c0327cdd3baad1fa5931b3a7cf1087
+a
+1src/main/webapp/views/admin/chi-tiet-sp/index.jsp,4\8\485e15b0713a294e5266d70ad6311379b3ab7e61
+S
+#src/main/webapp/views/user/home.jsp,f\4\f453f54403bfc5f3a885704f05818e582ad2d2dc
