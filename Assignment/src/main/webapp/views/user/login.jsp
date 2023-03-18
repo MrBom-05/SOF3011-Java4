@@ -67,10 +67,10 @@
     </div>
     <div class="card-body">
         <form method="POST"
-              action="/Assignment_war_exploded/admin/nsx/store" id="form">
+              action="/Assignment_war_exploded/login/store" id="form">
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <label for="username" class="form-label">Email</label>
+                <input type="email" class="form-control" id="username" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
@@ -80,7 +80,7 @@
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
             <div class="form-text text-center mt-3">
-                Don't have an account yet? <a href="#">Register now</a>
+                Don't have an account yet? <a href="/Assignment_war_exploded/sign-up">Register now</a>
             </div>
             <div class="form-text text-center mt-3">
                 Forgot your password? <a href="#">Reset it here</a>
@@ -92,5 +92,18 @@
 <script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function (event) {
+        const email = document.querySelector('input[name="email"]');
+        const password = document.querySelector('input[name="password"]');
+
+        if (!email.value || !password.value) {
+            alert("Không được để trống!");
+            event.preventDefault();
+        }
+    });
+
+</script>
 </body>
 </html>
