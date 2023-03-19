@@ -13,7 +13,7 @@
 </head>
 <body>
 <form class="row g-3 needs-validation col-10 offset-1 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/khach-hang/update" id="form">
+      action="/Assignment_war_exploded/admin/khach-hang/update?id=${khachHang.id}" id="form">
 
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Tên</label>

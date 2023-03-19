@@ -78,7 +78,8 @@
         <label for="validationCustom02" class="form-label">Giới Tính</label>
         <div class="row mt-1">
             <div class="form-check col-6">
-                <input class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" id="rdoTrue" checked required>
+                <input class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" id="rdoTrue" checked
+                       required>
                 <label class="form-check-label ms-2">Nam</label>
             </div>
             <div class="form-check col-6">
@@ -86,6 +87,15 @@
                 <label class="form-check-label">Nữ</label>
             </div>
         </div>
+    </div>
+
+    <div class="col-md-4 offset-4">
+        <label class="form-label">Trạng Thái</label>
+        <select class="form-select" name="trangThai">
+            <option value="" disabled selected>-- Chọn Trạng Thái --</option>
+            <option value="1">Đang Làm</option>
+            <option value="0">Đã Nghỉ</option>
+        </select>
     </div>
 
     <div class="col-12 mt-5">

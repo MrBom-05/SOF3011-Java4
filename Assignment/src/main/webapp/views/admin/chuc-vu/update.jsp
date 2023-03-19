@@ -13,8 +13,7 @@
 </head>
 <body>
 <form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/chuc-vu/update" id="form">
-
+      action="/Assignment_war_exploded/admin/chuc-vu/update?id=${chucVu.id}" id="form">
     <div class="col-12">
         <label class="form-label">Mã</label>
         <input type="text" class="form-control" name="ma" disabled value="${chucVu.ma}" required>

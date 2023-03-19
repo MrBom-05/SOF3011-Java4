@@ -46,6 +46,21 @@ public class DongSPRepository {
         }
     }
 
+    public boolean update(String id, DongSP dongSP){
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update DongSP set ten =: ten where id =: id");
+            query.setParameter("id", id);
+            query.setParameter("ten", dongSP.getTen());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public DongSP getById(String id){
         Query query = session.createQuery("from DongSP where id =: id");
         query.setParameter("id", id);

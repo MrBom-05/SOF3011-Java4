@@ -91,6 +91,19 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
 
+            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
+            dateTimeConverter.setPattern("yyyy-MM-dd");
+            ConvertUtils.register(dateTimeConverter, Date.class);
+
+            KhachHang khachHang = new KhachHang();
+            BeanUtils.populate(khachHang, request.getParameterMap());
+            khachHangService.update(id, khachHang);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/khach-hang/index");
     }
 }

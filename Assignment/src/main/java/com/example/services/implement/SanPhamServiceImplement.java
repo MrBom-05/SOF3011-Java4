@@ -26,6 +26,11 @@ public class SanPhamServiceImplement implements SanPhamService {
     }
 
     @Override
+    public boolean update(String id, SanPham sanPham) {
+        return sanPhamRepository.update(id, sanPham);
+    }
+
+    @Override
     public SanPham getById(String id) {
         return sanPhamRepository.getById(id);
     }

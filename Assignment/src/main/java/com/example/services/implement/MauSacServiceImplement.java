@@ -26,6 +26,11 @@ public class MauSacServiceImplement implements MauSacService {
     }
 
     @Override
+    public boolean update(String id, MauSac mauSac) {
+        return mauSacRepository.update(id, mauSac);
+    }
+
+    @Override
     public MauSac getById(String id) {
         return mauSacRepository.getById(id);
     }

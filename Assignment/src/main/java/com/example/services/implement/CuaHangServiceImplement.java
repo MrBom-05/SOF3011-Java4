@@ -27,6 +27,11 @@ public class CuaHangServiceImplement implements CuaHangService {
     }
 
     @Override
+    public boolean update(String id, CuaHang cuaHang) {
+        return cuaHangRepository.update(id, cuaHang);
+    }
+
+    @Override
     public CuaHang getById(String id) {
         return cuaHangRepository.getById(id);
     }

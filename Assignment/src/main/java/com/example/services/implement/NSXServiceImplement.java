@@ -26,6 +26,11 @@ public class NSXServiceImplement implements NSXService {
     }
 
     @Override
+    public boolean update(String id, NSX nsx) {
+        return nsxRepository.update(id, nsx);
+    }
+
+    @Override
     public NSX getById(String id) {
         return nsxRepository.getById(id);
     }

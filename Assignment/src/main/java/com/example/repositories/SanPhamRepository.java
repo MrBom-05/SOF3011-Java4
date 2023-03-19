@@ -46,6 +46,22 @@ public class SanPhamRepository {
         }
     }
 
+    public boolean update(String id, SanPham sanPham){
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update SanPham set ten =: ten, anh =: anh where id =: id");
+            query.setParameter("id", id);
+            query.setParameter("ten", sanPham.getTen());
+            query.setParameter("anh", sanPham.getAnh());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public SanPham getById(String id){
         Query query = session.createQuery("from SanPham where id =: id");
         query.setParameter("id", id);

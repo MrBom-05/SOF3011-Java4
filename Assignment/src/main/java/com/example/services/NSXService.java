@@ -11,5 +11,7 @@ public interface NSXService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, NSX nsx);
+
     public NSX getById(String id);
 }

@@ -46,6 +46,24 @@ public class CuaHangRepository {
         }
     }
 
+    public boolean update(String id, CuaHang cuaHang){
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update CuaHang set ten =: ten, diaChi =: diaChi, thanhPho =: thanhPho, quocGia =: quocGia where id =: id");
+            query.setParameter("id", id);
+            query.setParameter("ten", cuaHang.getTen());
+            query.setParameter("diaChi", cuaHang.getDiaChi());
+            query.setParameter("thanhPho", cuaHang.getThanhPho());
+            query.setParameter("quocGia", cuaHang.getQuocGia());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public CuaHang getById(String id){
         Query query = session.createQuery("from CuaHang where id =: id");
         query.setParameter("id", id);

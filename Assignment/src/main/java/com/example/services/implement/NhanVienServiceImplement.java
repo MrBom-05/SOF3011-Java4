@@ -27,6 +27,11 @@ public class NhanVienServiceImplement implements NhanVienService {
     }
 
     @Override
+    public boolean update(String ma, NhanVien nhanVien) {
+        return nhanVienRepository.update(ma, nhanVien);
+    }
+
+    @Override
     public String getIdCuaHangByMa(String ma) {
         return nhanVienRepository.getIdByMa(ma, nhanVienRepository.getIdCuaHangByMa);
     }

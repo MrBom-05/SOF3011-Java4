@@ -84,6 +84,15 @@ public class SanPhamServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
 
+            SanPham sanPham = new SanPham();
+            BeanUtils.populate(sanPham, request.getParameterMap());
+            sanPhamService.update(id, sanPham);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/san-pham/index");
     }
 }

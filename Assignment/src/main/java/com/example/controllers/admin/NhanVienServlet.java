@@ -120,6 +120,28 @@ public class NhanVienServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String ma = request.getParameter("ma");
 
+            // Định dạng năm tháng ngày
+            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
+            dateTimeConverter.setPattern("yyyy-MM-dd");
+            ConvertUtils.register(dateTimeConverter, Date.class);
+
+            CuaHang cuaHang = new CuaHang();
+            cuaHang.setId(request.getParameter("idCuaHang"));
+
+            ChucVu chucVu = new ChucVu();
+            cuaHang.setId(request.getParameter("idChucVu"));
+
+            NhanVien nhanVien = new NhanVien();
+            nhanVien.setCuaHang(cuaHang);
+            nhanVien.setChucVu(chucVu);
+            BeanUtils.populate(nhanVien, request.getParameterMap());
+            nhanVienService.update(ma, nhanVien);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/nhan-vien/index");
     }
 }
