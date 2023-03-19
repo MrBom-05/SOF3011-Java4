@@ -24,6 +24,11 @@
         <label class="form-label">Tên</label>
         <input type="text" class="form-control" name="ten" required value="${sanPham.ten}">
     </div>
+
+    <div class="col-12 mt-3">
+        <label class="form-label">Ảnh</label>
+        <input type="file" class="form-control" name="anh" required value="${sanPham.anh}">
+    </div>
     <div class="col-12 mt-5">
         <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>
     </div>
