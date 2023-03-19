@@ -11,5 +11,7 @@ public interface MauSacService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, MauSac mauSac);
+
     public MauSac getById(String id);
 }

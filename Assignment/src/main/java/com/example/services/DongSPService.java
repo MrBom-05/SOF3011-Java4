@@ -11,5 +11,7 @@ public interface DongSPService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, DongSP dongSP);
+
     public DongSP getById(String id);
 }

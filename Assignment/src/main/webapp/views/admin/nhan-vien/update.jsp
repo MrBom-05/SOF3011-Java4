@@ -15,7 +15,7 @@
 </head>
 <body>
 <form class="row g-3 needs-validation col-10 offset-1 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/khach-hang/update" id="form">
+      action="/Assignment_war_exploded/admin/khach-hang/update?ma=${nhanVien.ma}" id="form">
 
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Tên</label>
@@ -86,6 +86,15 @@
                 <label class="form-check-label">Nữ</label>
             </div>
         </div>
+    </div>
+
+    <div class="col-md-4 offset-4">
+        <label class="form-label">Trạng Thái</label>
+        <select class="form-select" name="trangThai">
+            <option value="" disabled selected>-- Chọn Trạng Thái --</option>
+            <option value="1" ${nhanVien.trangThai == 1 ? "selected" : ""}>Đang Làm</option>
+            <option value="0" ${nhanVien.trangThai == 0 ? "selected" : ""}>Đã Nghỉ</option>
+        </select>
     </div>
 
 </form>

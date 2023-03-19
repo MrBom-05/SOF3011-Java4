@@ -13,6 +13,8 @@ public interface NhanVienService {
 
     public boolean delete(String ma);
 
+    public boolean update(String ma, NhanVien nhanVien);
+
     public String getIdCuaHangByMa(String ma);
 
     public String getIdChucVuByMa(String ma);

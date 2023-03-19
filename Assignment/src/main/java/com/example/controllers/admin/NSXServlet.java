@@ -83,6 +83,15 @@ public class NSXServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
 
+            NSX nsx = new NSX();
+            BeanUtils.populate(nsx, request.getParameterMap());
+            nsxService.update(id, nsx);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/nsx/index");
     }
 }

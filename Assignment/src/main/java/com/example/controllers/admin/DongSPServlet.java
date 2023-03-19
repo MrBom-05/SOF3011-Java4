@@ -83,7 +83,16 @@ public class DongSPServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
 
+            DongSP dongSP = new DongSP();
+            BeanUtils.populate(dongSP, request.getParameterMap());
+            dongSPService.update(id, dongSP);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/dong-sp/index");
     }
 }
 

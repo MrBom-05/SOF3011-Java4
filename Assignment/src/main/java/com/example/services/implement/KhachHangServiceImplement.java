@@ -27,6 +27,11 @@ public class KhachHangServiceImplement implements KhachHangService {
     }
 
     @Override
+    public boolean update(String id, KhachHang khachHang) {
+        return khachHangRepository.update(id, khachHang);
+    }
+
+    @Override
     public KhachHang getById(String id) {
         return khachHangRepository.getById(id);
     }

@@ -47,6 +47,32 @@ public class NhanVienRepository {
         }
     }
 
+    public boolean update(String ma, NhanVien nhanVien){
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update NhanVien set ten =: ten, tenDem =: tenDem, ho =: ho, ngaySinh =: ngaySinh, gioiTinh =: gioiTinh, sdt =: sdt, email =: email, matKhau =: matKhau, diaChi =: diaChi, cuaHang =: cuaHang, chucVu =: chucVu, trangThai =: trangThai where ma =: ma");
+            query.setParameter("ma", ma);
+            query.setParameter("ten", nhanVien.getTen());
+            query.setParameter("tenDem", nhanVien.getTenDem());
+            query.setParameter("ho", nhanVien.getHo());
+            query.setParameter("ngaySinh", nhanVien.getNgaySinh());
+            query.setParameter("gioiTinh", nhanVien.getGioiTinh());
+            query.setParameter("sdt", nhanVien.getSdt());
+            query.setParameter("email", nhanVien.getEmail());
+            query.setParameter("matKhau", nhanVien.getMatKhau());
+            query.setParameter("diaChi", nhanVien.getDiaChi());
+            query.setParameter("cuaHang", nhanVien.getCuaHang());
+            query.setParameter("chucVu", nhanVien.getChucVu());
+            query.setParameter("trangThai", nhanVien.getTrangThai());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public String getIdCuaHangByMa = "select n.cuaHang.id from NhanVien n where ma =: ma";
     public String getIdChucVuByMa = "select n.chucVu.id from NhanVien n where ma =: ma";
 

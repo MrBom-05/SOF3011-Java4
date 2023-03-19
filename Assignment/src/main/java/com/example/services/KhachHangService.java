@@ -11,5 +11,7 @@ public interface KhachHangService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, KhachHang khachHang);
+
     public KhachHang getById(String id);
 }

@@ -11,5 +11,7 @@ public interface CuaHangService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, CuaHang cuaHang);
+
     public CuaHang getById(String id);
 }

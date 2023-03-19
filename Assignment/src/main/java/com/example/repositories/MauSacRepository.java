@@ -46,6 +46,21 @@ public class MauSacRepository {
         }
     }
 
+    public boolean update(String id, MauSac mauSac){
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update MauSac set ten =: ten where id =: id");
+            query.setParameter("id", id);
+            query.setParameter("ten", mauSac.getTen());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public MauSac getById(String id){
         Query query = session.createQuery("from MauSac where id =: id");
         query.setParameter("id", id);

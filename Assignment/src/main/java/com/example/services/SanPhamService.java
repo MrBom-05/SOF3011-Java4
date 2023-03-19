@@ -11,5 +11,7 @@ public interface SanPhamService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, SanPham sanPham);
+
     public SanPham getById(String id);
 }

@@ -83,6 +83,15 @@ public class CuaHangServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
 
+            CuaHang cuaHang = new CuaHang();
+            BeanUtils.populate(cuaHang, request.getParameterMap());
+            cuaHangService.update(id, cuaHang);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/cua-hang/index");
     }
 }

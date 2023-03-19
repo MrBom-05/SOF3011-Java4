@@ -84,6 +84,15 @@ public class MauSacServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
 
+            MauSac mauSac = new MauSac();
+            BeanUtils.populate(mauSac, request.getParameterMap());
+            mauSacService.update(id, mauSac);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/mau-sac/index");
     }
 }

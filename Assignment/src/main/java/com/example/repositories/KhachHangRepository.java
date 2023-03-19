@@ -46,6 +46,30 @@ public class KhachHangRepository {
         }
     }
 
+    public boolean update(String id, KhachHang khachHang){
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update KhachHang set ten =: ten, tenDem =: tenDem, ho =: ho, ngaySinh =: ngaySinh, sdt =: sdt, email =: email, matKhau =: matKhau, diaChi =: diaChi, thanhPho =: thanhPho, quocGia =: quocGia where id =: id");
+            query.setParameter("id", id);
+            query.setParameter("ten", khachHang.getTen());
+            query.setParameter("tenDem", khachHang.getTenDem());
+            query.setParameter("ho", khachHang.getHo());
+            query.setParameter("ngaySinh", khachHang.getNgaySinh());
+            query.setParameter("sdt", khachHang.getSdt());
+            query.setParameter("email", khachHang.getEmail());
+            query.setParameter("matKhau", khachHang.getMatKhau());
+            query.setParameter("diaChi", khachHang.getDiaChi());
+            query.setParameter("thanhPho", khachHang.getThanhPho());
+            query.setParameter("quocGia", khachHang.getQuocGia());
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public KhachHang getById(String id){
         Query query = session.createQuery("from KhachHang where id =: id");
         query.setParameter("id", id);

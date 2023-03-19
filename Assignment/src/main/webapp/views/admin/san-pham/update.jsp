@@ -13,7 +13,7 @@
 </head>
 <body>
 <form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/san-pham/update" id="form">
+      action="/Assignment_war_exploded/admin/san-pham/update?id=${sanPham.id}" id="form">
 
     <div class="col-12">
         <label class="form-label">Mã</label>
@@ -23,6 +23,11 @@
     <div class="col-12 mt-3">
         <label class="form-label">Tên</label>
         <input type="text" class="form-control" name="ten" required value="${sanPham.ten}">
+    </div>
+
+    <div class="col-12 mt-3">
+        <label class="form-label">Ảnh</label>
+        <input type="file" class="form-control" name="anh" required value="${sanPham.anh}">
     </div>
     <div class="col-12 mt-5">
         <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>

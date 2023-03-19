@@ -26,6 +26,11 @@ public class DongSPServiceImplement implements DongSPService {
     }
 
     @Override
+    public boolean update(String id, DongSP dongSP) {
+        return dongSPRepository.update(id, dongSP);
+    }
+
+    @Override
     public DongSP getById(String id) {
         return dongSPRepository.getById(id);
     }

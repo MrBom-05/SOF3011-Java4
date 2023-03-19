@@ -31,6 +31,7 @@
             <th>STT</th>
             <th>Mã</th>
             <th>Tên</th>
+            <th>Ảnh</th>
             <th class="col-2 text-center">Action</th>
         </tr>
         </thead>
@@ -41,6 +42,7 @@
                 <td>${status.index + 1}</td>
                 <td>${ sanPham.ma }</td>
                 <td>${ sanPham.ten }</td>
+                <td><img src="${ sanPham.anh }" width="200px" height="200px"></td>
 
                 <td class="text-center">
                     <a href="/Assignment_war_exploded/admin/san-pham/edit?id=${ sanPham.id }"
