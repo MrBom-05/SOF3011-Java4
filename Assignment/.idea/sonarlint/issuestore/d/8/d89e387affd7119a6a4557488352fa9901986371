@@ -8,4 +8,4 @@ java:S1130@"yRemove the declaration of thrown exception 'jakarta.servlet.Servle
 –
 java:S1130J"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(Ã°ÿÆ8¶ùœðî0
 –
-java:S1130U"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(àÉºö8È´¢ðî0
+java:S1130U"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(àÉºö8Ö•¸ýï0

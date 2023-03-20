@@ -74,6 +74,11 @@ public class SanPhamServlet extends HttpServlet {
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+
+            Part anh = request.getPart("anh");
+            String part = "D:\\SOF3011-Java4\\Assignment\\src\\main\\webapp\\anhSanPham\\" + anh.getSubmittedFileName();
+            String filename = request.getServletContext().getRealPath(part);
+            anh.write(filename);
             SanPham sanPham = new SanPham();
             BeanUtils.populate(sanPham, request.getParameterMap());
             sanPhamService.insert(sanPham);

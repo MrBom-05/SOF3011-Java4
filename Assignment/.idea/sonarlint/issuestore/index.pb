@@ -171,8 +171,6 @@ q
 Asrc/main/java/com/example/controllers/admin/KhachHangServlet.java,6\a\6a256fb15a635c2fb85c1f275f688cf86ced37d1
 n
 >src/main/java/com/example/controllers/admin/MauSacServlet.java,9\a\9af0dbc395a8529d8f0d6d3c4fe2ebcbccd61657
-o
-?src/main/java/com/example/controllers/admin/SanPhamServlet.java,6\7\6707cb2df1ca56993bdb43e8e474daaedfa42002
 T
 $src/main/webapp/views/user/login.jsp,2\4\24b2458ed4c3195024a2b0a219d431072f625209
 l
@@ -187,8 +185,6 @@ k
 ;src/main/java/com/example/controllers/admin/NSXServlet.java,6\b\6b141597eb2c24105793bf23f07d1017254b8012
 p
 @src/main/java/com/example/controllers/admin/NhanVienServlet.java,3\5\35336bb7459c12415ada23031ccb1e2a9032b17f
-n
->src/main/java/com/example/controllers/admin/ChucVuServlet.java,d\8\d89e387affd7119a6a4557488352fa9901986371
 `
 0src/main/webapp/views/admin/nhan-vien/create.jsp,e\e\eec2f055c097415e115318ec3b2c7f4d6317b60e
 _
@@ -197,8 +193,6 @@ o
 ?src/main/java/com/example/controllers/admin/CuaHangServlet.java,5\a\5a7da488a82885fbdc98d9cf667348d12527caf0
 _
 /src/main/webapp/views/admin/san-pham/update.jsp,6\0\605b089761e6b09bdadf21a919bb1d5beb7c377d
-_
-/src/main/webapp/views/admin/san-pham/create.jsp,1\7\1780a08ff3a8315db6e1e311c14cc7522e5fc3ec
 _
 /src/main/webapp/bootstrap/css/bootstrap.min.css,6\9\693ce8e14579203f8dfd97d216dc6c5221fc2d73
 S
@@ -209,3 +203,9 @@ U
 %src/main/webapp/views/admin/admin.jsp,1\6\16b86cce09d7a44277971a337fe135c7af795990
 U
 %.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
+n
+>src/main/java/com/example/controllers/admin/ChucVuServlet.java,d\8\d89e387affd7119a6a4557488352fa9901986371
+_
+/src/main/webapp/views/admin/san-pham/create.jsp,1\7\1780a08ff3a8315db6e1e311c14cc7522e5fc3ec
+o
+?src/main/java/com/example/controllers/admin/SanPhamServlet.java,6\7\6707cb2df1ca56993bdb43e8e474daaedfa42002
