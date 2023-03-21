@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @WebServlet({"/admin/chuc-vu/index", "/admin/chuc-vu/create", "/admin/chuc-vu/edit", "/admin/chuc-vu/delete", "/admin/chuc-vu/update", "/admin/chuc-vu/store"})
@@ -45,11 +46,13 @@ public class ChucVuServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<ChucVu> list = chucVuService.getListChucVu();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/chuc-vu/index.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/chuc-vu/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/chuc-vu/create.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/chuc-vu/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,7 +61,8 @@ public class ChucVuServlet extends HttpServlet {
         ChucVu chucVu = chucVuService.getById(id);
         request.setAttribute("chucVu", chucVu);
 
-        request.getRequestDispatcher("/views/admin/chuc-vu/update.jsp").forward(request, response);
+        request.setAttribute("view", "//views/admin/chuc-vu/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -90,8 +94,8 @@ public class ChucVuServlet extends HttpServlet {
             BeanUtils.populate(chucVu, request.getParameterMap());
 
             chucVuService.update(id, chucVu);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            throw new RuntimeException(e);
         }
         response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
     }

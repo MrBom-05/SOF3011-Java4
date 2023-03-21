@@ -9,13 +9,6 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="f" uri="jakarta.tags.functions" %>
 
-<html>
-<head>
-    <title>Danh sách</title>
-    <link rel="stylesheet" href="/Assignment_war_exploded/bootstrap/css/bootstrap.min.css">
-</head>
-<body class="col-10 offset-1">
-
 <h2 class="mt-3">Quản Lý Chức Vụ</h2>
 
 <a href="/Assignment_war_exploded/admin/chuc-vu/create" class="btn btn-success mt-3">Add</a>
@@ -57,5 +50,3 @@
 <script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
 <script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
