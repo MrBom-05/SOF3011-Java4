@@ -1,6 +1,8 @@
 package com.example.controllers.user;
 
+import com.example.entities.SanPham;
 import com.example.models.ChiTietSPCustom;
+import com.example.models.SanPhamCustom;
 import com.example.services.ChiTietSPService;
 import com.example.services.implement.ChiTietSPServiceImplement;
 import jakarta.servlet.*;
@@ -19,9 +21,22 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("list", chiTietSPService.getListChiTietSP());
+        List<SanPhamCustom> list = chiTietSPService.getListSP();
+
+        String realPath = request.getServletContext().getRealPath("/images");
+
+        // Thay đổi đường dẫn tới ảnh để hiển thị ảnh thay vì đường dẫn
+        for (SanPhamCustom sanPhamCustom : list) {
+            String fileName = sanPhamCustom.getAnh();
+            if (fileName != null) {
+                sanPhamCustom.setAnh(request.getContextPath() + "/images/" + fileName);
+            }
+        }
+
+        request.setAttribute("list", list);
 
         request.setAttribute("view", "/views/user/product.jsp");
+        request.setAttribute("banner", "/views/user/banner.jsp");
         request.getRequestDispatcher("/views/user/home.jsp").forward(request, response);
     }
 

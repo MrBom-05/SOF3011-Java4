@@ -6,53 +6,34 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<c:if test="${ f:length(list) == 0 }">
-  <h4 class="text-center">Không có dữ liệu</h4>
-</c:if>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="f" uri="jakarta.tags.functions" %>
 
-<c:if test="${ f:length(list) != 0 }">
+<div class="row text-center mt-4 mb-4">
+    <h2>Tất cả sản phẩm</h2>
+</div>
 
-  <table class="table table-bordered mt-5">
-    <thead>
-    <tr>
-      <th>STT</th>
-      <th>Mã</th>
-      <th>Tên</th>
-      <th>NSX</th>
-      <th>Màu Sắc</th>
-      <th>Dòng SP</th>
-      <th>Năm SX</th>
-      <th>Mô Tả</th>
-      <th>Số Lượng</th>
-      <th>Giá Nhập</th>
-      <th>Giá Bán</th>
-      <th class="col-2 text-center">Action</th>
-    </tr>
-    </thead>
-    <tbody>
+<div class="row me-3">
+    <article class="col-12">
+        <div class="row">
+            <div class="col-md-3 col-12">
+                <c:if test="${ f:length(list) == 0 }">
+                    <h4 class="text-center">Không có dữ liệu</h4>
+                </c:if>
+                <c:if test="${ f:length(list) != 0 }">
+                    <c:forEach var="sanPham" items="${ list }" varStatus="status">
+                        <div class="card ms-3">
+                            <img src="${sanPham.anh}" class="card-img-top img-fluid" alt="...">
+                            <div class="card-body text-center">
+                                <a href="/Assignment_war_exploded/product-detail?id=${sanPham.id}"
+                                   class="card-text" style="text-decoration: none;">${sanPham.ten}</a>
+                                <span class="card text fw-bold">${sanPham.giaBan}</span>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
+    </article>
+</div>
 
-    <c:forEach var="chiTietSP" items="${ list }" varStatus="status">
-      <tr>
-        <td>${status.index + 1}</td>
-        <td>${ chiTietSP.ma }</td>
-        <td>${ chiTietSP.ten }</td>
-        <td>${ chiTietSP.nsx }</td>
-        <td>${ chiTietSP.mauSac }</td>
-        <td>${ chiTietSP.dongSP }</td>
-        <td>${ chiTietSP.namSX }</td>
-        <td>${ chiTietSP.moTa }</td>
-        <td>${ chiTietSP.soLuongTon }</td>
-        <td>${ chiTietSP.giaNhap }</td>
-        <td>${ chiTietSP.giaBan }</td>
-
-        <td class="text-center">
-          <a href="/Assignment_war_exploded/admin/chi-tiet-sp/edit?id=${ chiTietSP.id }"
-             class="btn btn-primary">Update</a>
-          <a href="/Assignment_war_exploded/admin/chi-tiet-sp/delete?id=${ chiTietSP.id }"
-             class="btn btn-danger delete">Delete</a>
-        </td>
-      </tr>
-    </c:forEach>
-    </tbody>
-  </table>
-</c:if>

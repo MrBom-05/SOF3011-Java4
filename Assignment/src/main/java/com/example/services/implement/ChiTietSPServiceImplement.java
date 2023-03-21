@@ -2,6 +2,8 @@ package com.example.services.implement;
 
 import com.example.entities.ChiTietSP;
 import com.example.models.ChiTietSPCustom;
+import com.example.models.SanPhamChiTietCustom;
+import com.example.models.SanPhamCustom;
 import com.example.repositories.ChiTietSPRepository;
 import com.example.services.ChiTietSPService;
 
@@ -54,5 +56,15 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     @Override
     public ChiTietSP getById(String id) {
         return chiTietSPRepository.getById(id);
+    }
+
+    @Override
+    public List<SanPhamCustom> getListSP() {
+        return chiTietSPRepository.getListSP();
+    }
+
+    @Override
+    public SanPhamChiTietCustom getProductById(String id) {
+        return chiTietSPRepository.getProductById(id);
     }
 }

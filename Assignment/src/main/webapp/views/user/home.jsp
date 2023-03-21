@@ -93,40 +93,9 @@
                     </li>
                 </ul>
 
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog" ng-controller="editPasswordController">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đổi Mật Khẩu</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" ng-model="oldPassword">
-                                    <label>Mật khẩu Cũ</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" ng-model="newPassword1">
-                                    <label>Mật khẩu Mới</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" ng-model="newPassword2">
-                                    <label>Nhập lại Mật Khẩu Mới</label>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" ng-click="editPassword($event)">Lưu Thay
-                                    Đổi
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="shopping-cart d-flex align-items-center">
-                <a href="#cart">
+                <a href="/Assignment_war_exploded/cart">
                     <img src="/Assignment_war_exploded/views/user/img/icons8-shopping-cart-30.png" alt="Shopping cart">
                     <span class="cart-items ms-2"></span>
                 </a>
@@ -157,36 +126,7 @@
 
     <div>
 
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/Assignment_war_exploded/views/user/img/522_attimg1_origin.jpg" class="d-block w-100"
-                         alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/Assignment_war_exploded/views/user/img/523_attimg1_origin.jpg" class="d-block w-100"
-                         alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/Assignment_war_exploded/views/user/img/525_attimg1_origin.jpg" class="d-block w-100"
-                         alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <div class="row text-center mt-4 mb-4">
-            <h2>Các sản phẩm</h2>
-        </div>
+        <jsp:include page="${ banner }"/>
 
         <div>
             <jsp:include page="${ view }"/>
@@ -263,5 +203,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/Assignment_war_exploded/js/bootstrap.min.js"></script>
+<script src="/Assignment_war_exploded/js/jquery.min.js"></script>
+<script src="/Assignment_war_exploded/js/popper.js"></script>
 </body>
 </html>

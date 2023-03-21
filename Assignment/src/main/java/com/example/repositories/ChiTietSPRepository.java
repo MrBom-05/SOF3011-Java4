@@ -2,6 +2,8 @@ package com.example.repositories;
 
 import com.example.entities.ChiTietSP;
 import com.example.models.ChiTietSPCustom;
+import com.example.models.SanPhamChiTietCustom;
+import com.example.models.SanPhamCustom;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -89,5 +91,19 @@ public class ChiTietSPRepository {
         query.setParameter("id", id);
         ChiTietSP chiTietSP = (ChiTietSP) query.getSingleResult();
         return chiTietSP;
+    }
+
+    public List<SanPhamCustom> getListSP() {
+        Session session = HibernateUtil.getFACTORY().openSession();
+        Query query = session.createQuery("select new com.example.models.SanPhamCustom(sp.id, sp.sanPham.ten, sp.sanPham.anh, sp.giaBan) from com.example.entities.ChiTietSP sp left join sp.sanPham spm");
+        List<SanPhamCustom> list = query.getResultList();
+        return list;
+    }
+
+    public SanPhamChiTietCustom getProductById(String id) {
+        Query query = session.createQuery("select new com.example.models.SanPhamChiTietCustom(sp.id, sp.sanPham.ten, sp.sanPham.anh, sp.soLuongTon, sp.giaBan) from com.example.entities.ChiTietSP sp left join sp.sanPham spm where sp.id =: id");
+        query.setParameter("id", id);
+        SanPhamChiTietCustom sanPhamChiTietCustom = (SanPhamChiTietCustom) query.getSingleResult();
+        return sanPhamChiTietCustom;
     }
 }

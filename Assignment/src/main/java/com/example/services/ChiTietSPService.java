@@ -2,6 +2,8 @@ package com.example.services;
 
 import com.example.entities.ChiTietSP;
 import com.example.models.ChiTietSPCustom;
+import com.example.models.SanPhamChiTietCustom;
+import com.example.models.SanPhamCustom;
 
 import java.util.List;
 
@@ -23,4 +25,8 @@ public interface ChiTietSPService {
     public String getIdNSXById(String id);
 
     public ChiTietSP getById(String id);
+
+    public List<SanPhamCustom> getListSP();
+
+    public SanPhamChiTietCustom getProductById(String id);
 }

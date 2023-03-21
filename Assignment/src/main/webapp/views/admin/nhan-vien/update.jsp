@@ -12,7 +12,7 @@
 <h2 class="mt-3 text-center">Cập Nhật Nhân Viên</h2>
 
 <form class="row g-3 needs-validation col-10 offset-1 mt-3 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/khach-hang/update?ma=${nhanVien.ma}" id="form">
+      action="/Assignment_war_exploded/admin/nhan-vien/update?ma=${nhanVien.ma}" id="form">
 
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Tên</label>
@@ -75,11 +75,11 @@
         <label for="validationCustom02" class="form-label">Giới Tính</label>
         <div class="row mt-1">
             <div class="form-check col-6">
-                <input ${nhanVien == "Nam" ? "checked" : ""} class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" id="rdoTrue" checked required>
+                <input ${nhanVien.gioiTinh == "Nam" ? "checked" : ""} class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" id="rdoTrue" checked required>
                 <label class="form-check-label ms-2">Nam</label>
             </div>
             <div class="form-check col-6">
-                <input ${nhanVien == "Nữ" ? "checked" : ""} class="form-check-input" value="Nữ" type="radio" name="gioiTinh" id="rdoFalse" required>
+                <input ${nhanVien.gioiTinh == "Nữ" ? "checked" : ""} class="form-check-input" value="Nữ" type="radio" name="gioiTinh" id="rdoFalse" required>
                 <label class="form-check-label">Nữ</label>
             </div>
         </div>
@@ -92,6 +92,10 @@
             <option value="1" ${nhanVien.trangThai == 1 ? "selected" : ""}>Đang Làm</option>
             <option value="0" ${nhanVien.trangThai == 0 ? "selected" : ""}>Đã Nghỉ</option>
         </select>
+    </div>
+
+    <div class="col-12 mt-5">
+        <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>
     </div>
 
 </form>

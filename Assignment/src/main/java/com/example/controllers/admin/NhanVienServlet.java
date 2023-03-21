@@ -108,7 +108,7 @@ public class NhanVienServlet extends HttpServlet {
             cuaHang.setId(request.getParameter("idCuaHang"));
 
             ChucVu chucVu = new ChucVu();
-            cuaHang.setId(request.getParameter("idChucVu"));
+            chucVu.setId(request.getParameter("idChucVu"));
 
             NhanVien nhanVien = new NhanVien();
             nhanVien.setCuaHang(cuaHang);
@@ -134,7 +134,7 @@ public class NhanVienServlet extends HttpServlet {
             cuaHang.setId(request.getParameter("idCuaHang"));
 
             ChucVu chucVu = new ChucVu();
-            cuaHang.setId(request.getParameter("idChucVu"));
+            chucVu.setId(request.getParameter("idChucVu"));
 
             NhanVien nhanVien = new NhanVien();
             nhanVien.setCuaHang(cuaHang);
