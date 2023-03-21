@@ -15,7 +15,7 @@ public class ChiTietSPRepository {
     Transaction transaction = null;
 
     public List<ChiTietSPCustom> getListChiTietSP() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("select new com.example.models.ChiTietSPCustom(sp.id, sp.sanPham.ma, sp.sanPham.ten, sp.nsx.ten, sp.mauSac.ten, sp.dongSP.ten, sp.namSX, sp.moTa, sp.soLuongTon, sp.giaNhap, sp.giaBan) from com.example.entities.ChiTietSP sp left join sp.sanPham spm left join sp.nsx nsx left join sp.mauSac ms left join sp.dongSP dsp");
         List<ChiTietSPCustom> list = query.getResultList();
         return list;
@@ -47,12 +47,35 @@ public class ChiTietSPRepository {
         }
     }
 
+    public boolean update(String id, ChiTietSP chiTietSP) {
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update ChiTietSP set namSX =: namSX, moTa =: moTa, soLuongTon =: soLuongTon, giaNhap =: giaNhap, giaBan =: giaBan, sanPham.id =: idSP, nsx.id =: idNSX, mauSac.id =: idMS, dongSP.id =: idDSP where id =: id");
+            query.setParameter("namSX", chiTietSP.getNamSX());
+            query.setParameter("moTa", chiTietSP.getMoTa());
+            query.setParameter("soLuongTon", chiTietSP.getSoLuongTon());
+            query.setParameter("giaNhap", chiTietSP.getGiaNhap());
+            query.setParameter("giaBan", chiTietSP.getGiaBan());
+            query.setParameter("idSP", chiTietSP.getSanPham());
+            query.setParameter("idNSX", chiTietSP.getNsx());
+            query.setParameter("idMS", chiTietSP.getMauSac());
+            query.setParameter("idDSP", chiTietSP.getDongSP());
+            query.setParameter("id", id);
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public String getIdSanPhamById = "select s.sanPham.id from ChiTietSP s where id =: id";
     public String getIdMauSacById = "select s.mauSac.id from ChiTietSP s where id =: id";
     public String getIdDongSPById = "select s.dongSP.id from ChiTietSP s where id =: id";
     public String getIdNSXById = "select s.nsx.id from ChiTietSP s where id =: id";
 
-    public String getIdById(String id, String where){
+    public String getIdById(String id, String where) {
 
         Query query = session.createQuery(where);
         query.setParameter("id", id);
@@ -61,7 +84,7 @@ public class ChiTietSPRepository {
     }
 
 
-    public ChiTietSP getById(String id){
+    public ChiTietSP getById(String id) {
         Query query = session.createQuery("from ChiTietSP where id =: id");
         query.setParameter("id", id);
         ChiTietSP chiTietSP = (ChiTietSP) query.getSingleResult();

@@ -27,6 +27,11 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     }
 
     @Override
+    public boolean update(String id, ChiTietSP chiTietSP) {
+        return chiTietSPRepository.update(id, chiTietSP);
+    }
+
+    @Override
     public String getIdSanPhamById(String id) {
         return chiTietSPRepository.getIdById(id, chiTietSPRepository.getIdSanPhamById);
     }

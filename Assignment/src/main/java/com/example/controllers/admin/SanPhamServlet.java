@@ -46,11 +46,13 @@ public class SanPhamServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<SanPham> list = sanPhamService.getListSanPham();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/san-pham/index.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/san-pham/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/san-pham/create.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/san-pham/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +61,8 @@ public class SanPhamServlet extends HttpServlet {
         SanPham sanPham = sanPhamService.getById(id);
         request.setAttribute("sanPham", sanPham);
 
-        request.getRequestDispatcher("/views/admin/san-pham/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/san-pham/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

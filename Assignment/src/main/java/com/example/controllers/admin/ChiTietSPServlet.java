@@ -55,7 +55,9 @@ public class ChiTietSPServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<ChiTietSPCustom> list = chiTietSPService.getListChiTietSP();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/chi-tiet-sp/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/chi-tiet-sp/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -63,7 +65,9 @@ public class ChiTietSPServlet extends HttpServlet {
         request.setAttribute("listMauSac", listMauSac);
         request.setAttribute("listNSX", listNSX);
         request.setAttribute("listDongSP", listDongSP);
-        request.getRequestDispatcher("/views/admin/chi-tiet-sp/create.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/chi-tiet-sp/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,8 +87,8 @@ public class ChiTietSPServlet extends HttpServlet {
         ChiTietSP chiTietSP = chiTietSPService.getById(id);
         request.setAttribute("chiTietSP", chiTietSP);
 
-
-        request.getRequestDispatcher("/views/admin/chi-tiet-sp/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/chi-tiet-sp/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -128,6 +132,33 @@ public class ChiTietSPServlet extends HttpServlet {
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            String id = request.getParameter("id");
+            // Lấy các id từ thẻ select bên JSP
+            SanPham sanPham = new SanPham();
+            sanPham.setId(request.getParameter("idSanPham"));
 
+            MauSac mauSac = new MauSac();
+            mauSac.setId(request.getParameter("idMauSac"));
+
+            DongSP dongSP = new DongSP();
+            dongSP.setId(request.getParameter("idDongSP"));
+
+            NSX nsx = new NSX();
+            nsx.setId(request.getParameter("idNSX"));
+
+            // Gán các đối tượng được setID vào đối tượng muốn thêm
+            ChiTietSP chiTietSP = new ChiTietSP();
+            chiTietSP.setSanPham(sanPham);
+            chiTietSP.setMauSac(mauSac);
+            chiTietSP.setDongSP(dongSP);
+            chiTietSP.setNsx(nsx);
+
+            BeanUtils.populate(chiTietSP, request.getParameterMap());
+            chiTietSPService.update(id, chiTietSP);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/admin/chi-tiet-sp/index");
     }
 }

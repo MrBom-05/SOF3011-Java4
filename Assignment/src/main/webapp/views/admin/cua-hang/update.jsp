@@ -6,12 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Cập nhật</title>
-    <link rel="stylesheet" href="/Assignment_war_exploded/bootstrap/css/bootstrap.min.css">
-</head>
-<body>
+
+<h2 class="mt-3 text-center">Cập Nhật Cửa Hàng</h2>
+
 <form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
       action="/Assignment_war_exploded/admin/cua-hang/update?id=${cuaHang.id}" id="form">
 
@@ -56,9 +53,7 @@
     </div>
 
 </form>
-<script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+
 <script>
     const form = document.getElementById('form');
     form.addEventListener('submit', function (event) {
@@ -74,5 +69,4 @@
     });
 
 </script>
-</body>
-</html>
+

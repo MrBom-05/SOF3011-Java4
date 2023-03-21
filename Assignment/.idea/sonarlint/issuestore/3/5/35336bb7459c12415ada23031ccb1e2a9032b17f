@@ -1,19 +1,0 @@
-
-‘
-java:S11929"oDefine a constant instead of duplicating this literal "/Assignment_war_exploded/admin/nhan-vien/index" 3 times.(ş“˜½øÿÿÿÿ8ÛôÚÚî0
-
-java:S1186z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÉºö8éôÚÚî0
-N
-java:S1948"1Make "nhanVienService" transient or serializable.(ÓÿÉî8ÕÈœÜî0
-R
-java:S1948"0Make "cuaHangService" transient or serializable.(‚¯‰ùÿÿÿÿ8êôÚÚî0
-L
-java:S1948"/Make "chucVuService" transient or serializable.(·Öô¥8êôÚÚî0
-J
-java:S1948 "(Make "listCuaHang" private or transient.(ãĞ¨åùÿÿÿÿ8êôÚÚî0
-D
-java:S1948!"'Make "listChucVu" private or transient.(Ã•’Â8êôÚÚî0
-–
-java:S1130X"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(÷ßÔ¼8èÈœÜî0
-–
-java:S1130b"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(Ã°ÿÆ8ëÈœÜî0

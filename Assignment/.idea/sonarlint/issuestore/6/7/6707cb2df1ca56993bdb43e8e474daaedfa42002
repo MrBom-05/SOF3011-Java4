@@ -1,9 +1,0 @@
-
-‹
-java:S1192*"nDefine a constant instead of duplicating this literal "/Assignment_war_exploded/admin/san-pham/index" 4 times.(š¹ƒ©8ö¶øýï0
-M
-java:S1948"0Make "sanPhamService" transient or serializable.(ÔÆÊã8¬·øýï0
-–
-java:S1130A"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(÷ßÔ¼8Õ·øýï0
-–
-java:S1130["yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(àÉºö8„´•þï0

@@ -14,7 +14,7 @@ public class NSXRepository {
     Transaction transaction = null;
 
     public List<NSX> getListNSX() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("from NSX");
         List<NSX> list = query.getResultList();
         return list;

@@ -11,7 +11,8 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+    <link href="/Assignment_war_exploded/views/admin/css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"/>
     <style>
         .card {
             border: none;
@@ -66,7 +67,7 @@
     <!-- header -->
     <header class="d-flex align-items-center">
         <div class="col-2 mt-4">
-            <img class="img-fluid" src="/img/logo_hear.png" alt="Logo">
+            <img class="img-fluid" src="/Assignment_war_exploded/views/user/img/logo_hear.png" alt="Logo">
         </div>
         <form class="ms-3 col-4 mt-4 d-flex" role="search">
 
@@ -214,7 +215,7 @@
 <footer class="row mt-5 ">
     <div class="row">
         <div>
-            <p class="mt-3 ms-5"><img src="img/logo_foot.png" alt="innisfree"></p>
+            <p class="mt-3 ms-5"><img src="/Assignment_war_exploded/views/user/img/logo_foot.png" alt="innisfree"></p>
             <div class="row col-7 ms-4 ">
                 <a href="#" class="facebook col-1">
                     <img src="/Assignment_war_exploded/views/user/img/icons8-facebook-48.png" class="img-fluid" alt="">
@@ -276,9 +277,7 @@
     </div>
 </footer>
 
-
-<script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/Assignment_war_exploded/js/bootstrap.min.js"></script>
 </body>
 </html>

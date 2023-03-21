@@ -35,13 +35,15 @@ public class HoaDonServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<HoaDonCustom> listHoaDon = hoaDonService.getListHoaDon();
         request.setAttribute("listHoaDon", listHoaDon);
-        request.getRequestDispatcher("/views/admin/hoa-don/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/hoa-don/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-        request.getRequestDispatcher("/views/admin/chi-tiet-sp/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/chi-tiet-sp/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,6 +53,7 @@ public class HoaDonServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         response.sendRedirect("/Assignment_war_exploded/admin/chi-tiet-sp/index");
     }
 

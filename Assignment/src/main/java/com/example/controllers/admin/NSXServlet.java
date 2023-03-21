@@ -45,11 +45,14 @@ public class NSXServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NSX> list = nsxService.getListNSX();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/nsx/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/nsx/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/nsx/create.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/nsx/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,7 +61,8 @@ public class NSXServlet extends HttpServlet {
         NSX nsx = nsxService.getById(id);
         request.setAttribute("nsx", nsx);
 
-        request.getRequestDispatcher("/views/admin/nsx/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/nsx/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

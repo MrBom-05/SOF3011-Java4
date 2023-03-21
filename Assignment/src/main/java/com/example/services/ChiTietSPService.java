@@ -12,6 +12,8 @@ public interface ChiTietSPService {
 
     public boolean delete(String id);
 
+    public boolean update(String id, ChiTietSP chiTietSP);
+
     public String getIdSanPhamById(String id);
 
     public String getIdMauSacById(String id);

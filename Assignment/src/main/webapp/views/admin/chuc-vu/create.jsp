@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<h2 class="mt-3 text-center">Thêm Mới Chức Vụ</h2>
+
 <form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
       action="/Assignment_war_exploded/admin/chuc-vu/store" id="form">
 
@@ -24,9 +26,7 @@
     </div>
 
 </form>
-<script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+
 <script>
     const form = document.getElementById('form');
     form.addEventListener('submit', function (event) {

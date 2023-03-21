@@ -14,7 +14,7 @@ public class SanPhamRepository {
     Transaction transaction = null;
 
     public List<SanPham> getListSanPham() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("from SanPham");
         List<SanPham> list = query.getResultList();
         return list;

@@ -14,7 +14,7 @@ public class KhachHangRepository {
     Transaction transaction = null;
 
     public List<KhachHang> getListKhachHang() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("from KhachHang");
         List<KhachHang> list = query.getResultList();
         return list;

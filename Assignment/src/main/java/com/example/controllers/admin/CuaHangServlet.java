@@ -45,11 +45,14 @@ public class CuaHangServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<CuaHang> list = cuaHangService.getListCuaHang();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/cua-hang/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/cua-hang/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/cua-hang/create.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/cua-hang/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,7 +61,8 @@ public class CuaHangServlet extends HttpServlet {
         CuaHang cuaHang = cuaHangService.getById(id);
         request.setAttribute("cuaHang", cuaHang);
 
-        request.getRequestDispatcher("/views/admin/cua-hang/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/cua-hang/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

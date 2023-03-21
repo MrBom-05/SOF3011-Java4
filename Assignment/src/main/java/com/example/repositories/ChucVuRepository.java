@@ -14,7 +14,7 @@ public class ChucVuRepository {
     Transaction transaction = null;
 
     public List<ChucVu> getListChucVu() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("from ChucVu");
         List<ChucVu> list = query.getResultList();
         return list;

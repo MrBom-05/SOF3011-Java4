@@ -47,6 +47,4 @@
         </tbody>
     </table>
 </c:if>
-<script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+

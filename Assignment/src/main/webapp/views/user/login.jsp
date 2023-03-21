@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Đăng Nhập</title>
-    <link rel="stylesheet" href="/Assignment_war_exploded/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"/>
     <style>
         body {
             background-color: #eee;
@@ -89,9 +89,8 @@
     </div>
 </div>
 
-<script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/Assignment_war_exploded/js/bootstrap.min.js"></script>
 <script>
     const form = document.getElementById('form');
     form.addEventListener('submit', function (event) {

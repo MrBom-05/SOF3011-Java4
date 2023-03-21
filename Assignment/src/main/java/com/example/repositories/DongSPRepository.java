@@ -14,7 +14,7 @@ public class DongSPRepository {
     Transaction transaction = null;
 
     public List<DongSP> getListDongSP() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("from DongSP ");
         List<DongSP> list = query.getResultList();
         return list;

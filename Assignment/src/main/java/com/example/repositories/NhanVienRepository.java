@@ -15,7 +15,7 @@ public class NhanVienRepository {
     Transaction transaction = null;
 
     public List<NhanVienCustom> getListNhanVien() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("select new com.example.models.NhanVienCustom(nv.ma, nv.ten, nv.tenDem, nv.ho, nv.gioiTinh, nv.ngaySinh, nv.diaChi, nv.sdt, nv.cuaHang.ten, nv.chucVu.ten, nv.email, nv.matKhau, nv.trangThai) from com.example.entities.NhanVien nv left join nv.cuaHang ch left join nv.chucVu cv");
         List<NhanVienCustom> list = query.getResultList();
         return list;

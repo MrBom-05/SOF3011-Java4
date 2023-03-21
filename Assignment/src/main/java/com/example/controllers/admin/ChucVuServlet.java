@@ -61,7 +61,7 @@ public class ChucVuServlet extends HttpServlet {
         ChucVu chucVu = chucVuService.getById(id);
         request.setAttribute("chucVu", chucVu);
 
-        request.setAttribute("view", "//views/admin/chuc-vu/update.jsp");
+        request.setAttribute("view", "/views/admin/chuc-vu/update.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
@@ -94,8 +94,8 @@ public class ChucVuServlet extends HttpServlet {
             BeanUtils.populate(chucVu, request.getParameterMap());
 
             chucVuService.update(id, chucVu);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
     }

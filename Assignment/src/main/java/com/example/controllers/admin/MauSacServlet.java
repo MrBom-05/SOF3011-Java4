@@ -46,11 +46,14 @@ public class MauSacServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<MauSac> list = mauSacService.getListMauSac();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/mau-sac/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/mau-sac/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/mau-sac/create.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/mau-sac/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +62,8 @@ public class MauSacServlet extends HttpServlet {
         MauSac mauSac = mauSacService.getById(id);
         request.setAttribute("mauSac", mauSac);
 
-        request.getRequestDispatcher("/views/admin/mau-sac/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/mau-sac/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

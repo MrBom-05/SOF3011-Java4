@@ -14,7 +14,7 @@ public class MauSacRepository {
     Transaction transaction = null;
 
     public List<MauSac> getListMauSac() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("from MauSac");
         List<MauSac> list = query.getResultList();
         return list;

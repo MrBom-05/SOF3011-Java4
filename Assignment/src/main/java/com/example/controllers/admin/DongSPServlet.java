@@ -45,11 +45,14 @@ public class DongSPServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<DongSP> list = dongSPService.getListDongSP();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/dong-sp/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/dong-sp/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/dong-sp/create.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/dong-sp/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,7 +61,8 @@ public class DongSPServlet extends HttpServlet {
         DongSP dongSP = dongSPService.getById(id);
         request.setAttribute("dongSP", dongSP);
 
-        request.getRequestDispatcher("/views/admin/dong-sp/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/dong-sp/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

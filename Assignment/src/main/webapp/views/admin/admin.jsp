@@ -3,31 +3,33 @@
 <head>
     <title>Admin</title>
 
-    <link href="/Assignment_war_exploded/views/css/styles.css" rel="stylesheet"/>
+    <link href="/Assignment_war_exploded/views/admin/css/styles.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"/>
 </head>
 <body>
 <div class="d-flex " id="wrapper">
     <!-- Sidebar-->
     <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light">ADMIN</div>
+        <div class="sidebar-heading border-bottom bg-light">Admin</div>
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/san-pham/index">Sản phẩm</a>
+               href="/Assignment_war_exploded/admin/hoa-don/index">Quản lý hóa đơn</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/chi-tiet-san-pham/index">Chi tiết Sản phẩm</a>
+               href="/Assignment_war_exploded/admin/chi-tiet-sp/index">Chi tiết Sản phẩm</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/dong-san-pham/index">Dòng sản phẩm</a>
+               href="/Assignment_war_exploded/admin/san-pham/index">Sản phẩm</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/khach-hang/index">Khách Hàng</a>
+               href="/Assignment_war_exploded/admin/dong-sp/index">Dòng sản phẩm</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/nhan-vien/index">Nhân Viên</a>
+               href="/Assignment_war_exploded/admin/mau-sac/index">Màu sắc</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/cua-hang/index">Cửa Hàng</a>
+               href="/Assignment_war_exploded/admin/nsx/index">Nhà sản xuất</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/mau-sac/index">Màu sắc</a>
+               href="/Assignment_war_exploded/admin/khach-hang/index">Khách Hàng</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
-               href="/Assignment_Sof3011_war_exploded/nsx/index">Nhà sản xuất</a>
+               href="/Assignment_war_exploded/admin/nhan-vien/index">Nhân Viên</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3"
+               href="/Assignment_war_exploded/admin/cua-hang/index">Cửa Hàng</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3"
                href="/Assignment_war_exploded/admin/chuc-vu/index">Chức vụ</a>
         </div>
@@ -68,22 +70,30 @@
     </div>
 
 </div>
-<div class="bg-success" style="min-height: 200px">
+<div class="bg-success" style="min-height: 50px;">
     <div class="row">
-        <p>
-        <h1 class="text-center text-white">Footer</h1>
-
-        </p>
+        <h4 class="text-center text-white mt-2">Assignment KYNNPH27937</h4>
     </div>
 </div>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/Assignment_war_exploded/js/bootstrap.min.js"></script>
 <!-- Core theme JS-->
-<script src="/Assignment_war_exploded/views/js/scripts.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', event => {
 
+        // Toggle the side navigation
+        const sidebarToggle = document.body.querySelector('#sidebarToggle');
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', event => {
+                event.preventDefault();
+                document.body.classList.toggle('sb-sidenav-toggled');
+                localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+            });
+        }
+
+    });
+</script>
 
 </body>
-
 </html>

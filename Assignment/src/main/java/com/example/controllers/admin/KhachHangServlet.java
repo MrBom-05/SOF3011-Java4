@@ -49,11 +49,14 @@ public class KhachHangServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<KhachHang> list = khachHangService.getListKhachHang();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/khach-hang/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/khach-hang/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/views/admin/khach-hang/create.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/khach-hang/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,7 +65,8 @@ public class KhachHangServlet extends HttpServlet {
         KhachHang khachHang = khachHangService.getById(id);
         request.setAttribute("khachHang", khachHang);
 
-        request.getRequestDispatcher("/views/admin/khach-hang/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/khach-hang/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

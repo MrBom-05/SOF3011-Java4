@@ -14,7 +14,7 @@ public class CuaHangRepository {
     Transaction transaction = null;
 
     public List<CuaHang> getListCuaHang() {
-
+        Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("from CuaHang");
         List<CuaHang> list = query.getResultList();
         return list;

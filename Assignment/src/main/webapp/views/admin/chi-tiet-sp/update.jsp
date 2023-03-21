@@ -8,14 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="f" uri="jakarta.tags.functions" %>
-<html>
-<head>
-    <title>Cập Nhật</title>
-    <link rel="stylesheet" href="/Assignment_war_exploded/bootstrap/css/bootstrap.min.css">
-</head>
-<body>
+
+<h2 class="mt-3 text-center">Cập Nhật Chi Tiết Sản Phẩm</h2>
+
 <form class="row g-3 needs-validation col-10 offset-1 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/chi-tiet-sp/update" id="form">
+      action="/Assignment_war_exploded/admin/chi-tiet-sp/update?id=${chiTietSP.id}" id="form">
 
     <div class="col-md-6">
         <label class="form-label">Sản Phẩm</label>
@@ -86,9 +83,7 @@
     </div>
 
 </form>
-<script src="/Assignment_war_exploded/bootstrap/js/jquery.min.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/popper.js"></script>
-<script src="/Assignment_war_exploded/bootstrap/js/bootstrap.min.js"></script>
+
 <script>
     const form = document.getElementById('form');
     form.addEventListener('submit', function (event) {
@@ -103,5 +98,4 @@
         }
     });
 </script>
-</body>
-</html>
+

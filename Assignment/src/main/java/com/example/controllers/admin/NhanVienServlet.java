@@ -61,13 +61,17 @@ public class NhanVienServlet extends HttpServlet {
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NhanVienCustom> list = nhanVienService.getListNhanVien();
         request.setAttribute("list", list);
-        request.getRequestDispatcher("/views/admin/nhan-vien/index.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/nhan-vien/index.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("listCuaHang", listCuaHang);
         request.setAttribute("listChucVu", listChucVu);
-        request.getRequestDispatcher("/views/admin/nhan-vien/create.jsp").forward(request, response);
+
+        request.setAttribute("view", "/views/admin/nhan-vien/create.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -82,7 +86,8 @@ public class NhanVienServlet extends HttpServlet {
         NhanVien nhanVien = nhanVienService.getByMa(ma);
         request.setAttribute("nhanVien", nhanVien);
 
-        request.getRequestDispatcher("/views/admin/nhan-vien/update.jsp").forward(request, response);
+        request.setAttribute("view", "/views/admin/nhan-vien/update.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
