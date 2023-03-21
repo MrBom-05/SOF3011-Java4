@@ -14,4 +14,6 @@ public interface KhachHangService {
     public boolean update(String id, KhachHang khachHang);
 
     public KhachHang getById(String id);
+
+    public KhachHang login(String email, String matKhau);
 }

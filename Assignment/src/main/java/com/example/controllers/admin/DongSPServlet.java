@@ -43,8 +43,7 @@ public class DongSPServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<DongSP> list = dongSPService.getListDongSP();
-        request.setAttribute("list", list);
+        request.setAttribute("list", dongSPService.getListDongSP());
 
         request.setAttribute("view", "/views/admin/dong-sp/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);

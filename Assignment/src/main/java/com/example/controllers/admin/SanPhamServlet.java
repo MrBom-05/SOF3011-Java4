@@ -9,8 +9,11 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
+@MultipartConfig
 @WebServlet({"/admin/san-pham/index", "/admin/san-pham/create", "/admin/san-pham/edit", "/admin/san-pham/delete", "/admin/san-pham/update", "/admin/san-pham/store"})
 public class SanPhamServlet extends HttpServlet {
 
@@ -45,6 +48,18 @@ public class SanPhamServlet extends HttpServlet {
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<SanPham> list = sanPhamService.getListSanPham();
+
+        String realPath = request.getServletContext().getRealPath("/images");
+
+        // Thay đổi đường dẫn tới ảnh để hiển thị ảnh thay vì đường dẫn
+        for (SanPham sanPham : list) {
+            String fileName = sanPham.getAnh();
+            if (fileName != null) {
+                sanPham.setAnh(request.getContextPath() + "/images/" + fileName);
+            }
+        }
+
+
         request.setAttribute("list", list);
         request.setAttribute("view", "/views/admin/san-pham/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
@@ -78,11 +93,21 @@ public class SanPhamServlet extends HttpServlet {
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
 
-            Part anh = request.getPart("anh");
-            String part = "D:\\SOF3011-Java4\\Assignment\\src\\main\\webapp\\anhSanPham\\" + anh.getSubmittedFileName();
-            String filename = request.getServletContext().getRealPath(part);
-            anh.write(filename);
+            Part part = request.getPart("anh");
+            String realPath = request.getServletContext().getRealPath("/images");
+            String fileName = Path.of(part.getSubmittedFileName()).getFileName().toString();
+            if (!Files.exists(Path.of(realPath))) {
+                Files.createDirectories(Path.of(realPath));
+            }
+            part.write(realPath + "/" + fileName);
+            try {
+                request.setAttribute("anh", fileName);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             SanPham sanPham = new SanPham();
+            sanPham.setAnh(fileName);
             BeanUtils.populate(sanPham, request.getParameterMap());
             sanPhamService.insert(sanPham);
         } catch (Exception e) {
@@ -95,7 +120,21 @@ public class SanPhamServlet extends HttpServlet {
         try {
             String id = request.getParameter("id");
 
+            Part part = request.getPart("anh");
+            String realPath = request.getServletContext().getRealPath("/images");
+            String fileName = Path.of(part.getSubmittedFileName()).getFileName().toString();
+            if (!Files.exists(Path.of(realPath))) {
+                Files.createDirectories(Path.of(realPath));
+            }
+            part.write(realPath + "/" + fileName);
+            try {
+                request.setAttribute("anh", fileName);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             SanPham sanPham = new SanPham();
+            sanPham.setAnh(fileName);
             BeanUtils.populate(sanPham, request.getParameterMap());
             sanPhamService.update(id, sanPham);
         } catch (Exception e) {

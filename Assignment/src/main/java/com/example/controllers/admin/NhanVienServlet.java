@@ -29,8 +29,6 @@ public class NhanVienServlet extends HttpServlet {
     private CuaHangService cuaHangService = new CuaHangServiceImplement();
     private ChucVuService chucVuService = new ChucVuServiceImplement();
 
-    List<CuaHang> listCuaHang = cuaHangService.getListCuaHang();
-    List<ChucVu> listChucVu = chucVuService.getListChucVu();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,24 +57,23 @@ public class NhanVienServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<NhanVienCustom> list = nhanVienService.getListNhanVien();
-        request.setAttribute("list", list);
+        request.setAttribute("list", nhanVienService.getListNhanVien());
 
         request.setAttribute("view", "/views/admin/nhan-vien/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("listCuaHang", listCuaHang);
-        request.setAttribute("listChucVu", listChucVu);
+        request.setAttribute("listCuaHang", cuaHangService.getListCuaHang());
+        request.setAttribute("listChucVu", chucVuService.getListChucVu());
 
         request.setAttribute("view", "/views/admin/nhan-vien/create.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("listCuaHang", listCuaHang);
-        request.setAttribute("listChucVu", listChucVu);
+        request.setAttribute("listCuaHang", cuaHangService.getListCuaHang());
+        request.setAttribute("listChucVu", chucVuService.getListChucVu());
 
         String ma = request.getParameter("ma");
 

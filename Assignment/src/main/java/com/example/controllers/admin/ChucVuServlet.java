@@ -44,8 +44,7 @@ public class ChucVuServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<ChucVu> list = chucVuService.getListChucVu();
-        request.setAttribute("list", list);
+        request.setAttribute("list", chucVuService.getListChucVu());
         request.setAttribute("view", "/views/admin/chuc-vu/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }

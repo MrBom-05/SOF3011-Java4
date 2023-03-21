@@ -6,8 +6,8 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "ChiTietSPServlet", value = "/ChiTietSPServlet")
-public class ChiTietSPServlet extends HttpServlet {
+@WebServlet(name = "SanPhamServlet", value = "/SanPhamServlet")
+public class SanPhamServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

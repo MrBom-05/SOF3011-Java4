@@ -47,8 +47,7 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<KhachHang> list = khachHangService.getListKhachHang();
-        request.setAttribute("list", list);
+        request.setAttribute("list", khachHangService.getListKhachHang());
 
         request.setAttribute("view", "/views/admin/khach-hang/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);

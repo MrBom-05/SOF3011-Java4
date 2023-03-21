@@ -43,8 +43,7 @@ public class NSXServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<NSX> list = nsxService.getListNSX();
-        request.setAttribute("list", list);
+        request.setAttribute("list", nsxService.getListNSX());
 
         request.setAttribute("view", "/views/admin/nsx/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);

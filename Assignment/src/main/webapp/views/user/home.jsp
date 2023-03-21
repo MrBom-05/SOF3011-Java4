@@ -185,27 +185,11 @@
         </div>
 
         <div class="row text-center mt-4 mb-4">
-            <h2>Sản phẩm bán chạy nhất</h2>
+            <h2>Các sản phẩm</h2>
         </div>
 
-        <div class="row me-3">
-            <article class="col-12">
-                <div class="row">
-                    <div class="col-md-3 col-12" ng-repeat="product in listProduct | limitTo:4"
-                         ng-if="product.status === true">
-                        <div class="card ms-3">
-                            <img ng-src="img/{{product.image}}" class="card-img-top img-fluid" alt="...">
-                            <div class="card-body">
-                                <a href="#/product/{{product.id}}" ng-click="getProductDetail($event, product.id)"
-                                   class="card-text text-center" style="text-decoration: none;" scroll-to-top>{{product.name
-                                    |
-                                    limitTo:50}}...</a>
-                                <span class="card text text-center fw-bold">${{product.price}}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
+        <div>
+            <jsp:include page="${ view }"/>
         </div>
 
     </div>

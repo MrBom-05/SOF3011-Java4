@@ -43,8 +43,7 @@ public class CuaHangServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<CuaHang> list = cuaHangService.getListCuaHang();
-        request.setAttribute("list", list);
+        request.setAttribute("list", cuaHangService.getListCuaHang());
 
         request.setAttribute("view", "/views/admin/cua-hang/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);

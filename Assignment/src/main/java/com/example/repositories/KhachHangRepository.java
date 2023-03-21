@@ -46,7 +46,7 @@ public class KhachHangRepository {
         }
     }
 
-    public boolean update(String id, KhachHang khachHang){
+    public boolean update(String id, KhachHang khachHang) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update KhachHang set ten =: ten, tenDem =: tenDem, ho =: ho, ngaySinh =: ngaySinh, sdt =: sdt, email =: email, matKhau =: matKhau, diaChi =: diaChi, thanhPho =: thanhPho, quocGia =: quocGia where id =: id");
@@ -70,10 +70,25 @@ public class KhachHangRepository {
         }
     }
 
-    public KhachHang getById(String id){
+    public KhachHang getById(String id) {
         Query query = session.createQuery("from KhachHang where id =: id");
         query.setParameter("id", id);
         KhachHang khachHang = (KhachHang) query.getSingleResult();
         return khachHang;
+    }
+
+    public KhachHang login(String email, String matKhau) {
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("select k from KhachHang k where email =: email and matKhau =: matKhau");
+            query.setParameter("email", email);
+            query.setParameter("matKhau", matKhau);
+            KhachHang khachHang = (KhachHang) query.getSingleResult();
+            transaction.commit();
+            return khachHang;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

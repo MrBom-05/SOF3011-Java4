@@ -33,8 +33,7 @@ public class HoaDonServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<HoaDonCustom> listHoaDon = hoaDonService.getListHoaDon();
-        request.setAttribute("listHoaDon", listHoaDon);
+        request.setAttribute("listHoaDon", hoaDonService.getListHoaDon());
 
         request.setAttribute("view", "/views/admin/hoa-don/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);

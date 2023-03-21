@@ -35,4 +35,9 @@ public class KhachHangServiceImplement implements KhachHangService {
     public KhachHang getById(String id) {
         return khachHangRepository.getById(id);
     }
+
+    @Override
+    public KhachHang login(String email, String matKhau) {
+        return khachHangRepository.login(email, matKhau);
+    }
 }

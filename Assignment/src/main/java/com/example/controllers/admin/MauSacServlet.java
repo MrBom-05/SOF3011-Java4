@@ -44,8 +44,7 @@ public class MauSacServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<MauSac> list = mauSacService.getListMauSac();
-        request.setAttribute("list", list);
+        request.setAttribute("list", mauSacService.getListMauSac());
 
         request.setAttribute("view", "/views/admin/mau-sac/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);

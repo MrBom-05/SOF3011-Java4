@@ -21,11 +21,6 @@ public class ChiTietSPServlet extends HttpServlet {
     private NSXService nsxService = new NSXServiceImplement();
     private DongSPService dongSPService = new DongSPServiceImplement();
 
-    List<SanPham> listSanPham = sanPhamService.getListSanPham();
-    List<MauSac> listMauSac = mauSacService.getListMauSac();
-    List<NSX> listNSX = nsxService.getListNSX();
-    List<DongSP> listDongSP = dongSPService.getListDongSP();
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURI();
@@ -53,28 +48,27 @@ public class ChiTietSPServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<ChiTietSPCustom> list = chiTietSPService.getListChiTietSP();
-        request.setAttribute("list", list);
+        request.setAttribute("list", chiTietSPService.getListChiTietSP());
 
         request.setAttribute("view", "/views/admin/chi-tiet-sp/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("listSanPham", listSanPham);
-        request.setAttribute("listMauSac", listMauSac);
-        request.setAttribute("listNSX", listNSX);
-        request.setAttribute("listDongSP", listDongSP);
+        request.setAttribute("listSanPham", sanPhamService.getListSanPham());
+        request.setAttribute("listMauSac", mauSacService.getListMauSac());
+        request.setAttribute("listNSX", nsxService.getListNSX());
+        request.setAttribute("listDongSP", dongSPService.getListDongSP());
 
         request.setAttribute("view", "/views/admin/chi-tiet-sp/create.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("listSanPham", listSanPham);
-        request.setAttribute("listMauSac", listMauSac);
-        request.setAttribute("listNSX", listNSX);
-        request.setAttribute("listDongSP", listDongSP);
+        request.setAttribute("listSanPham", sanPhamService.getListSanPham());
+        request.setAttribute("listMauSac", mauSacService.getListMauSac());
+        request.setAttribute("listNSX", nsxService.getListNSX());
+        request.setAttribute("listDongSP", dongSPService.getListDongSP());
 
 
         String id = request.getParameter("id");
