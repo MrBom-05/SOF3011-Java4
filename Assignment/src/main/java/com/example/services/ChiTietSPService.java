@@ -29,4 +29,6 @@ public interface ChiTietSPService {
     public List<SanPhamCustom> getListSP();
 
     public SanPhamChiTietCustom getProductById(String id);
+
+    public float getGiaBanById(String id);
 }

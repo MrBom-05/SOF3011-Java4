@@ -18,23 +18,23 @@
     <div class="col-6 justify-content-center">
 
         <h3>${sanPham.ten}</h3>
+        <form novalidate method="POST"
+              action="/Assignment_war_exploded/add-cart?id=${sanPham.id}">
+            <div class="input-group mb-5 mt-5">
+                <p class="mt-1 fw-bold">Số lượng</p>
 
-        <div class="input-group mb-5 mt-5">
-            <p class="mt-1 fw-bold">Số lượng</p>
+                <input type="number" class="form-control ms-5" id="quantity-input" name="soLuong">
 
-            <input type="number" class="form-control ms-5" id="quantity-input" ng-model="quantity">
-
-            <p class="mt-1 text-danger ms-5"> còn ${sanPham.soLuong} sản phẩm</p>
-        </div>
-        <h3 class="fw-bold mb-5 text-center">${sanPham.giaBan}</h3>
-        <div class="row" ng-controller="cart">
-            <a class="col-6 offset-3 btn text-white btn-success w-50 " ng-click="addToCart(product, quantity, $event)"
-               href="#cart" role="button">
-                <img src="img/icons8-shopping-cart-30.png" class="img-fluid" alt="">
-                Thêm vào giỏ hàng
-            </a>
-        </div>
-
+                <p class="mt-1 text-danger ms-5"> còn ${sanPham.soLuong} sản phẩm</p>
+            </div>
+            <h3 class="fw-bold mb-5 text-center">${sanPham.giaBan}</h3>
+            <div class="row">
+                <button class="col-6 offset-3 btn text-white btn-success w-50" type="submit">
+                    <img src="img/icons8-shopping-cart-30.png" class="img-fluid" alt="">
+                    Thêm vào giỏ hàng
+                </button>
+            </div>
+        </form>
     </div>
 </div>
 

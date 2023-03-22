@@ -67,4 +67,9 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     public SanPhamChiTietCustom getProductById(String id) {
         return chiTietSPRepository.getProductById(id);
     }
+
+    @Override
+    public float getGiaBanById(String id) {
+        return chiTietSPRepository.getGiaBanById(id);
+    }
 }

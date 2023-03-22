@@ -103,7 +103,12 @@ public class ChiTietSPRepository {
     public SanPhamChiTietCustom getProductById(String id) {
         Query query = session.createQuery("select new com.example.models.SanPhamChiTietCustom(sp.id, sp.sanPham.ten, sp.sanPham.anh, sp.soLuongTon, sp.giaBan) from com.example.entities.ChiTietSP sp left join sp.sanPham spm where sp.id =: id");
         query.setParameter("id", id);
-        SanPhamChiTietCustom sanPhamChiTietCustom = (SanPhamChiTietCustom) query.getSingleResult();
-        return sanPhamChiTietCustom;
+        return (SanPhamChiTietCustom) query.getSingleResult();
+    }
+
+    public float getGiaBanById(String id) {
+        Query query = session.createQuery("select sp.giaBan from ChiTietSP sp where sp.id =: id");
+        query.setParameter("id", id);
+        return (float) query.getSingleResult();
     }
 }

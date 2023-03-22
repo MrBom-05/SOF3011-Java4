@@ -34,4 +34,11 @@ public class GioHangChiTiet implements Serializable {
 
     @Column(name = "DonGiaKhiGiam", columnDefinition = "Decimal(20,0)")
     private Float donGiaKhiGiam;
+
+    public GioHangChiTiet(GioHang gioHang, ChiTietSP chiTietSP, int soLuong, Float donGia) {
+        this.gioHang = gioHang;
+        this.chiTietSP = chiTietSP;
+        this.soLuong = soLuong;
+        this.donGia = donGia;
+    }
 }

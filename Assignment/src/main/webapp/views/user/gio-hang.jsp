@@ -50,8 +50,8 @@
                                 <span class="text-center text-truncate text-danger">${sanPham.giaBan * sanPham.soLuong}</span>
                             </div>
                             <div class="col-md-1 col-2">
-                                <button class="btn btn-success border-1"
-                                        ng-click="deleteToCart($event, product.id)">Xoá</button>
+                                <a class="btn btn-danger border-1" style="width: 70px" href="/Assignment_war_exploded/cart-delete?id=${sanPham.id}" type="button">Xoá</a>
+                                <a class="btn btn-success border-1 mt-1" style="width: 70px" href="" type="button">Mua</a>
                             </div>
                         </div>
                     </div>
