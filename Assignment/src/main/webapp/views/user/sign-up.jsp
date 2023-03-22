@@ -60,7 +60,7 @@
     </div>
     <div class="card-body">
         <form class="row g-3 needs-validation" novalidate method="POST"
-              action="/Assignment_war_exploded/sign-up/store" id="form">
+              action="/Assignment_war_exploded/sign-up" id="form">
 
             <div class="col-md-4">
                 <label class="form-label">Tên</label>

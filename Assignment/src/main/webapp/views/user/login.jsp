@@ -67,7 +67,7 @@
     </div>
     <div class="card-body">
         <form method="POST"
-              action="/Assignment_war_exploded/login/store" id="form">
+              action="/Assignment_war_exploded/login" id="form">
             <div class="mb-3">
                 <label for="username" class="form-label">Email</label>
                 <input type="email" class="form-control" id="username" name="email" required>

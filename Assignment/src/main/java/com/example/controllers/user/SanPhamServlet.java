@@ -1,5 +1,6 @@
 package com.example.controllers.user;
 
+import com.example.entities.KhachHang;
 import com.example.models.SanPhamChiTietCustom;
 import com.example.models.SanPhamCustom;
 import com.example.services.ChiTietSPService;
@@ -52,6 +53,9 @@ public class SanPhamServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
 
+        HttpSession session = request.getSession();
+        KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
     }
 }

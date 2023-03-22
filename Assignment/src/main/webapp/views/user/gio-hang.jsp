@@ -11,48 +11,55 @@
 
 
 <div>
-    <div ng-repeat="product in userProducts">
-        <div class="card mb-2 border">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-1">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    </div>
-                    <div class="col-1">
-                        <img src="img/{{product.image}}" class="img-fluid d-flex" alt="Ảnh sản phẩm">
-                    </div>
-                    <div class="col-md-3 col-7">
-                        <a href="#/product/{{product.id}}" ng-click="getProductDetail($event, product.id)"
-                           class="text-decoration-none text-black" scroll-to-top>{{product.name}}</a>
-                    </div>
-                    <div class="col-md-2 col-3">
-                        <a class="text-decoration-none text-black">{{ getNameByID(product.category)
-                            }}</a>
-                    </div>
+    <div>
+        <c:if test="${ f:length(list) == 0 }">
+            <h4 class="text-center">Không có dữ liệu</h4>
+        </c:if>
+        <c:if test="${ f:length(list) != 0 }">
+            <c:forEach var="sanPham" items="${ list }" varStatus="status">
+                <div class="card mb-2 border">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-1">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            </div>
+                            <div class="col-1">
+                                <img src="${sanPham.anh}" class="img-fluid d-flex" alt="Ảnh sản phẩm">
+                            </div>
+                            <div class="col-md-3 col-7">
+                                <a href="/Assignment_war_exploded/product-detail?id=${sanPham.id}"
+                                   class="text-decoration-none text-black" scroll-to-top>${sanPham.ten}</a>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <a class="text-decoration-none text-black">${sanPham.mauSac}</a>
+                            </div>
 
-                    <div class="col-md-1 col-2">
-                        <span class="text-center text-truncate">${{product.price}}</span>
-                    </div>
+                            <div class="col-md-1 col-2">
+                                <span class="text-center text-truncate">${sanPham.giaBan}</span>
+                            </div>
 
-                    <div class="col-md-2 col-3">
-                        <div class="input-group">
+                            <div class="col-md-2 col-3">
+                                <div class="input-group">
 
-                            <input type="number" class="form-control" id="quantity-input" name="quantity"
-                                   ng-model="product.quantity">
+                                    <input type="number" class="form-control" id="quantity-input" name="quantity"
+                                           value="${sanPham.soLuong}">
 
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-2">
+                                <span class="text-center text-truncate text-danger">${sanPham.giaBan * sanPham.soLuong}</span>
+                            </div>
+                            <div class="col-md-1 col-2">
+                                <button class="btn btn-success border-1"
+                                        ng-click="deleteToCart($event, product.id)">Xoá</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-1 col-2">
-                        <span class="text-center text-truncate text-danger">${{product.price * product.quantity}}</span>
-                    </div>
-                    <div class="col-md-1 col-2">
-                        <button class="btn btn-success border-1"
-                                ng-click="deleteToCart($event, product.id)">Xoá</button>
-                    </div>
-                </div>
-            </div>
 
-        </div>
+                </div>
+            </c:forEach>
+        </c:if>
+
     </div>
     <div class="row">
         <button class="col-2 offset-9 btn text-white btn-success float-end">
