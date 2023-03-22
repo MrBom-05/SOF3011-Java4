@@ -23,8 +23,9 @@ public class ChucVuRepository {
     public boolean insert(ChucVu chucVu) {
         try {
             transaction = session.beginTransaction();
-            session.save(chucVu);
+            String id = (String) session.save(chucVu);
             transaction.commit();
+            System.out.println(id);
             return true;
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -46,7 +47,7 @@ public class ChucVuRepository {
         }
     }
 
-    public boolean update(String id, ChucVu chucVu){
+    public boolean update(String id, ChucVu chucVu) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update ChucVu set ten =: ten where id =: id");
@@ -61,7 +62,7 @@ public class ChucVuRepository {
         }
     }
 
-    public ChucVu getById(String id){
+    public ChucVu getById(String id) {
         Query query = session.createQuery("from ChucVu where id =: id");
         query.setParameter("id", id);
         ChucVu chucVu = (ChucVu) query.getSingleResult();
