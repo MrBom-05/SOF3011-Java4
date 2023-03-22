@@ -11,11 +11,11 @@
 
 <h2 class="mt-3">Quản Lý Hóa Đơn</h2>
 
-<c:if test="${ f:length(list) == 0 }">
+<c:if test="${ f:length(listHoaDon) == 0 }">
     <h4 class="text-center">Không có dữ liệu</h4>
 </c:if>
 
-<c:if test="${ f:length(list) != 0 }">
+<c:if test="${ f:length(listHoaDon) != 0 }">
 
     <table class="table table-bordered mt-5">
         <thead>
@@ -31,7 +31,7 @@
             <th>Ngày Nhận</th>
             <th>Ngày Thanh Toán</th>
             <th>Trạng Thái</th>
-            <th class="col-1 text-center">Action</th>
+            <th class="col-2 text-center">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -52,10 +52,11 @@
 
                 <td class="text-center">
                     <a href="/Assignment_war_exploded/admin/hoa-don/detail?id=${ hoaDon.id }"
-                       class="btn btn-danger">Detail</a>
+                       class="btn btn-success">Detail</a>
                     <a href="/Assignment_war_exploded/admin/hoa-don/edit?id=${ hoaDon.id }"
                        class="btn btn-danger">Update</a>
                 </td>
+
             </tr>
         </c:forEach>
         </tbody>

@@ -1,7 +1,6 @@
 package com.example.controllers.admin;
 
 import com.example.entities.*;
-import com.example.models.ChiTietSPCustom;
 import com.example.services.*;
 import com.example.services.implement.*;
 import jakarta.servlet.*;
@@ -10,7 +9,6 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet({"/admin/chi-tiet-sp/index", "/admin/chi-tiet-sp/create", "/admin/chi-tiet-sp/edit", "/admin/chi-tiet-sp/delete", "/admin/chi-tiet-sp/update", "/admin/chi-tiet-sp/store"})
 public class ChiTietSPServlet extends HttpServlet {

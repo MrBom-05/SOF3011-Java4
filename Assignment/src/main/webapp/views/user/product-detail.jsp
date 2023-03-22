@@ -39,32 +39,34 @@
 </div>
 
 <!-- Content -->
-<div class="row me-3">
-    <div class="row text-center mt-3 mb-4">
-        <h4>Các sản phẩm tương tự</h4>
-    </div>
+<%--<div class="row me-3">--%>
+<%--    <div class="row text-center mt-3 mb-4">--%>
+<%--        <h4>Các sản phẩm tương tự</h4>--%>
+<%--    </div>--%>
 
-    <div class="row me-3">
-        <article class="col-12">
-            <div class="row">
-                <div class="col-md-3 col-12">
-                    <c:if test="${ f:length(list) == 0 }">
-                        <h4 class="text-center">Không có dữ liệu</h4>
-                    </c:if>
-                    <c:if test="${ f:length(list) != 0 }">
-                        <c:forEach var="sanPham" items="${ list }" varStatus="status">
-                            <div class="card ms-3">
-                                <img src="${sanPham.anh}" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body text-center">
-                                    <a href="/Assignment_war_exploded/product-detail?id=${sanPham.id}"
-                                       class="card-text" style="text-decoration: none;">${sanPham.ten}</a>
-                                    <span class="card text fw-bold">${sanPham.giaBan}</span>
-                                </div>
-                            </div>
-                        </c:forEach>
-                    </c:if>
-                </div>
-            </div>
-        </article>
-    </div>
-</div>
+<%--    <div class="row me-3">--%>
+<%--        <article class="col-12">--%>
+<%--            <div class="row">--%>
+<%--                <c:if test="${ f:length(list) == 0 }">--%>
+<%--                    <h4 class="text-center">Không có dữ liệu</h4>--%>
+<%--                </c:if>--%>
+<%--                <c:if test="${ f:length(list) != 0 }">--%>
+<%--                    <c:forEach var="sp" items="${ list }" varStatus="status">--%>
+<%--                        <div class="col-md-3 col-12">--%>
+
+<%--                            <div class="card ms-3">--%>
+<%--                                <img src="${sp.anh}" class="card-img-top img-fluid" alt="...">--%>
+<%--                                <div class="card-body text-center">--%>
+<%--                                    <a href="/Assignment_war_exploded/product-detail?id=${sp.id}"--%>
+<%--                                       class="card-text" style="text-decoration: none;">${sp.ten}</a>--%>
+<%--                                    <span class="card text fw-bold">${sp.giaBan}</span>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+
+<%--                        </div>--%>
+<%--                    </c:forEach>--%>
+<%--                </c:if>--%>
+<%--            </div>--%>
+<%--        </article>--%>
+<%--    </div>--%>
+<%--</div>--%>

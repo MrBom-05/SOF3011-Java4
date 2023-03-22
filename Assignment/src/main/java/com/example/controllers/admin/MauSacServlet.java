@@ -1,6 +1,5 @@
 package com.example.controllers.admin;
 
-import com.example.entities.DongSP;
 import com.example.entities.MauSac;
 import com.example.services.MauSacService;
 import com.example.services.implement.MauSacServiceImplement;
@@ -10,7 +9,6 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet({"/admin/mau-sac/index", "/admin/mau-sac/create", "/admin/mau-sac/edit", "/admin/mau-sac/delete", "/admin/mau-sac/update", "/admin/mau-sac/store"})
 public class MauSacServlet extends HttpServlet {

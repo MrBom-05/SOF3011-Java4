@@ -13,7 +13,7 @@ import org.apache.commons.beanutils.converters.DateTimeConverter;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
+import java.util.Random;
 
 @WebServlet({"/admin/khach-hang/index", "/admin/khach-hang/create", "/admin/khach-hang/edit", "/admin/khach-hang/delete", "/admin/khach-hang/update", "/admin/khach-hang/store"})
 public class KhachHangServlet extends HttpServlet {
@@ -84,7 +84,11 @@ public class KhachHangServlet extends HttpServlet {
             dateTimeConverter.setPattern("yyyy-MM-dd");
             ConvertUtils.register(dateTimeConverter, Date.class);
 
+            Random random = new Random();
+            int pass = random.nextInt(10000) + 1;
+
             KhachHang khachHang = new KhachHang();
+            khachHang.setMa(String.valueOf(pass));
             BeanUtils.populate(khachHang, request.getParameterMap());
             khachHangService.insert(khachHang);
         } catch (Exception e) {

@@ -9,7 +9,6 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet({"/admin/nsx/index", "/admin/nsx/create", "/admin/nsx/edit", "/admin/nsx/delete", "/admin/nsx/update", "/admin/nsx/store"})
 public class NSXServlet extends HttpServlet {

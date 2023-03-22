@@ -36,15 +36,15 @@ public class SanPhamServlet extends HttpServlet {
 
 
 
-        List<SanPhamCustom> list = chiTietSPService.getListSP();
-        for (SanPhamCustom sanPhamCustom : list) {
-            String name = sanPhamCustom.getAnh();
-            if (name != null) {
-                sanPhamCustom.setAnh(request.getContextPath() + "/images/" + fileName);
-            }
-        }
-
-        request.setAttribute("list", list);
+//        List<SanPhamCustom> list = chiTietSPService.getListSP();
+//        for (SanPhamCustom sanPhamCustom : list) {
+//            String name = sanPhamCustom.getAnh();
+//            if (name != null) {
+//                sanPhamCustom.setAnh(request.getContextPath() + "/images/" + fileName);
+//            }
+//        }
+//
+//        request.setAttribute("list", list);
         request.setAttribute("sanPham", sanPhamChiTietCustom);
 
         request.setAttribute("view", "/views/user/product-detail.jsp");

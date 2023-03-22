@@ -16,12 +16,13 @@
 <div class="row me-3">
     <article class="col-12">
         <div class="row">
-            <div class="col-md-3 col-12">
-                <c:if test="${ f:length(list) == 0 }">
-                    <h4 class="text-center">Không có dữ liệu</h4>
-                </c:if>
-                <c:if test="${ f:length(list) != 0 }">
-                    <c:forEach var="sanPham" items="${ list }" varStatus="status">
+            <c:if test="${ f:length(list) == 0 }">
+                <h4 class="text-center">Không có dữ liệu</h4>
+            </c:if>
+            <c:if test="${ f:length(list) != 0 }">
+                <c:forEach var="sanPham" items="${ list }" varStatus="status">
+                    <div class="col-md-3 col-12">
+
                         <div class="card ms-3">
                             <img src="${sanPham.anh}" class="card-img-top img-fluid" alt="...">
                             <div class="card-body text-center">
@@ -30,9 +31,10 @@
                                 <span class="card text fw-bold">${sanPham.giaBan}</span>
                             </div>
                         </div>
-                    </c:forEach>
-                </c:if>
-            </div>
+
+                    </div>
+                </c:forEach>
+            </c:if>
         </div>
     </article>
 </div>

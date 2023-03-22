@@ -3,7 +3,6 @@ package com.example.controllers.admin;
 import com.example.entities.ChucVu;
 import com.example.entities.CuaHang;
 import com.example.entities.NhanVien;
-import com.example.models.NhanVienCustom;
 import com.example.services.ChucVuService;
 import com.example.services.CuaHangService;
 import com.example.services.NhanVienService;
@@ -20,7 +19,6 @@ import org.apache.commons.beanutils.converters.DateTimeConverter;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
 
 @WebServlet({"/admin/nhan-vien/index", "/admin/nhan-vien/create", "/admin/nhan-vien/edit", "/admin/nhan-vien/delete", "/admin/nhan-vien/update", "/admin/nhan-vien/store"})
 public class NhanVienServlet extends HttpServlet {

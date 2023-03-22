@@ -9,7 +9,6 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet({"/admin/cua-hang/index", "/admin/cua-hang/create", "/admin/cua-hang/edit", "/admin/cua-hang/delete", "/admin/cua-hang/update", "/admin/cua-hang/store"})
 public class CuaHangServlet extends HttpServlet {

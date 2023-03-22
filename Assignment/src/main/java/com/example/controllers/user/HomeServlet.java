@@ -1,7 +1,5 @@
 package com.example.controllers.user;
 
-import com.example.entities.SanPham;
-import com.example.models.ChiTietSPCustom;
 import com.example.models.SanPhamCustom;
 import com.example.services.ChiTietSPService;
 import com.example.services.implement.ChiTietSPServiceImplement;

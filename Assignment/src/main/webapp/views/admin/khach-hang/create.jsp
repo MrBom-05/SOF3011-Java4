@@ -56,7 +56,7 @@
 
     <div class="col-md-6">
         <label for="validationCustom02" class="form-label">Mã</label>
-        <input type="text" class="form-control" id="validationCustom011" name="ma" required>
+        <input type="text" class="form-control" id="validationCustom011" name="ma" required disabled>
     </div>
     <div class="col-12 mt-5">
         <button class="btn btn-primary col-2 offset-5" type="submit">Add</button>

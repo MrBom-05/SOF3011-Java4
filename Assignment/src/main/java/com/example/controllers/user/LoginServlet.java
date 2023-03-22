@@ -9,8 +9,14 @@ import com.example.services.implement.KhachHangServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
+import org.apache.commons.beanutils.converters.DateTimeConverter;
 
 import java.io.IOException;
+import java.util.Date;
+import java.util.Random;
 
 @WebServlet({"/login", "/sign-up"})
 public class LoginServlet extends HttpServlet {
@@ -63,7 +69,22 @@ public class LoginServlet extends HttpServlet {
         }
     }
 
-    private void signUp(HttpServletRequest request, HttpServletResponse response) {
+    private void signUp(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        try {
+            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
+            dateTimeConverter.setPattern("yyyy-MM-dd");
+            ConvertUtils.register(dateTimeConverter, Date.class);
 
+            Random random = new Random();
+            int pass = random.nextInt(10000) + 1;
+
+            KhachHang khachHang = new KhachHang();
+            khachHang.setMa(String.valueOf(pass));
+            BeanUtils.populate(khachHang, request.getParameterMap());
+            khachHangService.insert(khachHang);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.sendRedirect("/Assignment_war_exploded/login");
     }
 }
