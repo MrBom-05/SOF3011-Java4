@@ -15,18 +15,18 @@
       action="/Assignment_war_exploded/admin/chi-tiet-sp/store" id="form">
 
     <div class="col-md-6">
-        <label class="form-label">Sản Phẩm</label>
+        <label class="form-label">Sản Phẩm<span class="text-danger">*</span></label>
         <select class="form-select" name="idSanPham">
-            <option value="" disabled selected>-- Chọn Sản Phẩm --</option>
+            <option value="false" disabled selected>-- Chọn Sản Phẩm --</option>
             <c:forEach var="sanPham" items="${listSanPham}">
                 <option value="${sanPham.id}">${sanPham.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-6">
-        <label class="form-label">Màu Sắc</label>
+        <label class="form-label">Màu Sắc<span class="text-danger">*</span></label>
         <select class="form-select" name="idMauSac">
-            <option value="" disabled selected>-- Chọn Màu Sắc --</option>
+            <option value="false" disabled selected>-- Chọn Màu Sắc --</option>
             <c:forEach var="mauSac" items="${listMauSac}">
                 <option value="${mauSac.id}">${mauSac.ten}</option>
             </c:forEach>
@@ -34,64 +34,49 @@
     </div>
 
     <div class="col-md-6">
-        <label class="form-label">Dòng SP</label>
+        <label class="form-label">Dòng SP<span class="text-danger">*</span></label>
         <select class="form-select" name="idDongSP">
-            <option value="" disabled selected>-- Chọn Dòng SP --</option>
+            <option value="false" disabled selected>-- Chọn Dòng SP --</option>
             <c:forEach var="dongSP" items="${listDongSP}">
                 <option value="${dongSP.id}">${dongSP.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-6">
-        <label class="form-label">Nhà Sản Xuất</label>
+        <label class="form-label">Nhà Sản Xuất<span class="text-danger">*</span></label>
         <select class="form-select" name="idNSX">
-            <option value="" disabled selected>-- Chọn Nhà Sản Xuất --</option>
+            <option value="false" disabled selected>-- Chọn Nhà Sản Xuất --</option>
             <c:forEach var="nsx" items="${listNSX}">
                 <option value="${nsx.id}">${nsx.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-3">
-        <label class="form-label">Năm Sản Xuất</label>
-        <input type="number" class="form-control" id="validationCustom04" name="namSX" required>
+        <label class="form-label">Năm Sản Xuất<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="validationCustom04" name="namSX" required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">
-        <label class="form-label">Số Lượng</label>
-        <input type="number" class="form-control" id="validationCustom05" name="soLuongTon" required>
+        <label class="form-label">Số Lượng<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="validationCustom05" name="soLuongTon" required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">
-        <label for="validationCustom05" class="form-label">Giá Nhập</label>
-        <input type="number" class="form-control" id="validationCustom06" name="giaNhap" required>
+        <label for="validationCustom05" class="form-label">Giá Nhập<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="validationCustom06" name="giaNhap" required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">
-        <label class="form-label">Giá Bán</label>
-        <input type="number" class="form-control" id="validationCustom07" name="giaBan" required>
+        <label class="form-label">Giá Bán<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="validationCustom07" name="giaBan" required onblur="validateRed(this)">
     </div>
 
     <div class="col-12">
-        <span class="form-label">Mô Tả</span>
+        <span class="form-label">Mô Tả<span class="text-danger">*</span></span>
         <textarea class="form-control" aria-label="With textarea" name="moTa"></textarea>
     </div>
 
 
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit">Add</button>
+        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">Add</button>
     </div>
 
 </form>
-
-<script>
-    const form = document.getElementById('form');
-    form.addEventListener('submit', function (event) {
-        const namSX = document.querySelector('input[name="namSX"]');
-        const soLuongTon = document.querySelector('input[name="soLuongTon"]');
-        const giaNhap = document.querySelector('input[name="giaNhap"]');
-        const giaBan = document.querySelector('input[name="giaBan"]');
-        const moTa = document.querySelector('input[name="moTa"]');
-        if (!namSX.value || !soLuongTon.value || !giaNhap.value || !giaBan.value || !moTa.value) {
-            alert("Không được để trống!");
-            event.preventDefault(); // Ngăn chặn gửi form
-        }
-    });
-</script>
 

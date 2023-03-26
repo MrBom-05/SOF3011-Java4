@@ -65,11 +65,13 @@ public class ChucVuServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            chucVuService.delete(id);
+            boolean check = chucVuService.delete(id);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/chuc-vu/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

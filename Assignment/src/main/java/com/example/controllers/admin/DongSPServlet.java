@@ -66,11 +66,14 @@ public class DongSPServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            dongSPService.delete(id);
+            boolean check = dongSPService.delete(id);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/dong-sp/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/dong-sp/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

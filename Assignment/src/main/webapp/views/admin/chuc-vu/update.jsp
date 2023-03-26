@@ -12,29 +12,17 @@
 <form class="col-6 offset-3 mt-5 border p-4" novalidate method="POST"
       action="/Assignment_war_exploded/admin/chuc-vu/update?id=${chucVu.id}" id="form">
     <div class="col-12">
-        <label class="form-label">Mã</label>
-        <input type="text" class="form-control" name="ma" disabled value="${chucVu.ma}" required>
+        <label class="form-label">Mã<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="ma" disabled value="${chucVu.ma}" required onblur="validateRed(this)">
     </div>
 
     <div class="col-12 mt-3">
-        <label class="form-label">Tên</label>
-        <input type="text" class="form-control" name="ten" value="${chucVu.ten}" required>
+        <label class="form-label">Tên<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="ten" value="${chucVu.ten}" required onblur="validateRed(this)">
     </div>
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>
+        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">Update</button>
     </div>
 
 </form>
 
-<script>
-    const form = document.getElementById('form');
-    form.addEventListener('submit', function (event) {
-        const ma = document.querySelector('input[name="ma"]');
-        const ten = document.querySelector('input[name="ten"]');
-        if (!ma.value || !ten.value) {
-            alert("Không được để trống!");
-            event.preventDefault(); // Ngăn chặn gửi form
-        }
-    });
-
-</script>

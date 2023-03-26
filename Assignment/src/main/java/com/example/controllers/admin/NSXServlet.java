@@ -66,11 +66,14 @@ public class NSXServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            nsxService.delete(id);
+            boolean check = nsxService.delete(id);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/nsx/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/nsx/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

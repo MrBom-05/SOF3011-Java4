@@ -42,7 +42,8 @@
 
                 <td class="text-center">
                     <a href="/Assignment_war_exploded/admin/cua-hang/edit?id=${ cuaHang.id }" class="btn btn-primary">Update</a>
-                    <a href="/Assignment_war_exploded/admin/cua-hang/delete?id=${ cuaHang.id }" class="btn btn-danger">Delete</a>
+                    <a href="/Assignment_war_exploded/admin/cua-hang/delete?id=${ cuaHang.id }" class="btn btn-danger"
+                       onclick="return confirm('Bạn có muốn xóa không ?')">Delete</a>
                 </td>
             </tr>
         </c:forEach>

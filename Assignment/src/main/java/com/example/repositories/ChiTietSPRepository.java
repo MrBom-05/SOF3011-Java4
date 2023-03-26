@@ -40,11 +40,19 @@ public class ChiTietSPRepository {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from ChiTietSP where id =: id");
             query.setParameter("id", id);
-            query.executeUpdate();
-            transaction.commit();
-            return true;
+            int rowsAffected = query.executeUpdate();
+            if (rowsAffected == 0) {
+                // không có bản ghi nào bị xóa
+                transaction.rollback();
+                return false;
+            } else {
+                // xóa thành công
+                transaction.commit();
+                return true;
+            }
         } catch (Exception e) {
             e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }

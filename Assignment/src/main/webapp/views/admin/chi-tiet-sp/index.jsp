@@ -57,30 +57,11 @@
                     <a href="/Assignment_war_exploded/admin/chi-tiet-sp/edit?id=${ chiTietSP.id }"
                        class="btn btn-primary">Update</a>
                     <a href="/Assignment_war_exploded/admin/chi-tiet-sp/delete?id=${ chiTietSP.id }"
-                       class="btn btn-danger delete">Delete</a>
+                       class="btn btn-danger delete" onclick="return confirm('Bạn có muốn xóa không ?')">Delete</a>
                 </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 </c:if>
-
-<script>
-    const deleteButton = document.querySelector(".delete");
-    deleteButton.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default behavior of the link
-
-        // Display a confirmation dialog
-        const confirmed = confirm("Bạn có muốn xóa không?");
-
-        if (confirmed) {
-            // If the user confirmed, redirect to the delete URL
-            const deleteUrl = this.href;
-            window.location.href = deleteUrl;
-        } else {
-            // If the user cancelled, do nothing
-            return false;
-        }
-    });
-</script>
 

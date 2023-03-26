@@ -15,46 +15,51 @@
       action="/Assignment_war_exploded/admin/nhan-vien/store" id="form">
 
     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Tên</label>
-        <input type="text" class="form-control" id="validationCustom01" name="ten" required>
+        <label for="validationCustom01" class="form-label">Tên<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom01" name="ten" required onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Tên Đệm</label>
-        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required>
+        <label for="validationCustom02" class="form-label">Tên Đệm<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Họ</label>
-        <input type="text" class="form-control" id="validationCustom03" name="ho" required>
+        <label for="validationCustom02" class="form-label">Họ<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom03" name="ho" required onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom03" class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" required>
+        <label for="validationCustom03" class="form-label">Ngày Sinh<span class="text-danger">*</span></label>
+        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" required
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom03" class="form-label">SDT</label>
-        <input type="number" class="form-control" id="validationCustom05" name="sdt" required>
+        <label for="validationCustom03" class="form-label">SDT<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="validationCustom05" name="sdt" required
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom05" class="form-label">Email</label>
-        <input type="text" class="form-control" id="validationCustom06" name="email" required>
+        <label for="validationCustom05" class="form-label">Email<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom06" name="email" required
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Địa Chỉ</label>
-        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required>
+        <label for="validationCustom01" class="form-label">Địa Chỉ<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label class="form-label">Cửa Hàng</label>
+        <label class="form-label">Cửa Hàng<span class="text-danger">*</span></label>
         <select class="form-select" name="idCuaHang">
-            <option value="" disabled selected>-- Chọn Của Hàng --</option>
+            <option value="false" disabled selected>-- Chọn Của Hàng --</option>
             <c:forEach var="cuaHang" items="${listCuaHang}">
                 <option value="${cuaHang.id}">${cuaHang.ten}</option>
             </c:forEach>
         </select>
     </div>
     <div class="col-md-4">
-        <label class="form-label">Chức Vụ</label>
+        <label class="form-label">Chức Vụ<span class="text-danger">*</span></label>
         <select class="form-select" name="idChucVu">
-            <option value="" disabled selected>-- Chọn Chức Vụ --</option>
+            <option value="false" disabled selected>-- Chọn Chức Vụ --</option>
             <c:forEach var="chucVu" items="${listChucVu}">
                 <option value="${chucVu.id}">${chucVu.ten}</option>
             </c:forEach>
@@ -62,13 +67,14 @@
     </div>
 
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Mật Khẩu</label>
-        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required>
+        <label for="validationCustom02" class="form-label">Mật Khẩu<span class="text-danger">*</span></label>
+        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required
+               onblur="validateRed(this)">
     </div>
 
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Mã</label>
-        <input type="text" class="form-control" id="validationCustom011" name="ma" required>
+        <label for="validationCustom02" class="form-label">Mã<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom011" name="ma" required onblur="validateRed(this)">
     </div>
 
     <div class="col-md-4">
@@ -87,40 +93,18 @@
     </div>
 
     <div class="col-md-4 offset-4">
-        <label class="form-label">Trạng Thái</label>
+        <label class="form-label">Trạng Thái<span class="text-danger">*</span></label>
         <select class="form-select" name="trangThai">
-            <option value="" disabled selected>-- Chọn Trạng Thái --</option>
+            <option value="false" disabled selected>-- Chọn Trạng Thái --</option>
             <option value="1">Đang Làm</option>
             <option value="0">Đã Nghỉ</option>
         </select>
     </div>
 
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit">Add</button>
+        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">Add
+        </button>
     </div>
 
 </form>
-
-<script>
-    const form = document.getElementById('form');
-    form.addEventListener('submit', function (event) {
-        const ma = document.querySelector('input[name="ma"]');
-        const ten = document.querySelector('input[name="ten"]');
-        const tenDem = document.querySelector('input[name="tenDem"]');
-        const ho = document.querySelector('input[name="ho"]');
-        const ngaySinh = document.querySelector('input[name="ngaySinh"]');
-        const sdt = document.querySelector('input[name="sdt"]');
-        const email = document.querySelector('input[name="email"]');
-        const diaChi = document.querySelector('input[name="diaChi"]');
-        const thanhPho = document.querySelector('input[name="thanhPho"]');
-        const quocGia = document.querySelector('input[name="quocGia"]');
-        const matKhau = document.querySelector('input[name="matKhau"]');
-        if (!ma.value || !ten.value || !tenDem.value || !ho.value || !ngaySinh.value || !sdt.value || !email.value || !diaChi.value
-            || !thanhPho.value || !quocGia.value || !matKhau.value) {
-            alert("Không được để trống!");
-            event.preventDefault(); // Ngăn chặn gửi form
-        }
-    });
-
-</script>
 

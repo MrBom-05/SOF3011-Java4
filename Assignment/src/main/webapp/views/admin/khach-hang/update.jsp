@@ -13,76 +13,66 @@
       action="/Assignment_war_exploded/admin/khach-hang/update?id=${khachHang.id}" id="form">
 
     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Tên</label>
-        <input type="text" class="form-control" id="validationCustom01" name="ten" required value="${khachHang.ten}">
+        <label for="validationCustom01" class="form-label">Tên<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom01" name="ten" required value="${khachHang.ten}"
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Tên Đệm</label>
-        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required value="${khachHang.tenDem}">
+        <label for="validationCustom02" class="form-label">Tên Đệm<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required
+               value="${khachHang.tenDem}" onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Họ</label>
-        <input type="text" class="form-control" id="validationCustom03" name="ho" required value="${khachHang.ho}">
+        <label for="validationCustom02" class="form-label">Họ<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom03" name="ho" required value="${khachHang.ho}"
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
         <label for="validationCustom03" class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" required value="${khachHang.ngaySinh}">
+        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" value="${khachHang.ngaySinh}">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom03" class="form-label">SDT</label>
-        <input type="number" class="form-control" id="validationCustom05" name="sdt" required value="${khachHang.sdt}">
+        <label for="validationCustom03" class="form-label">SDT<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="validationCustom05" name="sdt" required value="${khachHang.sdt}"
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom05" class="form-label">Email</label>
-        <input type="text" class="form-control" id="validationCustom06" name="email" required value="${khachHang.email}">
+        <label for="validationCustom05" class="form-label">Email<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom06" name="email" required value="${khachHang.email}"
+               onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Địa Chỉ</label>
-        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required value="${khachHang.diaChi}">
+        <label for="validationCustom01" class="form-label">Địa Chỉ<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required
+               value="${khachHang.diaChi}" onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Thành Phố</label>
-        <input type="text" class="form-control" id="validationCustom08" name="thanhPho" required value="${khachHang.thanhPho}">
+        <label for="validationCustom02" class="form-label">Thành Phố<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom08" name="thanhPho" required
+               value="${khachHang.thanhPho}" onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Quốc Gia</label>
-        <input type="text" class="form-control" id="validationCustom09" name="quocGia" required value="${khachHang.quocGia}">
+        <label for="validationCustom02" class="form-label">Quốc Gia<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="validationCustom09" name="quocGia" required
+               value="${khachHang.quocGia}" onblur="validateRed(this)">
     </div>
 
     <div class="col-md-6">
-        <label for="validationCustom02" class="form-label">Mật Khẩu</label>
-        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required value="${khachHang.matKhau}">
+        <label for="validationCustom02" class="form-label">Mật Khẩu<span class="text-danger">*</span></label>
+        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required
+               value="${khachHang.matKhau}" onblur="validateRed(this)">
     </div>
 
     <div class="col-md-6">
         <label for="validationCustom02" class="form-label">Mã</label>
-        <input type="text" class="form-control" id="validationCustom011" name="ma" required value="${khachHang.ma}" disabled>
+        <input type="text" class="form-control" id="validationCustom011" name="ma" required value="${khachHang.ma}"
+               disabled>
     </div>
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>
+        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">
+            Update
+        </button>
     </div>
 
 </form>
 
-<script>
-    const form = document.getElementById('form');
-    form.addEventListener('submit', function (event) {
-        const ma = document.querySelector('input[name="ma"]');
-        const ten = document.querySelector('input[name="ten"]');
-        const tenDem = document.querySelector('input[name="tenDem"]');
-        const ho = document.querySelector('input[name="ho"]');
-        const ngaySinh = document.querySelector('input[name="ngaySinh"]');
-        const sdt = document.querySelector('input[name="sdt"]');
-        const email = document.querySelector('input[name="email"]');
-        const diaChi = document.querySelector('input[name="diaChi"]');
-        const thanhPho = document.querySelector('input[name="thanhPho"]');
-        const quocGia = document.querySelector('input[name="quocGia"]');
-        const matKhau = document.querySelector('input[name="matKhau"]');
-        if (!ma.value || !ten.value || !tenDem.value || !ho.value || !ngaySinh.value || !sdt.value || !email.value || !diaChi.value
-            || !thanhPho.value || !quocGia.value || !matKhau.value) {
-            alert("Không được để trống!");
-            event.preventDefault(); // Ngăn chặn gửi form
-        }
-    });
-
-</script>

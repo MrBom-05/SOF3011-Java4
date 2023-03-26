@@ -40,7 +40,7 @@
                     <a href="/Assignment_war_exploded/admin/nsx/edit?id=${ nsx.id }"
                        class="btn btn-primary">Update</a>
                     <a href="/Assignment_war_exploded/admin/nsx/delete?id=${ nsx.id }"
-                       class="btn btn-danger">Delete</a>
+                       class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không ?')">Delete</a>
                 </td>
             </tr>
         </c:forEach>

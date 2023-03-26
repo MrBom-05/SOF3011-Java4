@@ -59,7 +59,7 @@
                     <a href="/Assignment_war_exploded/admin/khach-hang/edit?id=${ khachHang.id }"
                        class="btn btn-primary">Update</a>
                     <a href="/Assignment_war_exploded/admin/khach-hang/delete?id=${ khachHang.id }"
-                       class="btn btn-danger">Delete</a>
+                       class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không ?')">Delete</a>
                 </td>
             </tr>
         </c:forEach>

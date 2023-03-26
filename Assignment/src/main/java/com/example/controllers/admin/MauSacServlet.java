@@ -66,11 +66,14 @@ public class MauSacServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            mauSacService.delete(id);
+            boolean check = mauSacService.delete(id);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/mau-sac/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/mau-sac/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

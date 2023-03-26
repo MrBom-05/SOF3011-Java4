@@ -71,11 +71,14 @@ public class KhachHangServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            khachHangService.delete(id);
+            boolean check = khachHangService.delete(id);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/khach-hang/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/khach-hang/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

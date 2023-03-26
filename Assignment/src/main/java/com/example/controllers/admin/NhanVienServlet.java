@@ -88,11 +88,14 @@ public class NhanVienServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String ma = request.getParameter("ma");
-            nhanVienService.delete(ma);
-        } catch (Exception e){
+            boolean check = nhanVienService.delete(ma);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/nhan-vien/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/nhan-vien/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

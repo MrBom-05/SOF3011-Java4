@@ -53,8 +53,6 @@
                 <td class="text-center">
                     <a href="/Assignment_war_exploded/admin/hoa-don/detail?id=${ hoaDon.id }"
                        class="btn btn-success">Detail</a>
-                    <a href="/Assignment_war_exploded/admin/hoa-don/edit?id=${ hoaDon.id }"
-                       class="btn btn-danger">Update</a>
                 </td>
 
             </tr>

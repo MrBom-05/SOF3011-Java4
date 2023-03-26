@@ -13,30 +13,21 @@
       action="/Assignment_war_exploded/admin/nsx/update?id=${nsx.id}" id="form">
 
     <div class="col-12">
-        <label class="form-label">Mã</label>
-        <input type="text" class="form-control" name="ma" required disabled value="${nsx.ma}">
+        <label class="form-label">Mã<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="ma" required disabled value="${nsx.ma}"
+               onblur="validateRed(this)">
     </div>
 
     <div class="col-12 mt-3">
-        <label class="form-label">Tên</label>
-        <input type="text" class="form-control" name="ten" required value="${nsx.ten}">
+        <label class="form-label">Tên<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="ten" required value="${nsx.ten}" onblur="validateRed(this)">
     </div>
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit">Update</button>
+        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">
+            Update
+        </button>
     </div>
 
 </form>
 
-<script>
-    const form = document.getElementById('form');
-    form.addEventListener('submit', function (event) {
-        const ma = document.querySelector('input[name="ma"]');
-        const ten = document.querySelector('input[name="ten"]');
-        if (!ma.value || !ten.value) {
-            alert("Không được để trống!");
-            event.preventDefault(); // Ngăn chặn gửi form
-        }
-    });
-
-</script>
 

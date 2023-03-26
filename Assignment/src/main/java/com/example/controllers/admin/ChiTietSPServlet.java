@@ -86,11 +86,14 @@ public class ChiTietSPServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            chiTietSPService.delete(id);
-        } catch (Exception e){
+            boolean check = chiTietSPService.delete(id);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/chi-tiet-sp/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/chi-tiet-sp/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

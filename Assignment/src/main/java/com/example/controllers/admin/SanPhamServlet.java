@@ -83,11 +83,14 @@ public class SanPhamServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            sanPhamService.delete(id);
+            boolean check = sanPhamService.delete(id);
+
+            request.setAttribute("check", check);
+            request.getRequestDispatcher("/admin/san-pham/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/san-pham/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
