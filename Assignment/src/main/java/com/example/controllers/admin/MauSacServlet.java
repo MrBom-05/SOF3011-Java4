@@ -42,6 +42,19 @@ public class MauSacServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Boolean check = (Boolean) session.getAttribute("check");
+        if (check == null){
+            check = true;
+        }
+        request.setAttribute("check", check);
+
+        Boolean checkUnique = (Boolean) session.getAttribute("checkUnique");
+        if (checkUnique == null){
+            checkUnique = true;
+        }
+        request.setAttribute("checkUnique", checkUnique);
+
         request.setAttribute("list", mauSacService.getListMauSac());
 
         request.setAttribute("view", "/views/admin/mau-sac/index.jsp");
@@ -67,20 +80,21 @@ public class MauSacServlet extends HttpServlet {
         try {
             String id = request.getParameter("id");
             boolean check = mauSacService.delete(id);
-
-            request.setAttribute("check", check);
-            request.getRequestDispatcher("/admin/mau-sac/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
-
+            HttpSession session = request.getSession();
+            session.setAttribute("check", check);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/Assignment_war_exploded/admin/mau-sac/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             MauSac mauSac = new MauSac();
             BeanUtils.populate(mauSac, request.getParameterMap());
-            mauSacService.insert(mauSac);
+            boolean checkUnique = mauSacService.insert(mauSac);
+            HttpSession session = request.getSession();
+            session.setAttribute("checkUnique", checkUnique);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -4,6 +4,7 @@ import com.example.entities.CuaHang;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -26,6 +27,10 @@ public class CuaHangRepository {
             session.save(cuaHang);
             transaction.commit();
             return true;
+        } catch (ConstraintViolationException e) {
+            // Thực hiện xử lý khi gặp lỗi unique key constraint
+            e.printStackTrace();
+            return false;
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return false;
@@ -54,7 +59,7 @@ public class CuaHangRepository {
         }
     }
 
-    public boolean update(String id, CuaHang cuaHang){
+    public boolean update(String id, CuaHang cuaHang) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update CuaHang set ten =: ten, diaChi =: diaChi, thanhPho =: thanhPho, quocGia =: quocGia where id =: id");
@@ -72,7 +77,7 @@ public class CuaHangRepository {
         }
     }
 
-    public CuaHang getById(String id){
+    public CuaHang getById(String id) {
         Query query = session.createQuery("from CuaHang where id =: id");
         query.setParameter("id", id);
         CuaHang cuaHang = (CuaHang) query.getSingleResult();

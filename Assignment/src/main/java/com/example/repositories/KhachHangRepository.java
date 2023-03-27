@@ -4,6 +4,7 @@ import com.example.entities.KhachHang;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -26,6 +27,10 @@ public class KhachHangRepository {
             session.save(khachHang);
             transaction.commit();
             return true;
+        } catch (ConstraintViolationException e) {
+            // Thực hiện xử lý khi gặp lỗi unique key constraint
+            e.printStackTrace();
+            return false;
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return false;

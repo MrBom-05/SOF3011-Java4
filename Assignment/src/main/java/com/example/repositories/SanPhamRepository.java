@@ -4,6 +4,7 @@ import com.example.entities.SanPham;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -26,6 +27,10 @@ public class SanPhamRepository {
             session.save(sanPham);
             transaction.commit();
             return true;
+        } catch (ConstraintViolationException e) {
+            // Thực hiện xử lý khi gặp lỗi unique key constraint
+            e.printStackTrace();
+            return false;
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return false;
@@ -54,7 +59,7 @@ public class SanPhamRepository {
         }
     }
 
-    public boolean update(String id, SanPham sanPham){
+    public boolean update(String id, SanPham sanPham) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update SanPham set ten =: ten, anh =: anh where id =: id");
@@ -70,7 +75,7 @@ public class SanPhamRepository {
         }
     }
 
-    public SanPham getById(String id){
+    public SanPham getById(String id) {
         Query query = session.createQuery("from SanPham where id =: id");
         query.setParameter("id", id);
         SanPham sanPham = (SanPham) query.getSingleResult();

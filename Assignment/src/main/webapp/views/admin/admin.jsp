@@ -16,9 +16,9 @@
 
 <header class="header" id="header">
     <div class="header_toggle"><i class='bx bx-menu' id="header-toggle"></i></div>
-    <div class="header_img"><img src="" alt=""></div>
+    <div class="header_img"><img src="/Assignment_war_exploded/anhSanPham/mew.jpg" alt=""></div>
 </header>
-<div class="l-navbar" id="nav-bar">
+<div class="l-navbar bg-dark" id="nav-bar">
     <nav class="nav">
         <div><a href="/Assignment_war_exploded/admin" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
                 class="nav_logo-name">Admin</span> </a>
@@ -65,6 +65,7 @@
 </div>
 <!--Container Main start-->
 <div class="height-100 bg-light">
+    <div style="height: 3rem;"></div>
     <div class="container-fluid mt-5">
         <jsp:include page="${ view }"/>
     </div>
@@ -73,6 +74,16 @@
 <c:if test="${check eq false}">
     <script>
         alert("Xóa thất bại, khi đã có một đối tượng khác dùng đối tượng này!");
+        <c:set var="check" value="${true}" scope="session" />
+        location.reload();
+    </script>
+</c:if>
+
+<c:if test="${checkUnique eq false}">
+    <script>
+        alert("Mã này đã tồn tại!");
+        <c:set var="checkUnique" value="${true}" scope="session" />
+        location.reload();
     </script>
 </c:if>
 <!-- Bootstrap core JS-->

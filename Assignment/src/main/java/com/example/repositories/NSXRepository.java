@@ -4,6 +4,7 @@ import com.example.entities.NSX;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -26,6 +27,10 @@ public class NSXRepository {
             session.save(nsx);
             transaction.commit();
             return true;
+        } catch (ConstraintViolationException e) {
+            // Thực hiện xử lý khi gặp lỗi unique key constraint
+            e.printStackTrace();
+            return false;
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return false;
@@ -54,7 +59,7 @@ public class NSXRepository {
         }
     }
 
-    public boolean update(String id, NSX nsx){
+    public boolean update(String id, NSX nsx) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update NSX set ten =: ten where id =: id");
@@ -69,7 +74,7 @@ public class NSXRepository {
         }
     }
 
-    public NSX getById(String id){
+    public NSX getById(String id) {
         Query query = session.createQuery("from NSX where id =: id");
         query.setParameter("id", id);
         NSX nsx = (NSX) query.getSingleResult();

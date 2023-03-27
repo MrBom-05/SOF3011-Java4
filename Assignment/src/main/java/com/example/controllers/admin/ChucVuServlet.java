@@ -42,6 +42,18 @@ public class ChucVuServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Boolean check = (Boolean) session.getAttribute("check");
+        if (check == null){
+            check = true;
+        }
+        request.setAttribute("check", check);
+
+        Boolean checkUnique = (Boolean) session.getAttribute("checkUnique");
+        if (checkUnique == null){
+            checkUnique = true;
+        }
+        request.setAttribute("checkUnique", checkUnique);
         request.setAttribute("list", chucVuService.getListChucVu());
         request.setAttribute("view", "/views/admin/chuc-vu/index.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
@@ -66,19 +78,21 @@ public class ChucVuServlet extends HttpServlet {
         try {
             String id = request.getParameter("id");
             boolean check = chucVuService.delete(id);
-
-            request.setAttribute("check", check);
-            request.getRequestDispatcher("/admin/chuc-vu/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
+            HttpSession session = request.getSession();
+            session.setAttribute("check", check);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/Assignment_war_exploded/admin/chuc-vu/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             ChucVu chucVu = new ChucVu();
             BeanUtils.populate(chucVu, request.getParameterMap());
-            chucVuService.insert(chucVu);
+            boolean checkUnique = chucVuService.insert(chucVu);
+            HttpSession session = request.getSession();
+            session.setAttribute("checkUnique", checkUnique);
         } catch (Exception e) {
             e.printStackTrace();
         }

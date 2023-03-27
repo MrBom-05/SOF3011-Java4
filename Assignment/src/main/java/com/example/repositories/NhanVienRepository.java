@@ -5,6 +5,7 @@ import com.example.models.NhanVienCustom;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -27,6 +28,10 @@ public class NhanVienRepository {
             session.save(nhanVien);
             transaction.commit();
             return true;
+        } catch (ConstraintViolationException e) {
+            // Thực hiện xử lý khi gặp lỗi unique key constraint
+            e.printStackTrace();
+            return false;
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return false;
@@ -55,7 +60,7 @@ public class NhanVienRepository {
         }
     }
 
-    public boolean update(String ma, NhanVien nhanVien){
+    public boolean update(String ma, NhanVien nhanVien) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update NhanVien set ten =: ten, tenDem =: tenDem, ho =: ho, ngaySinh =: ngaySinh, gioiTinh =: gioiTinh, sdt =: sdt, email =: email, matKhau =: matKhau, diaChi =: diaChi, cuaHang =: cuaHang, chucVu =: chucVu, trangThai =: trangThai where ma =: ma");
@@ -84,7 +89,7 @@ public class NhanVienRepository {
     public String getIdCuaHangByMa = "select n.cuaHang.id from NhanVien n where ma =: ma";
     public String getIdChucVuByMa = "select n.chucVu.id from NhanVien n where ma =: ma";
 
-    public String getIdByMa(String ma, String where){
+    public String getIdByMa(String ma, String where) {
 
         Query query = session.createQuery(where);
         query.setParameter("ma", ma);
@@ -93,7 +98,7 @@ public class NhanVienRepository {
     }
 
 
-    public NhanVien getByMa(String ma){
+    public NhanVien getByMa(String ma) {
         Query query = session.createQuery("from NhanVien where ma =: ma");
         query.setParameter("ma", ma);
         NhanVien nhanVien = (NhanVien) query.getSingleResult();

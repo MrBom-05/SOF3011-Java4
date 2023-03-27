@@ -31,6 +31,13 @@ public class HoaDonServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        HttpSession session = request.getSession();
+//        Boolean check = (Boolean) session.getAttribute("check");
+//        if (check == null){
+//            check = true;
+//        }
+//        request.setAttribute("check", check);
+
         request.setAttribute("listHoaDon", hoaDonService.getListHoaDon());
 
         request.setAttribute("view", "/views/admin/hoa-don/index.jsp");

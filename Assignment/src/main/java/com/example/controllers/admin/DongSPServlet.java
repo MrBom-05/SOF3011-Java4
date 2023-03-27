@@ -42,6 +42,19 @@ public class DongSPServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Boolean check = (Boolean) session.getAttribute("check");
+        if (check == null){
+            check = true;
+        }
+        request.setAttribute("check", check);
+
+        Boolean checkUnique = (Boolean) session.getAttribute("checkUnique");
+        if (checkUnique == null){
+            checkUnique = true;
+        }
+        request.setAttribute("checkUnique", checkUnique);
+
         request.setAttribute("list", dongSPService.getListDongSP());
 
         request.setAttribute("view", "/views/admin/dong-sp/index.jsp");
@@ -67,20 +80,21 @@ public class DongSPServlet extends HttpServlet {
         try {
             String id = request.getParameter("id");
             boolean check = dongSPService.delete(id);
-
-            request.setAttribute("check", check);
-            request.getRequestDispatcher("/admin/dong-sp/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
-
+            HttpSession session = request.getSession();
+            session.setAttribute("check", check);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/Assignment_war_exploded/admin/dong-sp/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             DongSP dongSP = new DongSP();
             BeanUtils.populate(dongSP, request.getParameterMap());
-            dongSPService.insert(dongSP);
+            boolean checkUnique = dongSPService.insert(dongSP);
+            HttpSession session = request.getSession();
+            session.setAttribute("checkUnique", checkUnique);
         } catch (Exception e) {
             e.printStackTrace();
         }

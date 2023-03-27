@@ -47,6 +47,19 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Boolean check = (Boolean) session.getAttribute("check");
+        if (check == null){
+            check = true;
+        }
+        request.setAttribute("check", check);
+
+        Boolean checkUnique = (Boolean) session.getAttribute("checkUnique");
+        if (checkUnique == null){
+            checkUnique = true;
+        }
+        request.setAttribute("checkUnique", checkUnique);
+
         request.setAttribute("list", khachHangService.getListKhachHang());
 
         request.setAttribute("view", "/views/admin/khach-hang/index.jsp");
@@ -72,13 +85,12 @@ public class KhachHangServlet extends HttpServlet {
         try {
             String id = request.getParameter("id");
             boolean check = khachHangService.delete(id);
-
-            request.setAttribute("check", check);
-            request.getRequestDispatcher("/admin/khach-hang/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
-
+            HttpSession session = request.getSession();
+            session.setAttribute("check", check);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/Assignment_war_exploded/admin/khach-hang/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -93,7 +105,9 @@ public class KhachHangServlet extends HttpServlet {
             KhachHang khachHang = new KhachHang();
             khachHang.setMa(String.valueOf(pass));
             BeanUtils.populate(khachHang, request.getParameterMap());
-            khachHangService.insert(khachHang);
+            boolean checkUnique = khachHangService.insert(khachHang);
+            HttpSession session = request.getSession();
+            session.setAttribute("checkUnique", checkUnique);
         } catch (Exception e) {
             e.printStackTrace();
         }

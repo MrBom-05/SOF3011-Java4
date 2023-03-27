@@ -4,6 +4,7 @@ import com.example.entities.DongSP;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import javax.persistence.Query;
 import java.util.List;
@@ -26,6 +27,10 @@ public class DongSPRepository {
             session.save(dongSP);
             transaction.commit();
             return true;
+        } catch (ConstraintViolationException e) {
+            // Thực hiện xử lý khi gặp lỗi unique key constraint
+            e.printStackTrace();
+            return false;
         } catch (Exception e) {
             e.printStackTrace(System.out);
             return false;
@@ -54,7 +59,7 @@ public class DongSPRepository {
         }
     }
 
-    public boolean update(String id, DongSP dongSP){
+    public boolean update(String id, DongSP dongSP) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update DongSP set ten =: ten where id =: id");
@@ -69,7 +74,7 @@ public class DongSPRepository {
         }
     }
 
-    public DongSP getById(String id){
+    public DongSP getById(String id) {
         Query query = session.createQuery("from DongSP where id =: id");
         query.setParameter("id", id);
         DongSP dongSP = (DongSP) query.getSingleResult();

@@ -46,6 +46,13 @@ public class ChiTietSPServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Boolean check = (Boolean) session.getAttribute("check");
+        if (check == null){
+            check = true;
+        }
+        request.setAttribute("check", check);
+
         request.setAttribute("list", chiTietSPService.getListChiTietSP());
 
         request.setAttribute("view", "/views/admin/chi-tiet-sp/index.jsp");
@@ -87,13 +94,12 @@ public class ChiTietSPServlet extends HttpServlet {
         try {
             String id = request.getParameter("id");
             boolean check = chiTietSPService.delete(id);
-
-            request.setAttribute("check", check);
-            request.getRequestDispatcher("/admin/chi-tiet-sp/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
-
+            HttpSession session = request.getSession();
+            session.setAttribute("check", check);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/Assignment_war_exploded/admin/chi-tiet-sp/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

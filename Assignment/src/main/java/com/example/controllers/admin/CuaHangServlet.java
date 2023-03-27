@@ -42,6 +42,19 @@ public class CuaHangServlet extends HttpServlet {
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Boolean check = (Boolean) session.getAttribute("check");
+        if (check == null){
+            check = true;
+        }
+        request.setAttribute("check", check);
+
+        Boolean checkUnique = (Boolean) session.getAttribute("checkUnique");
+        if (checkUnique == null){
+            checkUnique = true;
+        }
+        request.setAttribute("checkUnique", checkUnique);
+
         request.setAttribute("list", cuaHangService.getListCuaHang());
 
         request.setAttribute("view", "/views/admin/cua-hang/index.jsp");
@@ -67,20 +80,21 @@ public class CuaHangServlet extends HttpServlet {
         try {
             String id = request.getParameter("id");
             boolean check = cuaHangService.delete(id);
-
-            request.setAttribute("check", check);
-            request.getRequestDispatcher("/admin/cua-hang/index").forward(request, response); // chuyển hướng trang với request và response hiện tại
-
+            HttpSession session = request.getSession();
+            session.setAttribute("check", check);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("/Assignment_war_exploded/admin/cua-hang/index");
     }
 
     public void store(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             CuaHang cuaHang = new CuaHang();
             BeanUtils.populate(cuaHang, request.getParameterMap());
-            cuaHangService.insert(cuaHang);
+            boolean checkUnique = cuaHangService.insert(cuaHang);
+            HttpSession session = request.getSession();
+            session.setAttribute("checkUnique", checkUnique);
         } catch (Exception e) {
             e.printStackTrace();
         }
