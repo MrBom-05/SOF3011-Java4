@@ -107,7 +107,8 @@ public class DongSPServlet extends HttpServlet {
             UUID id = UUID.fromString(request.getParameter("id"));
 
             DongSP dongSP = new DongSP();
-            BeanUtils.populate(dongSP, request.getParameterMap());
+//            BeanUtils.populate(dongSP, request.getParameterMap());
+            dongSP.setTen(request.getParameter("ten"));
             dongSPService.update(id, dongSP);
         } catch (Exception e) {
             e.printStackTrace();

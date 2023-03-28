@@ -28,7 +28,6 @@ function validateForm(event, formId) {
                     isValid = false;
                 }
                 break;
-            case 'checkbox':
             case 'radio':
                 if (!element.checked) {
                     isValid = false;

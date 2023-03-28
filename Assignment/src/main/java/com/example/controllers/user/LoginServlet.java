@@ -30,6 +30,12 @@ public class LoginServlet extends HttpServlet {
         if (uri.contains("sign-up")) {
             request.getRequestDispatcher("/views/user/sign-up.jsp").forward(request, response);
         } else {
+            HttpSession session = request.getSession();
+            Boolean checkLogin = (Boolean) session.getAttribute("checkLogin");
+            if (checkLogin == null){
+                checkLogin = true;
+            }
+            request.setAttribute("checkLogin", checkLogin);
             request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
         }
 
@@ -48,6 +54,8 @@ public class LoginServlet extends HttpServlet {
     private void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String email = request.getParameter("email");
         String matKhau = request.getParameter("password");
+
+
         KhachHang khachHang = khachHangService.login(email, matKhau);
         if (khachHang != null) {
             boolean check = gioHangService.check(khachHang.getId());
@@ -58,14 +66,14 @@ public class LoginServlet extends HttpServlet {
                 gioHang.setTrangThai(1);
                 gioHangService.insert(gioHang);
             }
-
             HttpSession session = request.getSession();
             session.setAttribute("khachHang", khachHang);
             request.setAttribute("view", "/views/user/home.jsp");
             response.sendRedirect(request.getContextPath() + "/home");
-        } else {
-            request.setAttribute("error", "Email hoặc mật khẩu không đúng!");
-            request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
+        } else  if (khachHang == null){
+            HttpSession session = request.getSession();
+            session.setAttribute("checkLogin", false);
+            response.sendRedirect("/Assignment_war_exploded/login");
         }
     }
 

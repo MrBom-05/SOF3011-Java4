@@ -89,6 +89,14 @@
     </div>
 </div>
 
+<c:if test="${checkLogin eq false}">
+    <script>
+        alert("Sai tài khoản hoặc mật khẩu!");
+        <c:set var="checkLogin" value="${true}" scope="session" />
+        location.reload();
+    </script>
+</c:if>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/Assignment_war_exploded/js/bootstrap.min.js"></script>
 <script>

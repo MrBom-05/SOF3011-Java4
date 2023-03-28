@@ -140,11 +140,11 @@ public class NhanVienServlet extends HttpServlet {
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String ma = request.getParameter("ma");
-
-            // Định dạng năm tháng ngày
-            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
-            dateTimeConverter.setPattern("yyyy-MM-dd");
-            ConvertUtils.register(dateTimeConverter, Date.class);
+//
+//             Định dạng năm tháng ngày
+//            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
+//            dateTimeConverter.setPattern("yyyy-MM-dd");
+//            ConvertUtils.register(dateTimeConverter, Date.class);
 
             CuaHang cuaHang = new CuaHang();
             cuaHang.setId(UUID.fromString(request.getParameter("idCuaHang")));
@@ -155,7 +155,17 @@ public class NhanVienServlet extends HttpServlet {
             NhanVien nhanVien = new NhanVien();
             nhanVien.setCuaHang(cuaHang);
             nhanVien.setChucVu(chucVu);
-            BeanUtils.populate(nhanVien, request.getParameterMap());
+            nhanVien.setTen(request.getParameter("ten"));
+            nhanVien.setTenDem(request.getParameter("tenDem"));
+            nhanVien.setHo(request.getParameter("ho"));
+            nhanVien.setNgaySinh(java.sql.Date.valueOf(request.getParameter("ngaySinh")));
+            nhanVien.setGioiTinh(request.getParameter("gioiTinh"));
+            nhanVien.setSdt(request.getParameter("sdt"));
+            nhanVien.setEmail(request.getParameter("email"));
+            nhanVien.setMatKhau(request.getParameter("matKhau"));
+            nhanVien.setDiaChi(request.getParameter("diaChi"));
+            nhanVien.setTrangThai(Integer.parseInt(request.getParameter("trangThai")));
+//            BeanUtils.populate(nhanVien, request.getParameterMap());
             nhanVienService.update(ma, nhanVien);
         } catch (Exception e) {
             e.printStackTrace();

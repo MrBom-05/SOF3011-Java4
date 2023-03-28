@@ -119,12 +119,22 @@ public class KhachHangServlet extends HttpServlet {
         try {
             UUID id = UUID.fromString(request.getParameter("id"));
 
-            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
-            dateTimeConverter.setPattern("yyyy-MM-dd");
-            ConvertUtils.register(dateTimeConverter, Date.class);
+//            DateTimeConverter dateTimeConverter = new DateConverter(new Date());
+//            dateTimeConverter.setPattern("yyyy-MM-dd");
+//            ConvertUtils.register(dateTimeConverter, Date.class);
 
             KhachHang khachHang = new KhachHang();
-            BeanUtils.populate(khachHang, request.getParameterMap());
+            khachHang.setTen(request.getParameter("ten"));
+            khachHang.setTenDem(request.getParameter("tenDem"));
+            khachHang.setHo(request.getParameter("ho"));
+            khachHang.setNgaySinh(java.sql.Date.valueOf(request.getParameter("ngaySinh")));
+            khachHang.setSdt(request.getParameter("sdt"));
+            khachHang.setEmail(request.getParameter("email"));
+            khachHang.setMatKhau(request.getParameter("matKhau"));
+            khachHang.setDiaChi(request.getParameter("diaChi"));
+            khachHang.setThanhPho(request.getParameter("thanhPho"));
+            khachHang.setQuocGia(request.getParameter("quocGia"));
+//            BeanUtils.populate(khachHang, request.getParameterMap());
             khachHangService.update(id, khachHang);
         } catch (Exception e) {
             e.printStackTrace();

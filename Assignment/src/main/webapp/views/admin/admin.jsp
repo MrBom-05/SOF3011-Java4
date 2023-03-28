@@ -53,10 +53,6 @@
                                                                class="nav_link">
                 <i class="bi bi-box-seam nav_icon"></i>
                 <span class="nav_name">Chức Vụ</span> </a>
-                <%--                <i class="bi bi-box-seam nav_icon"></i>--%>
-                <%--                <span class="nav_name">Files</span> </a><a href="#" class="nav_link">--%>
-                <%--                <i class='bx bx-bar-chart-alt-2 nav_icon'></i>--%>
-                <%--                    <span class="nav_name">Stats</span> </a>--%>
             </div>
         </div>
         <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span

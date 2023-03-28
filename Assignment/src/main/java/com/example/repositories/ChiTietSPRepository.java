@@ -67,21 +67,10 @@ public class ChiTietSPRepository {
         }
     }
 
-    public boolean update(UUID id, ChiTietSP chiTietSP) {
+    public boolean update(ChiTietSP chiTietSP) {
         try {
-            transaction = session.beginTransaction();
-            Query query = session.createQuery("update ChiTietSP set namSX =: namSX, moTa =: moTa, soLuongTon =: soLuongTon, giaNhap =: giaNhap, giaBan =: giaBan, sanPham.id =: idSP, nsx.id =: idNSX, mauSac.id =: idMS, dongSP.id =: idDSP where id =: id");
-            query.setParameter("namSX", chiTietSP.getNamSX());
-            query.setParameter("moTa", chiTietSP.getMoTa());
-            query.setParameter("soLuongTon", chiTietSP.getSoLuongTon());
-            query.setParameter("giaNhap", chiTietSP.getGiaNhap());
-            query.setParameter("giaBan", chiTietSP.getGiaBan());
-            query.setParameter("idSP", chiTietSP.getSanPham());
-            query.setParameter("idNSX", chiTietSP.getNsx());
-            query.setParameter("idMS", chiTietSP.getMauSac());
-            query.setParameter("idDSP", chiTietSP.getDongSP());
-            query.setParameter("id", id);
-            query.executeUpdate();
+            transaction.begin();
+            session.merge(chiTietSP);
             transaction.commit();
             return true;
         } catch (Exception e) {

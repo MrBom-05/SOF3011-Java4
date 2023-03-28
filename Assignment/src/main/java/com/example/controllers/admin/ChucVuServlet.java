@@ -105,7 +105,8 @@ public class ChucVuServlet extends HttpServlet {
             UUID id = UUID.fromString(request.getParameter("id"));
 
             ChucVu chucVu = new ChucVu();
-            BeanUtils.populate(chucVu, request.getParameterMap());
+//            BeanUtils.populate(chucVu, request.getParameterMap());
+            chucVu.setTen(request.getParameter("ten"));
 
             chucVuService.update(id, chucVu);
         } catch (Exception e) {

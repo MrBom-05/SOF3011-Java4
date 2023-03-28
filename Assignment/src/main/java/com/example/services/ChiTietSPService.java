@@ -16,7 +16,7 @@ public interface ChiTietSPService {
 
     public boolean delete(UUID id);
 
-    public boolean update(UUID id, ChiTietSP chiTietSP);
+    public boolean update(ChiTietSP chiTietSP);
 
     public UUID getIdSanPhamById(UUID id);
 

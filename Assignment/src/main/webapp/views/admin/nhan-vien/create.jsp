@@ -15,36 +15,36 @@
       action="/Assignment_war_exploded/admin/nhan-vien/store" id="form">
 
     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Tên<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="validationCustom01" name="ten" required onblur="validateRed(this)">
+        <label class="form-label">Tên<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="ten" required onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Tên Đệm<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="validationCustom02" name="tenDem" required
+        <label class="form-label">Tên Đệm<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="tenDem" required
                onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Họ<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="validationCustom03" name="ho" required onblur="validateRed(this)">
+        <label class="form-label">Họ<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="ho" required onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom03" class="form-label">Ngày Sinh<span class="text-danger">*</span></label>
-        <input type="date" class="form-control" id="validationCustom04" name="ngaySinh" required
+        <label class="form-label">Ngày Sinh<span class="text-danger">*</span></label>
+        <input type="date" class="form-control" name="ngaySinh" required
                onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom03" class="form-label">SDT<span class="text-danger">*</span></label>
-        <input type="number" class="form-control" id="validationCustom05" name="sdt" required
+        <label class="form-label">SDT<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" name="sdt" required
                onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom05" class="form-label">Email<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="validationCustom06" name="email" required
+        <label class="form-label">Email<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="email" required
                onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Địa Chỉ<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="validationCustom07" name="diaChi" required
+        <label class="form-label">Địa Chỉ<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="diaChi" required
                onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
@@ -67,26 +67,26 @@
     </div>
 
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Mật Khẩu<span class="text-danger">*</span></label>
-        <input type="password" class="form-control" id="validationCustom10" name="matKhau" required
+        <label class="form-label">Mật Khẩu<span class="text-danger">*</span></label>
+        <input type="password" class="form-control" name="matKhau" required
                onblur="validateRed(this)">
     </div>
 
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Mã<span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="validationCustom011" name="ma" required onblur="validateRed(this)">
+        <label class="form-label">Mã<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" name="ma" required onblur="validateRed(this)">
     </div>
 
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Giới Tính</label>
+        <label class="form-label">Giới Tính</label>
         <div class="row mt-1">
             <div class="form-check col-6">
-                <input class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" id="rdoTrue" checked
+                <input class="form-check-input ms-5" value="Nam" type="radio" name="gioiTinh" checked
                        required>
                 <label class="form-check-label ms-2">Nam</label>
             </div>
             <div class="form-check col-6">
-                <input class="form-check-input" value="Nữ" type="radio" name="gioiTinh" id="rdoFalse" required>
+                <input class="form-check-input" value="Nữ" type="radio" name="gioiTinh" required>
                 <label class="form-check-label">Nữ</label>
             </div>
         </div>
@@ -102,9 +102,9 @@
     </div>
 
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">Add
-        </button>
+        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">Add</button>
     </div>
 
 </form>
+
 

@@ -107,7 +107,11 @@ public class CuaHangServlet extends HttpServlet {
             UUID id = UUID.fromString(request.getParameter("id"));
 
             CuaHang cuaHang = new CuaHang();
-            BeanUtils.populate(cuaHang, request.getParameterMap());
+//            BeanUtils.populate(cuaHang, request.getParameterMap());
+            cuaHang.setTen(request.getParameter("ten"));
+            cuaHang.setDiaChi(request.getParameter("diaChi"));
+            cuaHang.setThanhPho(request.getParameter("thanhPho"));
+            cuaHang.setQuocGia(request.getParameter("quocGia"));
             cuaHangService.update(id, cuaHang);
         } catch (Exception e) {
             e.printStackTrace();

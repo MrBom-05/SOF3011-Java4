@@ -107,7 +107,8 @@ public class NSXServlet extends HttpServlet {
             UUID id = UUID.fromString(request.getParameter("id"));
 
             NSX nsx = new NSX();
-            BeanUtils.populate(nsx, request.getParameterMap());
+//            BeanUtils.populate(nsx, request.getParameterMap());
+            nsx.setTen(request.getParameter("ten"));
             nsxService.update(id, nsx);
         } catch (Exception e) {
             e.printStackTrace();

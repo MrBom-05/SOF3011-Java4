@@ -93,13 +93,14 @@ public class KhachHangRepository {
     public KhachHang login(String email, String matKhau) {
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("select k from KhachHang k where email =: email and matKhau =: matKhau");
+            Query query = session.createQuery("from KhachHang where email = :email and matKhau = :matKhau");
             query.setParameter("email", email);
             query.setParameter("matKhau", matKhau);
-            KhachHang khachHang = (KhachHang) query.getSingleResult();
+            KhachHang khachHang = (KhachHang) ((org.hibernate.query.Query<?>) query).uniqueResult();
             transaction.commit();
             return khachHang;
         } catch (Exception e) {
+            transaction.rollback();
             e.printStackTrace();
             return null;
         }

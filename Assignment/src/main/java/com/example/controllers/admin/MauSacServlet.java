@@ -107,7 +107,8 @@ public class MauSacServlet extends HttpServlet {
             UUID id = UUID.fromString(request.getParameter("id"));
 
             MauSac mauSac = new MauSac();
-            BeanUtils.populate(mauSac, request.getParameterMap());
+//            BeanUtils.populate(mauSac, request.getParameterMap());
+            mauSac.setTen(request.getParameter("ten"));
             mauSacService.update(id, mauSac);
         } catch (Exception e) {
             e.printStackTrace();

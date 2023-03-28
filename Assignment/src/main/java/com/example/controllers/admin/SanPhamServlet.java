@@ -154,7 +154,8 @@ public class SanPhamServlet extends HttpServlet {
 
             SanPham sanPham = new SanPham();
             sanPham.setAnh(fileName);
-            BeanUtils.populate(sanPham, request.getParameterMap());
+//            BeanUtils.populate(sanPham, request.getParameterMap());
+            sanPham.setTen(request.getParameter("ten"));
             sanPhamService.update(id, sanPham);
         } catch (Exception e) {
             e.printStackTrace();

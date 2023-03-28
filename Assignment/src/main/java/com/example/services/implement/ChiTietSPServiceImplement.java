@@ -31,8 +31,8 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     }
 
     @Override
-    public boolean update(UUID id, ChiTietSP chiTietSP) {
-        return chiTietSPRepository.update(id, chiTietSP);
+    public boolean update(ChiTietSP chiTietSP) {
+        return chiTietSPRepository.update(chiTietSP);
     }
 
     @Override

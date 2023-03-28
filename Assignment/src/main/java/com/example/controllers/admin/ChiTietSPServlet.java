@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @WebServlet({"/admin/chi-tiet-sp/index", "/admin/chi-tiet-sp/create", "/admin/chi-tiet-sp/edit", "/admin/chi-tiet-sp/delete", "/admin/chi-tiet-sp/update", "/admin/chi-tiet-sp/store"})
@@ -136,7 +137,8 @@ public class ChiTietSPServlet extends HttpServlet {
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             UUID id = UUID.fromString(request.getParameter("id"));
-            // Lấy các id từ thẻ select bên JSP
+
+            // Tạo các đối tượng SanPham, MauSac, DongSP, NSX từ giá trị được chọn trong JSP
             SanPham sanPham = new SanPham();
             sanPham.setId(UUID.fromString(request.getParameter("idSanPham")));
 
@@ -149,15 +151,22 @@ public class ChiTietSPServlet extends HttpServlet {
             NSX nsx = new NSX();
             nsx.setId(UUID.fromString(request.getParameter("idNSX")));
 
-            // Gán các đối tượng được setID vào đối tượng muốn thêm
+            // Tạo đối tượng ChiTietSP và gán các đối tượng đã tạo vào
             ChiTietSP chiTietSP = new ChiTietSP();
+            chiTietSP.setId(id);
             chiTietSP.setSanPham(sanPham);
             chiTietSP.setMauSac(mauSac);
             chiTietSP.setDongSP(dongSP);
             chiTietSP.setNsx(nsx);
+            chiTietSP.setSoLuongTon(Integer.parseInt(request.getParameter("soLuongTon")));
+            chiTietSP.setNamSX(Integer.parseInt(request.getParameter("namSX")));
+            chiTietSP.setMoTa(request.getParameter("moTa"));
+            chiTietSP.setGiaNhap(new BigDecimal(request.getParameter("giaNhap")));
+            chiTietSP.setGiaBan(new BigDecimal(request.getParameter("giaBan")));
 
-            BeanUtils.populate(chiTietSP, request.getParameterMap());
-            chiTietSPService.update(id, chiTietSP);
+            // Truyền đối tượng ChiTietSP và định danh UUID cho phương thức update
+            chiTietSPService.update(chiTietSP);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
