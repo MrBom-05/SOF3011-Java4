@@ -7,6 +7,7 @@ import com.example.models.SanPhamCustom;
 import com.example.repositories.ChiTietSPRepository;
 import com.example.services.ChiTietSPService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ChiTietSPServiceImplement implements ChiTietSPService {
@@ -69,7 +70,7 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     }
 
     @Override
-    public float getGiaBanById(String id) {
+    public BigDecimal getGiaBanById(String id) {
         return chiTietSPRepository.getGiaBanById(id);
     }
 }

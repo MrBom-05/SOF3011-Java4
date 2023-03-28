@@ -9,6 +9,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.UUID;
 
 
 @Getter
@@ -23,7 +24,7 @@ public class KhachHang implements Serializable {
     @GenericGenerator(name = "generator", strategy = "guid", parameters = {})
     @GeneratedValue(generator = "generator")
     @Column(name = "id", columnDefinition = "uniqueidentifier")
-    private String id;
+    private UUID id;
 
     @Column(name = "Ma", columnDefinition = "Varchar(20)", unique = true)
     private String ma;

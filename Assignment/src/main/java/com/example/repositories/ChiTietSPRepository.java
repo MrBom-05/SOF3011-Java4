@@ -10,6 +10,7 @@ import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
 import javax.persistence.Query;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ChiTietSPRepository {
@@ -119,9 +120,9 @@ public class ChiTietSPRepository {
         return (SanPhamChiTietCustom) query.getSingleResult();
     }
 
-    public float getGiaBanById(String id) {
+    public BigDecimal getGiaBanById(String id) {
         Query query = session.createQuery("select sp.giaBan from ChiTietSP sp where sp.id =: id");
         query.setParameter("id", id);
-        return (float) query.getSingleResult();
+        return (BigDecimal) query.getSingleResult();
     }
 }

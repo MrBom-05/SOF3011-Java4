@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,5 +15,5 @@ public class SanPhamCustom {
     private String id;
     private String ten;
     private String anh;
-    private float giaBan;
+    private BigDecimal giaBan;
 }

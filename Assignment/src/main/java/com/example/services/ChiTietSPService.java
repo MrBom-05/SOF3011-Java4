@@ -5,6 +5,7 @@ import com.example.models.ChiTietSPCustom;
 import com.example.models.SanPhamChiTietCustom;
 import com.example.models.SanPhamCustom;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface ChiTietSPService {
@@ -30,5 +31,5 @@ public interface ChiTietSPService {
 
     public SanPhamChiTietCustom getProductById(String id);
 
-    public float getGiaBanById(String id);
+    public BigDecimal getGiaBanById(String id);
 }

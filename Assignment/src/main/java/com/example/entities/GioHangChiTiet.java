@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -30,12 +31,12 @@ public class GioHangChiTiet implements Serializable {
     private int soLuong;
 
     @Column(name = "DonGia", columnDefinition = "Decimal(20,0)")
-    private Float donGia;
+    private BigDecimal donGia;
 
     @Column(name = "DonGiaKhiGiam", columnDefinition = "Decimal(20,0)")
-    private Float donGiaKhiGiam;
+    private BigDecimal donGiaKhiGiam;
 
-    public GioHangChiTiet(GioHang gioHang, ChiTietSP chiTietSP, int soLuong, Float donGia) {
+    public GioHangChiTiet(GioHang gioHang, ChiTietSP chiTietSP, int soLuong, BigDecimal donGia) {
         this.gioHang = gioHang;
         this.chiTietSP = chiTietSP;
         this.soLuong = soLuong;

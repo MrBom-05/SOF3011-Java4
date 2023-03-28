@@ -10,15 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83b43dc4-95b1-4fd9-a1e0-4576a6b5ea3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entities/KhachHang.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/utils/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/user/GioHangServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/user/GioHangServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChiTietSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChiTietSP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChucVu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChucVu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/GioHangChiTiet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/GioHangChiTiet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/HoaDonChiTiet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/HoaDonChiTiet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/ChiTietSPCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/ChiTietSPCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/GioHangChiTietCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/GioHangChiTietCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamChiTietCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamChiTietCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/repositories/ChiTietSPRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/repositories/ChiTietSPRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/ChiTietSPService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/ChiTietSPService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/implement/ChiTietSPServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/implement/ChiTietSPServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BaiTapSOF3011/com/example/controller/admin/KhachHangController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BaiTapSOF3011/com/example/model/KhachHang.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entities/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entities/KhachHang.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +229,8 @@
       <workItem from="1678826291658" duration="101000" />
       <workItem from="1679239023057" duration="107000" />
       <workItem from="1679712026263" duration="4261000" />
+      <workItem from="1679929895052" duration="2000" />
+      <workItem from="1679970673157" duration="3260000" />
     </task>
     <servers />
   </component>

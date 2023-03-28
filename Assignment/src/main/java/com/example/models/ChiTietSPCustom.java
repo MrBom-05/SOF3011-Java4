@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,6 +22,6 @@ public class ChiTietSPCustom {
     private int namSX;
     private String moTa;
     private int soLuongTon;
-    private float giaNhap;
-    private float giaBan;
+    private BigDecimal giaNhap;
+    private BigDecimal giaBan;
 }

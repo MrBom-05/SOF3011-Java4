@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -50,10 +51,10 @@ public class ChiTietSP implements Serializable {
     private int soLuongTon;
 
     @Column(name = "GiaNhap", columnDefinition = "Decimal(20,0)")
-    private Float giaNhap;
+    private BigDecimal giaNhap;
 
     @Column(name = "GiaBan", columnDefinition = "Decimal(20,0)")
-    private Float giaBan;
+    private BigDecimal giaBan;
 
     @OneToMany(mappedBy = "chiTietSP", fetch = FetchType.LAZY)
     private List<GioHangChiTiet> listGioHangChiTiet;

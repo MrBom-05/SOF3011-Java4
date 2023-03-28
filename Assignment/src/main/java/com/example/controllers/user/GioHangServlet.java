@@ -17,6 +17,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 @WebServlet({"/cart", "/add-cart", "/cart-delete"})
@@ -71,7 +72,7 @@ public class GioHangServlet extends HttpServlet {
             String idSP = request.getParameter("id");
             String idGH = gioHangService.getById(khachHang.getId());
             int soLuong = Integer.parseInt(request.getParameter("soLuong"));
-            float giaBan = chiTietSPService.getGiaBanById(idSP);
+            BigDecimal giaBan = chiTietSPService.getGiaBanById(idSP);
 
             ChiTietSP chiTietSP = new ChiTietSP();
             chiTietSP.setId(idSP);
