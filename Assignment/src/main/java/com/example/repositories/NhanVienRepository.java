@@ -7,13 +7,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class NhanVienRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<NhanVienCustom> getListNhanVien() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -31,9 +32,11 @@ public class NhanVienRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
@@ -89,12 +92,12 @@ public class NhanVienRepository {
     public String getIdCuaHangByMa = "select n.cuaHang.id from NhanVien n where ma =: ma";
     public String getIdChucVuByMa = "select n.chucVu.id from NhanVien n where ma =: ma";
 
-    public String getIdByMa(String ma, String where) {
+    public UUID getIdByMa(String ma, String where) {
 
         Query query = session.createQuery(where);
         query.setParameter("ma", ma);
 
-        return (String) query.getSingleResult();
+        return (UUID) query.getSingleResult();
     }
 
 

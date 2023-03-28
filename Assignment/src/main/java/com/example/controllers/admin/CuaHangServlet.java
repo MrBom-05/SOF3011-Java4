@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet({"/admin/cua-hang/index", "/admin/cua-hang/create", "/admin/cua-hang/edit", "/admin/cua-hang/delete", "/admin/cua-hang/update", "/admin/cua-hang/store"})
 public class CuaHangServlet extends HttpServlet {
@@ -67,7 +68,7 @@ public class CuaHangServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         CuaHang cuaHang = cuaHangService.getById(id);
         request.setAttribute("cuaHang", cuaHang);
@@ -78,7 +79,7 @@ public class CuaHangServlet extends HttpServlet {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             boolean check = cuaHangService.delete(id);
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
@@ -103,7 +104,7 @@ public class CuaHangServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
 
             CuaHang cuaHang = new CuaHang();
             BeanUtils.populate(cuaHang, request.getParameterMap());

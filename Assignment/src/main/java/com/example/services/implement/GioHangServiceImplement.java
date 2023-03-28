@@ -4,6 +4,8 @@ import com.example.entities.GioHang;
 import com.example.repositories.GioHangRepository;
 import com.example.services.GioHangService;
 
+import java.util.UUID;
+
 public class GioHangServiceImplement implements GioHangService {
 
     private GioHangRepository gioHangRepository = new GioHangRepository();
@@ -14,12 +16,12 @@ public class GioHangServiceImplement implements GioHangService {
     }
 
     @Override
-    public boolean check(String id) {
+    public boolean check(UUID id) {
         return gioHangRepository.check(id);
     }
 
     @Override
-    public String getById(String id) {
+    public UUID getById(UUID id) {
         return gioHangRepository.getById(id);
     }
 }

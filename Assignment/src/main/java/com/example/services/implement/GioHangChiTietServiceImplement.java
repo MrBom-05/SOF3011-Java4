@@ -6,13 +6,14 @@ import com.example.repositories.GioHangChiTietRepository;
 import com.example.services.GioHangChiTietService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class GioHangChiTietServiceImplement implements GioHangChiTietService {
 
     private GioHangChiTietRepository gioHangChiTietRepository = new GioHangChiTietRepository();
 
     @Override
-    public List<GioHangChiTietCustom> getList(String id) {
+    public List<GioHangChiTietCustom> getList(UUID id) {
         return gioHangChiTietRepository.getList(id);
     }
 
@@ -22,7 +23,7 @@ public class GioHangChiTietServiceImplement implements GioHangChiTietService {
     }
 
     @Override
-    public boolean delete(String idSP, String idGH) {
+    public boolean delete(UUID idSP, UUID idGH) {
         return gioHangChiTietRepository.delete(idSP, idGH);
     }
 }

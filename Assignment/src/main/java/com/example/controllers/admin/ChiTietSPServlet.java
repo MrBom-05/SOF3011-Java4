@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet({"/admin/chi-tiet-sp/index", "/admin/chi-tiet-sp/create", "/admin/chi-tiet-sp/edit", "/admin/chi-tiet-sp/delete", "/admin/chi-tiet-sp/update", "/admin/chi-tiet-sp/store"})
 public class ChiTietSPServlet extends HttpServlet {
@@ -76,7 +77,7 @@ public class ChiTietSPServlet extends HttpServlet {
         request.setAttribute("listDongSP", dongSPService.getListDongSP());
 
 
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         request.setAttribute("idSanPham", chiTietSPService.getIdSanPhamById(id));
         request.setAttribute("idMauSac", chiTietSPService.getIdMauSacById(id));
@@ -93,7 +94,7 @@ public class ChiTietSPServlet extends HttpServlet {
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String id = request.getParameter("id");
-            boolean check = chiTietSPService.delete(id);
+            boolean check = chiTietSPService.delete(UUID.fromString(id));
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
         } catch (Exception e) {
@@ -106,16 +107,16 @@ public class ChiTietSPServlet extends HttpServlet {
         try {
             // Lấy các id từ thẻ select bên JSP
             SanPham sanPham = new SanPham();
-            sanPham.setId(request.getParameter("idSanPham"));
+            sanPham.setId(UUID.fromString(request.getParameter("idSanPham")));
 
             MauSac mauSac = new MauSac();
-            mauSac.setId(request.getParameter("idMauSac"));
+            mauSac.setId(UUID.fromString(request.getParameter("idMauSac")));
 
             DongSP dongSP = new DongSP();
-            dongSP.setId(request.getParameter("idDongSP"));
+            dongSP.setId(UUID.fromString(request.getParameter("idDongSP")));
 
             NSX nsx = new NSX();
-            nsx.setId(request.getParameter("idNSX"));
+            nsx.setId(UUID.fromString(request.getParameter("idNSX")));
 
             // Gán các đối tượng được setID vào đối tượng muốn thêm
             ChiTietSP chiTietSP = new ChiTietSP();
@@ -134,19 +135,19 @@ public class ChiTietSPServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             // Lấy các id từ thẻ select bên JSP
             SanPham sanPham = new SanPham();
-            sanPham.setId(request.getParameter("idSanPham"));
+            sanPham.setId(UUID.fromString(request.getParameter("idSanPham")));
 
             MauSac mauSac = new MauSac();
-            mauSac.setId(request.getParameter("idMauSac"));
+            mauSac.setId(UUID.fromString(request.getParameter("idMauSac")));
 
             DongSP dongSP = new DongSP();
-            dongSP.setId(request.getParameter("idDongSP"));
+            dongSP.setId(UUID.fromString(request.getParameter("idDongSP")));
 
             NSX nsx = new NSX();
-            nsx.setId(request.getParameter("idNSX"));
+            nsx.setId(UUID.fromString(request.getParameter("idNSX")));
 
             // Gán các đối tượng được setID vào đối tượng muốn thêm
             ChiTietSP chiTietSP = new ChiTietSP();

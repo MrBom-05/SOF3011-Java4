@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class HoaDonCustom {
-    private String id;
+    private UUID id;
     private String ma;
     private String tenNV;
     private String tenKH;

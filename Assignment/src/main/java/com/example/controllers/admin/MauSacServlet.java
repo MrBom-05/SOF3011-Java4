@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet({"/admin/mau-sac/index", "/admin/mau-sac/create", "/admin/mau-sac/edit", "/admin/mau-sac/delete", "/admin/mau-sac/update", "/admin/mau-sac/store"})
 public class MauSacServlet extends HttpServlet {
@@ -67,7 +68,7 @@ public class MauSacServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         MauSac mauSac = mauSacService.getById(id);
         request.setAttribute("mauSac", mauSac);
@@ -78,7 +79,7 @@ public class MauSacServlet extends HttpServlet {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             boolean check = mauSacService.delete(id);
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
@@ -103,7 +104,7 @@ public class MauSacServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
 
             MauSac mauSac = new MauSac();
             BeanUtils.populate(mauSac, request.getParameterMap());

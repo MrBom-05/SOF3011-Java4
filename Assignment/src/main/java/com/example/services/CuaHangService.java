@@ -3,15 +3,16 @@ package com.example.services;
 import com.example.entities.CuaHang;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface CuaHangService {
     public List<CuaHang> getListCuaHang();
 
     public boolean insert(CuaHang cuaHang);
 
-    public boolean delete(String id);
+    public boolean delete(UUID id);
 
-    public boolean update(String id, CuaHang cuaHang);
+    public boolean update(UUID id, CuaHang cuaHang);
 
-    public CuaHang getById(String id);
+    public CuaHang getById(UUID id);
 }

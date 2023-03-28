@@ -6,13 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class DongSPRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<DongSP> getListDongSP() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -30,14 +31,16 @@ public class DongSPRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from DongSP where id =: id");
@@ -59,7 +62,7 @@ public class DongSPRepository {
         }
     }
 
-    public boolean update(String id, DongSP dongSP) {
+    public boolean update(UUID id, DongSP dongSP) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update DongSP set ten =: ten where id =: id");
@@ -74,10 +77,7 @@ public class DongSPRepository {
         }
     }
 
-    public DongSP getById(String id) {
-        Query query = session.createQuery("from DongSP where id =: id");
-        query.setParameter("id", id);
-        DongSP dongSP = (DongSP) query.getSingleResult();
-        return dongSP;
+    public DongSP getById(UUID id) {
+        return session.find(DongSP.class, id);
     }
 }

@@ -14,6 +14,7 @@ import org.apache.commons.beanutils.converters.DateTimeConverter;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Random;
+import java.util.UUID;
 
 @WebServlet({"/admin/khach-hang/index", "/admin/khach-hang/create", "/admin/khach-hang/edit", "/admin/khach-hang/delete", "/admin/khach-hang/update", "/admin/khach-hang/store"})
 public class KhachHangServlet extends HttpServlet {
@@ -72,7 +73,7 @@ public class KhachHangServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         KhachHang khachHang = khachHangService.getById(id);
         request.setAttribute("khachHang", khachHang);
@@ -83,7 +84,7 @@ public class KhachHangServlet extends HttpServlet {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             boolean check = khachHangService.delete(id);
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
@@ -116,7 +117,7 @@ public class KhachHangServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
 
             DateTimeConverter dateTimeConverter = new DateConverter(new Date());
             dateTimeConverter.setPattern("yyyy-MM-dd");

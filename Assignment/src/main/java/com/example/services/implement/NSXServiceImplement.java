@@ -5,6 +5,7 @@ import com.example.repositories.NSXRepository;
 import com.example.services.NSXService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class NSXServiceImplement implements NSXService {
 
@@ -21,17 +22,17 @@ public class NSXServiceImplement implements NSXService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return nsxRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, NSX nsx) {
+    public boolean update(UUID id, NSX nsx) {
         return nsxRepository.update(id, nsx);
     }
 
     @Override
-    public NSX getById(String id) {
+    public NSX getById(UUID id) {
         return nsxRepository.getById(id);
     }
 }

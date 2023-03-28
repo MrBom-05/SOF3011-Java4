@@ -6,14 +6,15 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class GioHangRepository {
 
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public boolean insert(GioHang gioHang) {
         try {
@@ -24,15 +25,17 @@ public class GioHangRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
 
 
-    public boolean check(String id) {
+    public boolean check(UUID id) {
         Query query = session.createQuery("from GioHang g where g.khachHang.id =: id");
         query.setParameter("id", id);
         List<GioHang> gioHangList = query.getResultList();
@@ -42,10 +45,10 @@ public class GioHangRepository {
         return true;
     }
 
-    public String getById(String id) {
+    public UUID getById(UUID id) {
         Query query = session.createQuery("select g.id from GioHang g where g.khachHang.id =: id");
         query.setParameter("id", id);
-        return (String) query.getSingleResult();
+        return (UUID) query.getSingleResult();
     }
 
 }

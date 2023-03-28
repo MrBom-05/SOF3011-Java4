@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.UUID;
 
 @MultipartConfig
 @WebServlet({"/admin/san-pham/index", "/admin/san-pham/create", "/admin/san-pham/edit", "/admin/san-pham/delete", "/admin/san-pham/update", "/admin/san-pham/store"})
@@ -84,7 +85,7 @@ public class SanPhamServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         SanPham sanPham = sanPhamService.getById(id);
         request.setAttribute("sanPham", sanPham);
@@ -95,7 +96,7 @@ public class SanPhamServlet extends HttpServlet {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             boolean check = sanPhamService.delete(id);
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
@@ -136,7 +137,7 @@ public class SanPhamServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
 
             Part part = request.getPart("anh");
             String realPath = request.getServletContext().getRealPath("/images");

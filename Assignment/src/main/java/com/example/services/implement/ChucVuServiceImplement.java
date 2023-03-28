@@ -5,6 +5,7 @@ import com.example.repositories.ChucVuRepository;
 import com.example.services.ChucVuService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class ChucVuServiceImplement implements ChucVuService {
 
@@ -22,17 +23,17 @@ public class ChucVuServiceImplement implements ChucVuService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return chucVuRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, ChucVu chucVu) {
+    public boolean update(UUID id, ChucVu chucVu) {
         return chucVuRepository.update(id, chucVu);
     }
 
     @Override
-    public ChucVu getById(String id) {
+    public ChucVu getById(UUID id) {
         return chucVuRepository.getById(id);
     }
 }

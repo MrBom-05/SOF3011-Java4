@@ -19,6 +19,7 @@ import org.apache.commons.beanutils.converters.DateTimeConverter;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.UUID;
 
 @WebServlet({"/admin/nhan-vien/index", "/admin/nhan-vien/create", "/admin/nhan-vien/edit", "/admin/nhan-vien/delete", "/admin/nhan-vien/update", "/admin/nhan-vien/store"})
 public class NhanVienServlet extends HttpServlet {
@@ -118,10 +119,10 @@ public class NhanVienServlet extends HttpServlet {
             ConvertUtils.register(dateTimeConverter, Date.class);
 
             CuaHang cuaHang = new CuaHang();
-            cuaHang.setId(request.getParameter("idCuaHang"));
+            cuaHang.setId(UUID.fromString(request.getParameter("idCuaHang")));
 
             ChucVu chucVu = new ChucVu();
-            chucVu.setId(request.getParameter("idChucVu"));
+            chucVu.setId(UUID.fromString(request.getParameter("idChucVu")));
 
             NhanVien nhanVien = new NhanVien();
             nhanVien.setCuaHang(cuaHang);
@@ -146,10 +147,10 @@ public class NhanVienServlet extends HttpServlet {
             ConvertUtils.register(dateTimeConverter, Date.class);
 
             CuaHang cuaHang = new CuaHang();
-            cuaHang.setId(request.getParameter("idCuaHang"));
+            cuaHang.setId(UUID.fromString(request.getParameter("idCuaHang")));
 
             ChucVu chucVu = new ChucVu();
-            chucVu.setId(request.getParameter("idChucVu"));
+            chucVu.setId(UUID.fromString(request.getParameter("idChucVu")));
 
             NhanVien nhanVien = new NhanVien();
             nhanVien.setCuaHang(cuaHang);

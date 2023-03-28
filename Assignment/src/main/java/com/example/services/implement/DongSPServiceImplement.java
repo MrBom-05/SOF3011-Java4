@@ -5,6 +5,7 @@ import com.example.repositories.DongSPRepository;
 import com.example.services.DongSPService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class DongSPServiceImplement implements DongSPService {
 
@@ -21,17 +22,17 @@ public class DongSPServiceImplement implements DongSPService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return dongSPRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, DongSP dongSP) {
+    public boolean update(UUID id, DongSP dongSP) {
         return dongSPRepository.update(id, dongSP);
     }
 
     @Override
-    public DongSP getById(String id) {
+    public DongSP getById(UUID id) {
         return dongSPRepository.getById(id);
     }
 }

@@ -6,6 +6,7 @@ import com.example.repositories.NhanVienRepository;
 import com.example.services.NhanVienService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class NhanVienServiceImplement implements NhanVienService {
 
@@ -32,12 +33,12 @@ public class NhanVienServiceImplement implements NhanVienService {
     }
 
     @Override
-    public String getIdCuaHangByMa(String ma) {
+    public UUID getIdCuaHangByMa(String ma) {
         return nhanVienRepository.getIdByMa(ma, nhanVienRepository.getIdCuaHangByMa);
     }
 
     @Override
-    public String getIdChucVuByMa(String ma) {
+    public UUID getIdChucVuByMa(String ma) {
         return nhanVienRepository.getIdByMa(ma, nhanVienRepository.getIdChucVuByMa);
     }
 

@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet({"/admin/dong-sp/index", "/admin/dong-sp/create", "/admin/dong-sp/edit", "/admin/dong-sp/delete", "/admin/dong-sp/update", "/admin/dong-sp/store"})
 public class DongSPServlet extends HttpServlet {
@@ -67,7 +68,7 @@ public class DongSPServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         DongSP dongSP = dongSPService.getById(id);
         request.setAttribute("dongSP", dongSP);
@@ -78,7 +79,7 @@ public class DongSPServlet extends HttpServlet {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             boolean check = dongSPService.delete(id);
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
@@ -103,7 +104,7 @@ public class DongSPServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
 
             DongSP dongSP = new DongSP();
             BeanUtils.populate(dongSP, request.getParameterMap());

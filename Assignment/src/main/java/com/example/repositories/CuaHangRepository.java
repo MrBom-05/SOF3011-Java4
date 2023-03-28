@@ -6,13 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class CuaHangRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<CuaHang> getListCuaHang() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -30,14 +31,16 @@ public class CuaHangRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from CuaHang where id =: id");
@@ -59,7 +62,7 @@ public class CuaHangRepository {
         }
     }
 
-    public boolean update(String id, CuaHang cuaHang) {
+    public boolean update(UUID id, CuaHang cuaHang) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update CuaHang set ten =: ten, diaChi =: diaChi, thanhPho =: thanhPho, quocGia =: quocGia where id =: id");
@@ -77,10 +80,7 @@ public class CuaHangRepository {
         }
     }
 
-    public CuaHang getById(String id) {
-        Query query = session.createQuery("from CuaHang where id =: id");
-        query.setParameter("id", id);
-        CuaHang cuaHang = (CuaHang) query.getSingleResult();
-        return cuaHang;
+    public CuaHang getById(UUID id) {
+        return session.find(CuaHang.class, id);
     }
 }

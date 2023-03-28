@@ -5,6 +5,7 @@ import com.example.repositories.MauSacRepository;
 import com.example.services.MauSacService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class MauSacServiceImplement implements MauSacService {
 
@@ -21,17 +22,17 @@ public class MauSacServiceImplement implements MauSacService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return mauSacRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, MauSac mauSac) {
+    public boolean update(UUID id, MauSac mauSac) {
         return mauSacRepository.update(id, mauSac);
     }
 
     @Override
-    public MauSac getById(String id) {
+    public MauSac getById(UUID id) {
         return mauSacRepository.getById(id);
     }
 }

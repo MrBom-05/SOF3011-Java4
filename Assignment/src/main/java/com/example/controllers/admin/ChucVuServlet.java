@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet({"/admin/chuc-vu/index", "/admin/chuc-vu/create", "/admin/chuc-vu/edit", "/admin/chuc-vu/delete", "/admin/chuc-vu/update", "/admin/chuc-vu/store"})
 public class ChucVuServlet extends HttpServlet {
@@ -65,7 +66,7 @@ public class ChucVuServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         ChucVu chucVu = chucVuService.getById(id);
         request.setAttribute("chucVu", chucVu);
@@ -76,7 +77,7 @@ public class ChucVuServlet extends HttpServlet {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             boolean check = chucVuService.delete(id);
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
@@ -101,7 +102,7 @@ public class ChucVuServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
 
             ChucVu chucVu = new ChucVu();
             BeanUtils.populate(chucVu, request.getParameterMap());

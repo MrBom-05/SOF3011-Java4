@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 @WebServlet({
         "/product-detail"
@@ -21,7 +22,7 @@ public class SanPhamServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         SanPhamChiTietCustom sanPhamChiTietCustom = chiTietSPService.getProductById(id);
 

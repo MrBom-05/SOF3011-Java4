@@ -7,15 +7,16 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class GioHangChiTietRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
-    public List<GioHangChiTietCustom> getList(String id) {
+    public List<GioHangChiTietCustom> getList(UUID id) {
         Session session = HibernateUtil.getFACTORY().openSession();
         Query query = session.createQuery("select new com.example.models.GioHangChiTietCustom(sp.chiTietSP.id, sp.chiTietSP.sanPham.ten, sp.chiTietSP.sanPham.anh, sp.chiTietSP.mauSac.ten, sp.donGia, sp.soLuong) from com.example.entities.GioHangChiTiet sp left join sp.chiTietSP.sanPham spm left join sp.chiTietSP.mauSac ms left join sp.gioHang.khachHang kh where sp.gioHang.khachHang.id =: id");
         query.setParameter("id", id);
@@ -32,14 +33,16 @@ public class GioHangChiTietRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
 
-    public boolean delete(String idSP, String idGH) {
+    public boolean delete(UUID idSP, UUID idGH) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from GioHangChiTiet gh where gh.chiTietSP.id =: idSP and gh.gioHang.id =: idGH");

@@ -9,6 +9,7 @@ import com.example.services.ChiTietSPService;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 public class ChiTietSPServiceImplement implements ChiTietSPService {
 
@@ -25,37 +26,37 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return chiTietSPRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, ChiTietSP chiTietSP) {
+    public boolean update(UUID id, ChiTietSP chiTietSP) {
         return chiTietSPRepository.update(id, chiTietSP);
     }
 
     @Override
-    public String getIdSanPhamById(String id) {
+    public UUID getIdSanPhamById(UUID id) {
         return chiTietSPRepository.getIdById(id, chiTietSPRepository.getIdSanPhamById);
     }
 
     @Override
-    public String getIdMauSacById(String id) {
+    public UUID getIdMauSacById(UUID id) {
         return chiTietSPRepository.getIdById(id, chiTietSPRepository.getIdMauSacById);
     }
 
     @Override
-    public String getIdDongSPById(String id) {
+    public UUID getIdDongSPById(UUID id) {
         return chiTietSPRepository.getIdById(id, chiTietSPRepository.getIdDongSPById);
     }
 
     @Override
-    public String getIdNSXById(String id) {
+    public UUID getIdNSXById(UUID id) {
         return chiTietSPRepository.getIdById(id, chiTietSPRepository.getIdNSXById);
     }
 
     @Override
-    public ChiTietSP getById(String id) {
+    public ChiTietSP getById(UUID id) {
         return chiTietSPRepository.getById(id);
     }
 
@@ -65,12 +66,12 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     }
 
     @Override
-    public SanPhamChiTietCustom getProductById(String id) {
+    public SanPhamChiTietCustom getProductById(UUID id) {
         return chiTietSPRepository.getProductById(id);
     }
 
     @Override
-    public BigDecimal getGiaBanById(String id) {
+    public BigDecimal getGiaBanById(UUID id) {
         return chiTietSPRepository.getGiaBanById(id);
     }
 }

@@ -5,6 +5,7 @@ import com.example.repositories.CuaHangRepository;
 import com.example.services.CuaHangService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class CuaHangServiceImplement implements CuaHangService {
 
@@ -22,17 +23,17 @@ public class CuaHangServiceImplement implements CuaHangService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return cuaHangRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, CuaHang cuaHang) {
+    public boolean update(UUID id, CuaHang cuaHang) {
         return cuaHangRepository.update(id, cuaHang);
     }
 
     @Override
-    public CuaHang getById(String id) {
+    public CuaHang getById(UUID id) {
         return cuaHangRepository.getById(id);
     }
 }

@@ -5,13 +5,13 @@ import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
 
 public class HoaDonRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<HoaDonCustom> getListHoaDon() {
         Session session = HibernateUtil.getFACTORY().openSession();

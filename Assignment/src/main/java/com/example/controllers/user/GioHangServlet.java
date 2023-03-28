@@ -19,6 +19,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @WebServlet({"/cart", "/add-cart", "/cart-delete"})
 public class GioHangServlet extends HttpServlet {
@@ -69,8 +70,8 @@ public class GioHangServlet extends HttpServlet {
         }
 
         try {
-            String idSP = request.getParameter("id");
-            String idGH = gioHangService.getById(khachHang.getId());
+            UUID idSP = UUID.fromString(request.getParameter("id"));
+            UUID idGH = gioHangService.getById(khachHang.getId());
             int soLuong = Integer.parseInt(request.getParameter("soLuong"));
             BigDecimal giaBan = chiTietSPService.getGiaBanById(idSP);
 
@@ -94,8 +95,8 @@ public class GioHangServlet extends HttpServlet {
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
 
         try {
-            String idSP = request.getParameter("id");
-            String idGH = gioHangService.getById(khachHang.getId());
+            UUID idSP = UUID.fromString(request.getParameter("id"));
+            UUID idGH = gioHangService.getById(khachHang.getId());
 
             gioHangChiTietService.delete(idSP, idGH);
         } catch (Exception e) {

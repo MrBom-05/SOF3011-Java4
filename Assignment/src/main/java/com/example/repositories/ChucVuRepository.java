@@ -5,14 +5,15 @@ import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
+import jakarta.persistence.Query;
 
-import javax.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class ChucVuRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<ChucVu> getListChucVu() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -31,15 +32,17 @@ public class ChucVuRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
 
 
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from ChucVu where id =: id");
@@ -61,7 +64,7 @@ public class ChucVuRepository {
         }
     }
 
-    public boolean update(String id, ChucVu chucVu) {
+    public boolean update(UUID id, ChucVu chucVu) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update ChucVu set ten =: ten where id =: id");
@@ -76,10 +79,7 @@ public class ChucVuRepository {
         }
     }
 
-    public ChucVu getById(String id) {
-        Query query = session.createQuery("from ChucVu where id =: id");
-        query.setParameter("id", id);
-        ChucVu chucVu = (ChucVu) query.getSingleResult();
-        return chucVu;
+    public ChucVu getById(UUID id) {
+        return session.find(ChucVu.class, id);
     }
 }

@@ -5,6 +5,7 @@ import com.example.repositories.KhachHangRepository;
 import com.example.services.KhachHangService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class KhachHangServiceImplement implements KhachHangService {
 
@@ -22,17 +23,17 @@ public class KhachHangServiceImplement implements KhachHangService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return khachHangRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, KhachHang khachHang) {
+    public boolean update(UUID id, KhachHang khachHang) {
         return khachHangRepository.update(id, khachHang);
     }
 
     @Override
-    public KhachHang getById(String id) {
+    public KhachHang getById(UUID id) {
         return khachHangRepository.getById(id);
     }
 

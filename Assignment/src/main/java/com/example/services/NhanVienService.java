@@ -5,6 +5,7 @@ import com.example.entities.NhanVien;
 import com.example.models.NhanVienCustom;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface NhanVienService {
     public List<NhanVienCustom> getListNhanVien();
@@ -15,9 +16,9 @@ public interface NhanVienService {
 
     public boolean update(String ma, NhanVien nhanVien);
 
-    public String getIdCuaHangByMa(String ma);
+    public UUID getIdCuaHangByMa(String ma);
 
-    public String getIdChucVuByMa(String ma);
+    public UUID getIdChucVuByMa(String ma);
 
     public NhanVien getByMa(String ma);
 }

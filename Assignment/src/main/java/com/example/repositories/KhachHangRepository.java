@@ -6,13 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class KhachHangRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<KhachHang> getListKhachHang() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -30,14 +31,16 @@ public class KhachHangRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from KhachHang where id =: id");
@@ -59,7 +62,7 @@ public class KhachHangRepository {
         }
     }
 
-    public boolean update(String id, KhachHang khachHang) {
+    public boolean update(UUID id, KhachHang khachHang) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update KhachHang set ten =: ten, tenDem =: tenDem, ho =: ho, ngaySinh =: ngaySinh, sdt =: sdt, email =: email, matKhau =: matKhau, diaChi =: diaChi, thanhPho =: thanhPho, quocGia =: quocGia where id =: id");
@@ -83,11 +86,8 @@ public class KhachHangRepository {
         }
     }
 
-    public KhachHang getById(String id) {
-        Query query = session.createQuery("from KhachHang where id =: id");
-        query.setParameter("id", id);
-        KhachHang khachHang = (KhachHang) query.getSingleResult();
-        return khachHang;
+    public KhachHang getById(UUID id) {
+        return session.find(KhachHang.class, id);
     }
 
     public KhachHang login(String email, String matKhau) {

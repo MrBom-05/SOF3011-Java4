@@ -5,18 +5,20 @@ import com.example.models.ChiTietSPCustom;
 import com.example.models.SanPhamChiTietCustom;
 import com.example.models.SanPhamCustom;
 import com.example.utilities.HibernateUtil;
+import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 public class ChiTietSPRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<ChiTietSPCustom> getListChiTietSP() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -34,14 +36,16 @@ public class ChiTietSPRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            transaction.rollback();
+            e.printStackTrace();
             return false;
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from ChiTietSP where id =: id");
@@ -63,7 +67,7 @@ public class ChiTietSPRepository {
         }
     }
 
-    public boolean update(String id, ChiTietSP chiTietSP) {
+    public boolean update(UUID id, ChiTietSP chiTietSP) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update ChiTietSP set namSX =: namSX, moTa =: moTa, soLuongTon =: soLuongTon, giaNhap =: giaNhap, giaBan =: giaBan, sanPham.id =: idSP, nsx.id =: idNSX, mauSac.id =: idMS, dongSP.id =: idDSP where id =: id");
@@ -82,6 +86,7 @@ public class ChiTietSPRepository {
             return true;
         } catch (Exception e) {
             e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
@@ -91,20 +96,17 @@ public class ChiTietSPRepository {
     public String getIdDongSPById = "select s.dongSP.id from ChiTietSP s where id =: id";
     public String getIdNSXById = "select s.nsx.id from ChiTietSP s where id =: id";
 
-    public String getIdById(String id, String where) {
+    public UUID getIdById(UUID id, String where) {
 
         Query query = session.createQuery(where);
         query.setParameter("id", id);
 
-        return (String) query.getSingleResult();
+        return (UUID) query.getSingleResult();
     }
 
 
-    public ChiTietSP getById(String id) {
-        Query query = session.createQuery("from ChiTietSP where id =: id");
-        query.setParameter("id", id);
-        ChiTietSP chiTietSP = (ChiTietSP) query.getSingleResult();
-        return chiTietSP;
+    public ChiTietSP getById(UUID id) {
+        return session.find(ChiTietSP.class, id);
     }
 
     public List<SanPhamCustom> getListSP() {
@@ -114,13 +116,13 @@ public class ChiTietSPRepository {
         return list;
     }
 
-    public SanPhamChiTietCustom getProductById(String id) {
+    public SanPhamChiTietCustom getProductById(UUID id) {
         Query query = session.createQuery("select new com.example.models.SanPhamChiTietCustom(sp.id, sp.sanPham.ten, sp.sanPham.anh, sp.soLuongTon, sp.giaBan) from com.example.entities.ChiTietSP sp left join sp.sanPham spm where sp.id =: id");
         query.setParameter("id", id);
         return (SanPhamChiTietCustom) query.getSingleResult();
     }
 
-    public BigDecimal getGiaBanById(String id) {
+    public BigDecimal getGiaBanById(UUID id) {
         Query query = session.createQuery("select sp.giaBan from ChiTietSP sp where sp.id =: id");
         query.setParameter("id", id);
         return (BigDecimal) query.getSingleResult();

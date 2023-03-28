@@ -5,6 +5,7 @@ import com.example.repositories.SanPhamRepository;
 import com.example.services.SanPhamService;
 
 import java.util.List;
+import java.util.UUID;
 
 public class SanPhamServiceImplement implements SanPhamService {
 
@@ -21,17 +22,17 @@ public class SanPhamServiceImplement implements SanPhamService {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         return sanPhamRepository.delete(id);
     }
 
     @Override
-    public boolean update(String id, SanPham sanPham) {
+    public boolean update(UUID id, SanPham sanPham) {
         return sanPhamRepository.update(id, sanPham);
     }
 
     @Override
-    public SanPham getById(String id) {
+    public SanPham getById(UUID id) {
         return sanPhamRepository.getById(id);
     }
 }

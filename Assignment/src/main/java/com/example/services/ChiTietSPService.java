@@ -7,29 +7,30 @@ import com.example.models.SanPhamCustom;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 public interface ChiTietSPService {
     public List<ChiTietSPCustom> getListChiTietSP();
 
     public boolean insert(ChiTietSP chiTietSP);
 
-    public boolean delete(String id);
+    public boolean delete(UUID id);
 
-    public boolean update(String id, ChiTietSP chiTietSP);
+    public boolean update(UUID id, ChiTietSP chiTietSP);
 
-    public String getIdSanPhamById(String id);
+    public UUID getIdSanPhamById(UUID id);
 
-    public String getIdMauSacById(String id);
+    public UUID getIdMauSacById(UUID id);
 
-    public String getIdDongSPById(String id);
+    public UUID getIdDongSPById(UUID id);
 
-    public String getIdNSXById(String id);
+    public UUID getIdNSXById(UUID id);
 
-    public ChiTietSP getById(String id);
+    public ChiTietSP getById(UUID id);
 
     public List<SanPhamCustom> getListSP();
 
-    public SanPhamChiTietCustom getProductById(String id);
+    public SanPhamChiTietCustom getProductById(UUID id);
 
-    public BigDecimal getGiaBanById(String id);
+    public BigDecimal getGiaBanById(UUID id);
 }

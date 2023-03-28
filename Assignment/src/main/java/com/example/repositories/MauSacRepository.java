@@ -6,13 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class MauSacRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<MauSac> getListMauSac() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -27,13 +28,19 @@ public class MauSacRepository {
             session.save(mauSac);
             transaction.commit();
             return true;
+        } catch (ConstraintViolationException e) {
+            // Thực hiện xử lý khi gặp lỗi unique key constraint
+            e.printStackTrace();
+            transaction.rollback();
+            return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            e.printStackTrace();
+            transaction.rollback();
             return false;
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from MauSac where id =: id");
@@ -55,7 +62,7 @@ public class MauSacRepository {
         }
     }
 
-    public boolean update(String id, MauSac mauSac) {
+    public boolean update(UUID id, MauSac mauSac) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update MauSac set ten =: ten where id =: id");
@@ -74,10 +81,7 @@ public class MauSacRepository {
         }
     }
 
-    public MauSac getById(String id) {
-        Query query = session.createQuery("from MauSac where id =: id");
-        query.setParameter("id", id);
-        MauSac mauSac = (MauSac) query.getSingleResult();
-        return mauSac;
+    public MauSac getById(UUID id) {
+        return session.find(MauSac.class, id);
     }
 }

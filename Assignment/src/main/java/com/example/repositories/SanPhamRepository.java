@@ -6,13 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.List;
+import java.util.UUID;
 
 public class SanPhamRepository {
     Session session = HibernateUtil.getFACTORY().openSession();
 
-    Transaction transaction = null;
+    Transaction transaction = session.getTransaction();
 
     public List<SanPham> getListSanPham() {
         Session session = HibernateUtil.getFACTORY().openSession();
@@ -30,14 +31,16 @@ public class SanPhamRepository {
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint
             e.printStackTrace();
+            transaction.rollback();
             return false;
         } catch (Exception e) {
-            e.printStackTrace(System.out);
+            transaction.rollback();
+            e.printStackTrace();
             return false;
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(UUID id) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from SanPham where id =: id");
@@ -59,7 +62,7 @@ public class SanPhamRepository {
         }
     }
 
-    public boolean update(String id, SanPham sanPham) {
+    public boolean update(UUID id, SanPham sanPham) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update SanPham set ten =: ten, anh =: anh where id =: id");
@@ -75,10 +78,7 @@ public class SanPhamRepository {
         }
     }
 
-    public SanPham getById(String id) {
-        Query query = session.createQuery("from SanPham where id =: id");
-        query.setParameter("id", id);
-        SanPham sanPham = (SanPham) query.getSingleResult();
-        return sanPham;
+    public SanPham getById(UUID id) {
+        return session.find(SanPham.class, id);
     }
 }

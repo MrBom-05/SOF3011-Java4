@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class GioHangChiTietCustom {
-    private String id;
+    private UUID id;
     private String ten;
     private String anh;
     private String mauSac;

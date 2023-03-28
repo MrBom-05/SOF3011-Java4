@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.*;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet({"/admin/nsx/index", "/admin/nsx/create", "/admin/nsx/edit", "/admin/nsx/delete", "/admin/nsx/update", "/admin/nsx/store"})
 public class NSXServlet extends HttpServlet {
@@ -67,7 +68,7 @@ public class NSXServlet extends HttpServlet {
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
+        UUID id = UUID.fromString(request.getParameter("id"));
 
         NSX nsx = nsxService.getById(id);
         request.setAttribute("nsx", nsx);
@@ -78,7 +79,7 @@ public class NSXServlet extends HttpServlet {
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
             boolean check = nsxService.delete(id);
             HttpSession session = request.getSession();
             session.setAttribute("check", check);
@@ -103,7 +104,7 @@ public class NSXServlet extends HttpServlet {
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String id = request.getParameter("id");
+            UUID id = UUID.fromString(request.getParameter("id"));
 
             NSX nsx = new NSX();
             BeanUtils.populate(nsx, request.getParameterMap());
