@@ -68,12 +68,12 @@ public class LoginServlet extends HttpServlet {
             }
             HttpSession session = request.getSession();
             session.setAttribute("khachHang", khachHang);
-            request.setAttribute("view", "/views/user/home.jsp");
+//            request.setAttribute("view", "/views/user/home.jsp");
             response.sendRedirect(request.getContextPath() + "/home");
-        } else  if (khachHang == null){
+        } else {
             HttpSession session = request.getSession();
             session.setAttribute("checkLogin", false);
-            response.sendRedirect("/Assignment_war_exploded/login");
+            response.sendRedirect(request.getContextPath() + "/login");
         }
     }
 

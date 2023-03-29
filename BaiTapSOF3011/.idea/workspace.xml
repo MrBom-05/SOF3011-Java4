@@ -9,23 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83b43dc4-95b1-4fd9-a1e0-4576a6b5ea3e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/user/GioHangServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/controllers/user/GioHangServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChiTietSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChiTietSP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChucVu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/ChucVu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/GioHangChiTiet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/GioHangChiTiet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/HoaDonChiTiet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/entities/HoaDonChiTiet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/ChiTietSPCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/ChiTietSPCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/GioHangChiTietCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/GioHangChiTietCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamChiTietCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamChiTietCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/models/SanPhamCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/repositories/ChiTietSPRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/repositories/ChiTietSPRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/ChiTietSPService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/ChiTietSPService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/implement/ChiTietSPServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment/src/main/java/com/example/services/implement/ChiTietSPServiceImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entities/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entities/KhachHang.java" afterDir="false" />
-    </list>
+    <list default="true" id="83b43dc4-95b1-4fd9-a1e0-4576a6b5ea3e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,6 +215,7 @@
       <workItem from="1679712026263" duration="4261000" />
       <workItem from="1679929895052" duration="2000" />
       <workItem from="1679970673157" duration="3260000" />
+      <workItem from="1680055558657" duration="13000" />
     </task>
     <servers />
   </component>

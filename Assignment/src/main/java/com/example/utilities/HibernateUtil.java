@@ -3,16 +3,18 @@ package com.example.utilities;
 import com.example.entities.*;
 
 import java.util.Properties;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
+
 public class HibernateUtil {
     private static final SessionFactory FACTORY;
 
     static {
-        Configuration conf = new Configuration();
+        Configuration configuration = new Configuration();
 
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
@@ -21,27 +23,23 @@ public class HibernateUtil {
         properties.put(Environment.USER, "root");
         properties.put(Environment.PASS, "root");
         properties.put(Environment.SHOW_SQL, "true");
-//        gen DB tự động
-//        properties.put(Environment.HBM2DDL_AUTO, "create");
 
-        conf.setProperties(properties);
-        conf.addAnnotatedClass(ChiTietSP.class);
-        conf.addAnnotatedClass(ChucVu.class);
-        conf.addAnnotatedClass(CuaHang.class);
-        conf.addAnnotatedClass(DongSP.class);
-        conf.addAnnotatedClass(GioHang.class);
-        conf.addAnnotatedClass(GioHangChiTiet.class);
-        conf.addAnnotatedClass(HoaDon.class);
-        conf.addAnnotatedClass(HoaDonChiTiet.class);
-        conf.addAnnotatedClass(KhachHang.class);
-        conf.addAnnotatedClass(MauSac.class);
-        conf.addAnnotatedClass(NhanVien.class);
-        conf.addAnnotatedClass(NSX.class);
-        conf.addAnnotatedClass(SanPham.class);
-
-        ServiceRegistry registry = new StandardServiceRegistryBuilder()
-                .applySettings(conf.getProperties()).build();
-        FACTORY = conf.buildSessionFactory(registry);
+        configuration.setProperties(properties);
+        configuration.addAnnotatedClass(ChiTietSP.class);
+        configuration.addAnnotatedClass(ChucVu.class);
+        configuration.addAnnotatedClass(CuaHang.class);
+        configuration.addAnnotatedClass(DongSP.class);
+        configuration.addAnnotatedClass(GioHang.class);
+        configuration.addAnnotatedClass(GioHangChiTiet.class);
+        configuration.addAnnotatedClass(HoaDon.class);
+        configuration.addAnnotatedClass(HoaDonChiTiet.class);
+        configuration.addAnnotatedClass(KhachHang.class);
+        configuration.addAnnotatedClass(MauSac.class);
+        configuration.addAnnotatedClass(NhanVien.class);
+        configuration.addAnnotatedClass(NSX.class);
+        configuration.addAnnotatedClass(SanPham.class);
+        ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+        FACTORY = configuration.buildSessionFactory(registry);
 
     }
 
