@@ -75,14 +75,18 @@ public class GioHangServlet extends HttpServlet {
             int soLuong = Integer.parseInt(request.getParameter("soLuong"));
             BigDecimal giaBan = chiTietSPService.getGiaBanById(idSP);
 
-            ChiTietSP chiTietSP = new ChiTietSP();
-            chiTietSP.setId(idSP);
+            if (gioHangChiTietService.check(idSP, idGH)) {
+                ChiTietSP chiTietSP = new ChiTietSP();
+                chiTietSP.setId(idSP);
 
-            GioHang gioHang = new GioHang();
-            gioHang.setId(idGH);
+                GioHang gioHang = new GioHang();
+                gioHang.setId(idGH);
 
-            GioHangChiTiet gioHangChiTiet = new GioHangChiTiet(gioHang, chiTietSP, soLuong, giaBan);
-            gioHangChiTietService.insert(gioHangChiTiet);
+                GioHangChiTiet gioHangChiTiet = new GioHangChiTiet(gioHang, chiTietSP, soLuong, giaBan);
+                gioHangChiTietService.insert(gioHangChiTiet);
+            } else {
+                gioHangChiTietService.update(idSP, idGH, soLuong);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

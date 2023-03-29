@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
 import jakarta.persistence.Query;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -55,5 +56,33 @@ public class GioHangChiTietRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public boolean update(UUID idSP, UUID idGH, int soLuong) {
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update GioHangChiTiet set soLuong = soLuong +: soLuong where chiTietSP.id =: idSP and gioHang.id =: idGH");
+            query.setParameter("idSP", idSP);
+            query.setParameter("idGH", idGH);
+            query.setParameter("soLuong", soLuong);
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean check(UUID idSP, UUID idGH) {
+        Session session = HibernateUtil.getFACTORY().openSession();
+        Query query = session.createQuery("from GioHangChiTiet gh where gh.chiTietSP.id =: idSP and gh.gioHang.id =: idGH");
+        query.setParameter("idSP", idSP);
+        query.setParameter("idGH", idGH);
+        List<GioHangChiTiet> list = query.getResultList();
+        if (list == null || list.isEmpty()) {
+            return true;
+        }
+        return false;
     }
 }
