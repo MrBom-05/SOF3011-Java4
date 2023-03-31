@@ -23,7 +23,7 @@
             <div class="input-group mb-5 mt-5">
                 <p class="mt-1 fw-bold">Số lượng</p>
 
-                <input type="number" class="form-control ms-5" id="quantity-input" name="soLuong">
+                <input type="number" class="form-control ms-5" name="soLuong">
 
                 <p class="mt-1 text-danger ms-5"> còn ${sanPham.soLuong} sản phẩm</p>
             </div>
@@ -37,7 +37,6 @@
         </form>
     </div>
 </div>
-
 <!-- Content -->
 <%--<div class="row me-3">--%>
 <%--    <div class="row text-center mt-3 mb-4">--%>

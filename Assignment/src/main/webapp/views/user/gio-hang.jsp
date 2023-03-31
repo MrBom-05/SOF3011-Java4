@@ -50,8 +50,11 @@
                                 <span class="text-center text-truncate text-danger">${sanPham.giaBan * sanPham.soLuong}</span>
                             </div>
                             <div class="col-md-1 col-2">
-                                <a class="btn btn-danger border-1" style="width: 70px" href="/Assignment_war_exploded/cart-delete?id=${sanPham.id}" type="button">Xoá</a>
-                                <a class="btn btn-success border-1 mt-1" style="width: 70px" href="" type="button">Mua</a>
+                                <a class="btn btn-danger border-1" style="width: 70px"
+                                   href="/Assignment_war_exploded/cart-delete?id=${sanPham.id}" type="button">Xoá</a>
+                                <a class="btn btn-success border-1 mt-1" style="width: 70px"
+                                   href="/Assignment_war_exploded/add/bill?id=${sanPham.id}&soLuong=${sanPham.soLuong}"
+                                   type="button">Mua</a>
                             </div>
                         </div>
                     </div>

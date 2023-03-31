@@ -25,9 +25,8 @@ public class ChucVuRepository {
     public boolean insert(ChucVu chucVu) {
         try {
             transaction = session.beginTransaction();
-            String id = (String) session.save(chucVu);
+            session.save(chucVu);
             transaction.commit();
-            System.out.println(id);
             return true;
         } catch (ConstraintViolationException e) {
             // Thực hiện xử lý khi gặp lỗi unique key constraint

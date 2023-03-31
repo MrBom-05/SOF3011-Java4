@@ -26,4 +26,14 @@ public class GioHangChiTietServiceImplement implements GioHangChiTietService {
     public boolean delete(UUID idSP, UUID idGH) {
         return gioHangChiTietRepository.delete(idSP, idGH);
     }
+
+    @Override
+    public boolean update(UUID idSP, UUID idGH, int soLuong) {
+        return gioHangChiTietRepository.update(idSP, idGH, soLuong);
+    }
+
+    @Override
+    public boolean check(UUID idSP, UUID idGH) {
+        return gioHangChiTietRepository.check(idSP, idGH);
+    }
 }
