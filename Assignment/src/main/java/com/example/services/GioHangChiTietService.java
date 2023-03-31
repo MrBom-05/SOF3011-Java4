@@ -11,7 +11,9 @@ public interface GioHangChiTietService {
 
     public boolean insert(GioHangChiTiet gioHangChiTiet);
 
-    public boolean delete(UUID idSP, UUID idGH);
+    public boolean deleteOne(UUID idSP, UUID idGH);
+
+    public boolean deleteAll(UUID idGH);
 
     public boolean update(UUID idSP, UUID idGH, int soLuong);
 

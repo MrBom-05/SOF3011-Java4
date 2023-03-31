@@ -43,11 +43,25 @@ public class GioHangChiTietRepository {
         }
     }
 
-    public boolean delete(UUID idSP, UUID idGH) {
+    public boolean deleteOne(UUID idSP, UUID idGH) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("delete from GioHangChiTiet gh where gh.chiTietSP.id =: idSP and gh.gioHang.id =: idGH");
             query.setParameter("idSP", idSP);
+            query.setParameter("idGH", idGH);
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean deleteAll(UUID idGH) {
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("delete from GioHangChiTiet where gioHang.id =: idGH");
             query.setParameter("idGH", idGH);
             query.executeUpdate();
             transaction.commit();

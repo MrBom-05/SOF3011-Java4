@@ -23,8 +23,13 @@ public class GioHangChiTietServiceImplement implements GioHangChiTietService {
     }
 
     @Override
-    public boolean delete(UUID idSP, UUID idGH) {
-        return gioHangChiTietRepository.delete(idSP, idGH);
+    public boolean deleteOne(UUID idSP, UUID idGH) {
+        return gioHangChiTietRepository.deleteOne(idSP, idGH);
+    }
+
+    @Override
+    public boolean deleteAll(UUID idGH) {
+        return gioHangChiTietRepository.deleteAll(idGH);
     }
 
     @Override

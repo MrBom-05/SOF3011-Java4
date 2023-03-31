@@ -13,7 +13,7 @@
 <div>
     <div>
         <c:if test="${ f:length(list) == 0 }">
-            <h4 class="text-center">Không có dữ liệu</h4>
+            <h4 class="text-center">Không có sản phẩm</h4>
         </c:if>
         <c:if test="${ f:length(list) != 0 }">
             <c:forEach var="sanPham" items="${ list }" varStatus="status">
@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-1">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <%--                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">--%>
                             </div>
                             <div class="col-1">
                                 <img src="${sanPham.anh}" class="img-fluid d-flex" alt="Ảnh sản phẩm">
@@ -65,8 +65,9 @@
 
     </div>
     <div class="row">
-        <button class="col-2 offset-9 btn text-white btn-success float-end">
+        <a type="button" class="col-2 offset-9 btn text-white btn-success float-end"
+           href="/Assignment_war_exploded/all/bill">
             Mua hàng
-        </button>
+        </a>
     </div>
 </div>

@@ -102,7 +102,7 @@ public class GioHangServlet extends HttpServlet {
             UUID idSP = UUID.fromString(request.getParameter("id"));
             UUID idGH = gioHangService.getById(khachHang.getId());
 
-            gioHangChiTietService.delete(idSP, idGH);
+            gioHangChiTietService.deleteOne(idSP, idGH);
         } catch (Exception e) {
             e.printStackTrace();
         }
