@@ -19,15 +19,18 @@
 
         <h3>${sanPham.ten}</h3>
         <form novalidate method="POST"
-              action="/Assignment_war_exploded/add-cart?id=${sanPham.id}">
+              action="/Assignment_war_exploded/cart-add?id=${sanPham.id}">
             <div class="input-group mb-5 mt-5">
                 <p class="mt-1 fw-bold">Số lượng</p>
 
-                <input type="number" class="form-control ms-5" name="soLuong">
+                <button onclick="decrease(event)" class="btn btn-success ms-2">-</button>
+                <input type="number" class="form-control" id="quantity" name="soLuong" value="1" readonly min="1"
+                       max="${sanPham.soLuong}">
+                <button onclick="increase(event)" class="btn btn-success">+</button>
 
                 <p class="mt-1 text-danger ms-5"> còn ${sanPham.soLuong} sản phẩm</p>
             </div>
-            <h3 class="fw-bold mb-5 text-center">${sanPham.giaBan}</h3>
+            <h3 class="fw-bold mb-5 text-center">$${sanPham.giaBan}</h3>
             <div class="row">
                 <button class="col-6 offset-3 btn text-white btn-success w-50" type="submit">
                     <img src="img/icons8-shopping-cart-30.png" class="img-fluid" alt="">
@@ -37,6 +40,26 @@
         </form>
     </div>
 </div>
+
+<script>
+    function increase(event) {
+        event.preventDefault();
+        var quantity = document.getElementById("quantity");
+        var currentValue = parseInt(quantity.value);
+        var maxValue = parseInt(quantity.getAttribute("max"));
+        if (currentValue < maxValue) {
+            quantity.value = currentValue + 1;
+        }
+    }
+
+    function decrease(event) {
+        event.preventDefault();
+        var quantity = document.getElementById("quantity");
+        if (quantity.value > 1) {
+            quantity.value = parseInt(quantity.value) - 1;
+        }
+    }
+</script>
 <!-- Content -->
 <%--<div class="row me-3">--%>
 <%--    <div class="row text-center mt-3 mb-4">--%>

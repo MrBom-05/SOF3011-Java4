@@ -2,11 +2,15 @@ package com.example.repositories;
 
 import com.example.entities.GioHang;
 import com.example.utilities.HibernateUtil;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
 import jakarta.persistence.Query;
+import org.hibernate.query.NativeQuery;
+
+import java.math.BigInteger;
 import java.util.List;
 import java.util.UUID;
 
@@ -50,5 +54,4 @@ public class GioHangRepository {
         query.setParameter("id", id);
         return (UUID) query.getSingleResult();
     }
-
 }

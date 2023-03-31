@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-@WebServlet({"/bill", "/add/bill", "/update/bill", "/all/bill"})
+@WebServlet({"/bill", "/bill-add", "/bill-update", "/bill-all"})
 public class HoaDonServlet extends HttpServlet {
 
     private HoaDonService hoaDonService = new HoaDonServiceImplement();
@@ -33,11 +33,11 @@ public class HoaDonServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
-        if (uri.contains("add/bill")) {
+        if (uri.contains("bill-add")) {
             insert(request, response);
-        } else if (uri.contains("update/bill")) {
+        } else if (uri.contains("bill-update")) {
 
-        } else if (uri.contains("all/bill")) {
+        } else if (uri.contains("bill-all")) {
             insertAll(request, response);
         } else {
 

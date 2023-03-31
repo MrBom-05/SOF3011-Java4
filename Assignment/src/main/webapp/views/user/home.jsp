@@ -85,19 +85,13 @@
             <a class="nav-link active me-3" href="/Assignment_war_exploded/login">Đăng
                 nhập</a>
             <div class="dropdown">
-                <a class="nav-link active me-3" data-bs-toggle="dropdown" aria-current="page"
-                   href="#">Trang Của Tôi</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#purchasedProducts">Đơn Hàng</a></li>
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">Đổi Mật Khẩu</a>
-                    </li>
-                </ul>
-
+                <a class="nav-link active me-3" aria-current="page"
+                   href="/Assignment_war_exploded/bill">Đơn Hàng</a>
             </div>
             <div class="shopping-cart d-flex align-items-center">
                 <a href="/Assignment_war_exploded/cart">
                     <img src="/Assignment_war_exploded/views/user/img/icons8-shopping-cart-30.png" alt="Shopping cart">
-                    <span class="cart-items ms-2"></span>
+                    <span class="cart-items ms-2">${index}</span>
                 </a>
             </div>
         </nav>
@@ -106,19 +100,19 @@
     <div class="row mt-3 mb-3 ms-3">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid col-12 ">
-                <a class="navbar-brand col-2 fw-bold " href="#">Trang chủ</a>
+                <a class="navbar-brand col-2 fw-bold " href="/Assignment_war_exploded/home">Trang chủ</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav col-12">
-                        <a class="nav-link active col-2" aria-current="page" href="#product">Sản phẩm</a>
-                        <a class="nav-link active col-3 " aria-current="page" href="#introduce">Giới thiệu cửa
-                            hàng</a>
-                        <a class="nav-link active" aria-current="page" href="#event">Sự kiện</a>
-                    </div>
+<%--                    <div class="navbar-nav col-12">--%>
+<%--                        <a class="nav-link active col-2" aria-current="page" href="#product">Sản phẩm</a>--%>
+<%--                        <a class="nav-link active col-3 " aria-current="page" href="#introduce">Giới thiệu cửa--%>
+<%--                            hàng</a>--%>
+<%--                        <a class="nav-link active" aria-current="page" href="#event">Sự kiện</a>--%>
+<%--                    </div>--%>
                 </div>
             </div>
         </nav>

@@ -18,4 +18,6 @@ public interface GioHangChiTietService {
     public boolean update(UUID idSP, UUID idGH, int soLuong);
 
     public boolean check(UUID idSP, UUID idGH);
+
+    public int index(UUID id);
 }

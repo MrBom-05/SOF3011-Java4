@@ -4,7 +4,9 @@ import com.example.entities.KhachHang;
 import com.example.models.SanPhamChiTietCustom;
 import com.example.models.SanPhamCustom;
 import com.example.services.ChiTietSPService;
+import com.example.services.GioHangChiTietService;
 import com.example.services.implement.ChiTietSPServiceImplement;
+import com.example.services.implement.GioHangChiTietServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -19,6 +21,8 @@ import java.util.UUID;
 public class SanPhamServlet extends HttpServlet {
 
     private ChiTietSPService chiTietSPService = new ChiTietSPServiceImplement();
+
+    private GioHangChiTietService gioHangChiTietService = new GioHangChiTietServiceImplement();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,15 +41,16 @@ public class SanPhamServlet extends HttpServlet {
 
 
 
-//        List<SanPhamCustom> list = chiTietSPService.getListSP();
-//        for (SanPhamCustom sanPhamCustom : list) {
-//            String name = sanPhamCustom.getAnh();
-//            if (name != null) {
-//                sanPhamCustom.setAnh(request.getContextPath() + "/images/" + fileName);
-//            }
-//        }
-//
-//        request.setAttribute("list", list);
+        HttpSession session = request.getSession();
+        KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
+
+        if (khachHang != null) {
+            request.setAttribute("index", gioHangChiTietService.index(khachHang.getId()));
+            // Tiếp tục thực hiện đoạn code của bạn ở đây
+        } else {
+            // Xử lý trường hợp khachHang là null ở đây (ví dụ: ghi log, trả về lỗi, ...)
+            request.setAttribute("index", 0);
+        }
         request.setAttribute("sanPham", sanPhamChiTietCustom);
 
         request.setAttribute("view", "/views/user/product-detail.jsp");

@@ -41,4 +41,9 @@ public class GioHangChiTietServiceImplement implements GioHangChiTietService {
     public boolean check(UUID idSP, UUID idGH) {
         return gioHangChiTietRepository.check(idSP, idGH);
     }
+
+    @Override
+    public int index(UUID id) {
+        return gioHangChiTietRepository.index(id);
+    }
 }

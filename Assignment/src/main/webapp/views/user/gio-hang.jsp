@@ -35,25 +35,27 @@
                             </div>
 
                             <div class="col-md-1 col-2">
-                                <span class="text-center text-truncate">${sanPham.giaBan}</span>
+                                <span class="text-center text-truncate">$${sanPham.giaBan}</span>
                             </div>
 
                             <div class="col-md-2 col-3">
                                 <div class="input-group">
-
-                                    <input type="number" class="form-control" id="quantity-input" name="quantity"
-                                           value="${sanPham.soLuong}">
-
+                                    <a type="button" onclick="decrease()" class="btn btn-success ms-2"
+                                       href="/Assignment_war_exploded/cart-update?id=${sanPham.id}&soLuong=${sanPham.soLuong}">-</a>
+                                    <input type="number" class="form-control" id="quantity" name="soLuong"
+                                           value="${sanPham.soLuong}" readonly min="1">
+                                    <a type="button" onclick="increase()" class="btn btn-success"
+                                       href="/Assignment_war_exploded/cart-update?id=${sanPham.id}&soLuong=${sanPham.soLuong}">+</a>
                                 </div>
                             </div>
                             <div class="col-md-1 col-2">
-                                <span class="text-center text-truncate text-danger">${sanPham.giaBan * sanPham.soLuong}</span>
+                                <span class="text-center text-truncate text-danger">$${sanPham.giaBan * sanPham.soLuong}</span>
                             </div>
                             <div class="col-md-1 col-2">
                                 <a class="btn btn-danger border-1" style="width: 70px"
                                    href="/Assignment_war_exploded/cart-delete?id=${sanPham.id}" type="button">Xoá</a>
                                 <a class="btn btn-success border-1 mt-1" style="width: 70px"
-                                   href="/Assignment_war_exploded/add/bill?id=${sanPham.id}&soLuong=${sanPham.soLuong}"
+                                   href="/Assignment_war_exploded/bill-add?id=${sanPham.id}&soLuong=${sanPham.soLuong}"
                                    type="button">Mua</a>
                             </div>
                         </div>
@@ -66,8 +68,21 @@
     </div>
     <div class="row">
         <a type="button" class="col-2 offset-9 btn text-white btn-success float-end"
-           href="/Assignment_war_exploded/all/bill">
+           href="/Assignment_war_exploded/bill-all">
             Mua hàng
         </a>
     </div>
 </div>
+<script>
+    function increase() {
+        var quantity = document.getElementById("quantity");
+        quantity.value = parseInt(quantity.value) + 1;
+    }
+
+    function decrease() {
+        var quantity = document.getElementById("quantity");
+        if (quantity.value > 1) {
+            quantity.value = parseInt(quantity.value) - 1;
+        }
+    }
+</script>

@@ -28,7 +28,7 @@
                             <div class="card-body text-center">
                                 <a href="/Assignment_war_exploded/product-detail?id=${sanPham.id}"
                                    class="card-text" style="text-decoration: none;">${sanPham.ten}</a>
-                                <span class="card text fw-bold">${sanPham.giaBan}</span>
+                                <span class="card text fw-bold">$${sanPham.giaBan}</span>
                             </div>
                         </div>
 

@@ -2,8 +2,10 @@ package com.example.controllers.user;
 
 import com.example.entities.GioHang;
 import com.example.entities.KhachHang;
+import com.example.services.GioHangChiTietService;
 import com.example.services.GioHangService;
 import com.example.services.KhachHangService;
+import com.example.services.implement.GioHangChiTietServiceImplement;
 import com.example.services.implement.GioHangServiceImplement;
 import com.example.services.implement.KhachHangServiceImplement;
 import jakarta.servlet.*;
@@ -24,6 +26,8 @@ public class LoginServlet extends HttpServlet {
     private KhachHangService khachHangService = new KhachHangServiceImplement();
 
     private GioHangService gioHangService = new GioHangServiceImplement();
+
+    private GioHangChiTietService gioHangChiTietService = new GioHangChiTietServiceImplement();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();

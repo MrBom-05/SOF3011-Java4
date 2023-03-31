@@ -3,12 +3,15 @@ package com.example.repositories;
 import com.example.entities.GioHangChiTiet;
 import com.example.models.GioHangChiTietCustom;
 import com.example.utilities.HibernateUtil;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
 
 import jakarta.persistence.Query;
+import org.hibernate.query.NativeQuery;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.UUID;
 
@@ -99,4 +102,29 @@ public class GioHangChiTietRepository {
         }
         return false;
     }
+
+    public int index(UUID id) {
+        try {
+            Transaction transaction = session.beginTransaction();
+
+            // Thực hiện câu lệnh SQL để lấy giá trị index lớn nhất
+            Query query = session.createQuery("from GioHangChiTiet gh where gh.gioHang.khachHang.id = :id");
+            query.setParameter("id", id);
+            // In ra giá trị index lớn nhất
+            List<GioHangChiTiet> list = query.getResultList();
+            int count = 0;
+            for (GioHangChiTiet gioHangChiTiet : list) {
+                count++;
+            }
+
+            System.out.println("Max index: " + count);
+            transaction.commit();
+            return count; // trả về giá trị mặc định nếu maxIndex là null
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+
 }
