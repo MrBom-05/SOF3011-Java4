@@ -21,9 +21,6 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-1">
-                                    <%--                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">--%>
-                            </div>
-                            <div class="col-1">
                                 <img src="${sanPham.anh}" class="img-fluid d-flex" alt="Ảnh sản phẩm">
                             </div>
                             <div class="col-md-3 col-7">
@@ -40,12 +37,20 @@
 
                             <div class="col-md-2 col-3">
                                 <div class="input-group">
-                                    <a type="button" onclick="decrease()" class="btn btn-success ms-2"
-                                       href="/Assignment_war_exploded/cart-update?id=${sanPham.id}&soLuong=${sanPham.soLuong}">-</a>
-                                    <input type="number" class="form-control" id="quantity" name="soLuong"
-                                           value="${sanPham.soLuong}" readonly min="1">
-                                    <a type="button" onclick="increase()" class="btn btn-success"
-                                       href="/Assignment_war_exploded/cart-update?id=${sanPham.id}&soLuong=${sanPham.soLuong}">+</a>
+                                    <form method="POST"
+                                          action="/Assignment_war_exploded/cart-update?id=${sanPham.id}">
+                                        <div class="input-group">
+                                            <button onclick="decrease('quantity-${sanPham.id}')"
+                                                    class="btn btn-success ms-2">-
+                                            </button>
+                                            <input type="number" class="form-control" id="quantity-${sanPham.id}"
+                                                   name="soLuong"
+                                                   value="${sanPham.soLuong}" readonly min="1">
+                                            <button onclick="increase('quantity-${sanPham.id}')"
+                                                    class="btn btn-success">+
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="col-md-1 col-2">
@@ -74,13 +79,13 @@
     </div>
 </div>
 <script>
-    function increase() {
-        var quantity = document.getElementById("quantity");
+    function increase(quantityId) {
+        var quantity = document.getElementById(quantityId);
         quantity.value = parseInt(quantity.value) + 1;
     }
 
-    function decrease() {
-        var quantity = document.getElementById("quantity");
+    function decrease(quantityId) {
+        var quantity = document.getElementById(quantityId);
         if (quantity.value > 1) {
             quantity.value = parseInt(quantity.value) - 1;
         }

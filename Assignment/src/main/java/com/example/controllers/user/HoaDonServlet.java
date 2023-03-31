@@ -5,6 +5,7 @@ import com.example.entities.HoaDon;
 import com.example.entities.HoaDonChiTiet;
 import com.example.entities.KhachHang;
 import com.example.models.GioHangChiTietCustom;
+import com.example.models.HoaDonUserCustom;
 import com.example.services.*;
 import com.example.services.implement.*;
 import jakarta.servlet.*;
@@ -13,11 +14,12 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-@WebServlet({"/bill", "/bill-add", "/bill-update", "/bill-all"})
+@WebServlet({"/bill", "/bill-add", "/bill-update", "/bill-all", "/bill-detail"})
 public class HoaDonServlet extends HttpServlet {
 
     private HoaDonService hoaDonService = new HoaDonServiceImplement();
@@ -39,14 +41,47 @@ public class HoaDonServlet extends HttpServlet {
 
         } else if (uri.contains("bill-all")) {
             insertAll(request, response);
-        } else {
+        } else if (uri.contains("bill-detail")) {
 
+        } else {
+            getListBill(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
+
+    private Date getDateNow() {
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
+        return date;
+    }
+
+    private void getListBill(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession();
+        KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
+        if (khachHang == null) {
+            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
+            response.sendRedirect("/Assignment_war_exploded/login");
+            return;
+        }
+
+        List<HoaDonUserCustom> list = hoaDonService.getListHoaDonByUser(khachHang.getId());
+
+        if (khachHang != null) {
+            request.setAttribute("index", gioHangChiTietService.index(khachHang.getId()));
+            // Tiếp tục thực hiện đoạn code của bạn ở đây
+        } else {
+            // Xử lý trường hợp khachHang là null ở đây (ví dụ: ghi log, trả về lỗi, ...)
+            request.setAttribute("index", 0);
+        }
+
+        request.setAttribute("list", list);
+
+        request.setAttribute("view", "/views/user/bill.jsp");
+        request.getRequestDispatcher("/views/user/home.jsp").forward(request, response);
     }
 
     private void insert(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -67,6 +102,7 @@ public class HoaDonServlet extends HttpServlet {
             HoaDon hoaDon = new HoaDon();
             hoaDon.setMa(String.valueOf(pass));
             hoaDon.setKhachHang(khachHang);
+            hoaDon.setNgayTao(getDateNow());
 
             // Thêm hóa đơn và lấy ra id của hoá đơn đó
             UUID idHD = hoaDonService.insert(hoaDon);
@@ -111,6 +147,7 @@ public class HoaDonServlet extends HttpServlet {
             HoaDon hoaDon = new HoaDon();
             hoaDon.setMa(String.valueOf(pass));
             hoaDon.setKhachHang(khachHang);
+            hoaDon.setNgayTao(getDateNow());
 
             UUID idHD = hoaDonService.insert(hoaDon);
 

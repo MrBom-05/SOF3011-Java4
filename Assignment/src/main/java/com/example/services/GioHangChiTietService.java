@@ -15,7 +15,9 @@ public interface GioHangChiTietService {
 
     public boolean deleteAll(UUID idGH);
 
-    public boolean update(UUID idSP, UUID idGH, int soLuong);
+    public boolean updateProduct(UUID idSP, UUID idGH, int soLuong);
+
+    public boolean updateCart(UUID idSP, UUID idGH, int soLuong);
 
     public boolean check(UUID idSP, UUID idGH);
 

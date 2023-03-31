@@ -75,10 +75,26 @@ public class GioHangChiTietRepository {
         }
     }
 
-    public boolean update(UUID idSP, UUID idGH, int soLuong) {
+    public boolean updateProduct(UUID idSP, UUID idGH, int soLuong) {
         try {
             transaction = session.beginTransaction();
             Query query = session.createQuery("update GioHangChiTiet set soLuong = soLuong +: soLuong where chiTietSP.id =: idSP and gioHang.id =: idGH");
+            query.setParameter("idSP", idSP);
+            query.setParameter("idGH", idGH);
+            query.setParameter("soLuong", soLuong);
+            query.executeUpdate();
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean updateCart(UUID idSP, UUID idGH, int soLuong) {
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("update GioHangChiTiet set soLuong =: soLuong where chiTietSP.id =: idSP and gioHang.id =: idGH");
             query.setParameter("idSP", idSP);
             query.setParameter("idGH", idGH);
             query.setParameter("soLuong", soLuong);

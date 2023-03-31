@@ -12,7 +12,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class HoaDonCustom {
+public class HoaDonAdminCustom {
     private UUID id;
     private String ma;
     private String tenNV;

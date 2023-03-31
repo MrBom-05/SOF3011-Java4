@@ -1,8 +1,8 @@
 package com.example.repositories;
 
-import com.example.entities.ChucVu;
 import com.example.entities.HoaDon;
-import com.example.models.HoaDonCustom;
+import com.example.models.HoaDonAdminCustom;
+import com.example.models.HoaDonUserCustom;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -18,10 +18,10 @@ public class HoaDonRepository {
 
     Transaction transaction = session.getTransaction();
 
-    public List<HoaDonCustom> getListHoaDon() {
+    public List<HoaDonAdminCustom> getListHoaDon() {
         Session session = HibernateUtil.getFACTORY().openSession();
-        Query query = session.createQuery("select new com.example.models.HoaDonCustom(hd.id, hd.ma, hd.nhanVien.ten, hd.khachHang.ten, hd.khachHang.sdt, hd.khachHang.diaChi, hd.ngayTao, hd.ngayShip, hd.ngayNhan, hd.ngayThanhToan, hd.trangThai) from com.example.entities.HoaDon hd left join hd.nhanVien nv left join hd.khachHang kh");
-        List<HoaDonCustom> list = query.getResultList();
+        Query query = session.createQuery("select new com.example.models.HoaDonAdminCustom(hd.id, hd.ma, hd.nhanVien.ten, hd.khachHang.ten, hd.khachHang.sdt, hd.khachHang.diaChi, hd.ngayTao, hd.ngayShip, hd.ngayNhan, hd.ngayThanhToan, hd.trangThai) from com.example.entities.HoaDon hd left join hd.nhanVien nv left join hd.khachHang kh");
+        List<HoaDonAdminCustom> list = query.getResultList();
         return list;
     }
 
@@ -42,5 +42,13 @@ public class HoaDonRepository {
             transaction.rollback();
             return null;
         }
+    }
+
+    public List<HoaDonUserCustom> getListHoaDonByUser(UUID id){
+        Session session = HibernateUtil.getFACTORY().openSession();
+        Query query = session.createQuery("select new com.example.models.HoaDonUserCustom(hdct.hoaDon.id, hdct.hoaDon.ma, hdct.hoaDon.ngayTao, count(hdct), sum(hdct.donGia), hdct.hoaDon.trangThai) from com.example.entities.HoaDonChiTiet hdct left join hdct.hoaDon hd left join hdct.chiTietSP ctdp where hdct.hoaDon.khachHang.id =: id group by hdct.hoaDon.id, hdct.hoaDon.ma, hdct.hoaDon.ngayTao, hdct.hoaDon.trangThai");
+        query.setParameter("id", id);
+        List<HoaDonUserCustom> list = query.getResultList();
+        return list;
     }
 }

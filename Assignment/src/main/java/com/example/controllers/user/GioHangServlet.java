@@ -35,8 +35,6 @@ public class GioHangServlet extends HttpServlet {
         String uri = request.getRequestURI();
         if (uri.contains("cart-delete")) {
             delete(request, response);
-        } else if (uri.contains("cart-update")) {
-            update(request, response);
         } else {
             HttpSession session = request.getSession();
             KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
@@ -64,44 +62,49 @@ public class GioHangServlet extends HttpServlet {
 
             request.setAttribute("list", list);
 
-            request.setAttribute("view", "/views/user/gio-hang.jsp");
+            request.setAttribute("view", "/views/user/cart.jsp");
             request.getRequestDispatcher("/views/user/home.jsp").forward(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-        if (khachHang == null) {
-            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
-            return;
-        }
-
-        try {
-            UUID idSP = UUID.fromString(request.getParameter("id"));
-            UUID idGH = gioHangService.getById(khachHang.getId());
-            int soLuong = Integer.parseInt(request.getParameter("soLuong"));
-            BigDecimal giaBan = chiTietSPService.getGiaBanById(idSP);
-
-            if (gioHangChiTietService.check(idSP, idGH)) {
-                ChiTietSP chiTietSP = new ChiTietSP();
-                chiTietSP.setId(idSP);
-
-                GioHang gioHang = new GioHang();
-                gioHang.setId(idGH);
-
-                GioHangChiTiet gioHangChiTiet = new GioHangChiTiet(gioHang, chiTietSP, soLuong, giaBan);
-                gioHangChiTietService.insert(gioHangChiTiet);
-            } else {
-                gioHangChiTietService.update(idSP, idGH, soLuong);
+        String uri = request.getRequestURI();
+        if (uri.contains("cart-add")) {
+            HttpSession session = request.getSession();
+            KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
+            if (khachHang == null) {
+                // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
+                request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
+                return;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        response.sendRedirect("/Assignment_war_exploded/cart");
+            try {
+                UUID idSP = UUID.fromString(request.getParameter("id"));
+                UUID idGH = gioHangService.getById(khachHang.getId());
+                int soLuong = Integer.parseInt(request.getParameter("soLuong"));
+                BigDecimal giaBan = chiTietSPService.getGiaBanById(idSP);
+
+                if (gioHangChiTietService.check(idSP, idGH)) {
+                    ChiTietSP chiTietSP = new ChiTietSP();
+                    chiTietSP.setId(idSP);
+
+                    GioHang gioHang = new GioHang();
+                    gioHang.setId(idGH);
+
+                    GioHangChiTiet gioHangChiTiet = new GioHangChiTiet(gioHang, chiTietSP, soLuong, giaBan);
+                    gioHangChiTietService.insert(gioHangChiTiet);
+                } else {
+                    gioHangChiTietService.updateProduct(idSP, idGH, soLuong);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            response.sendRedirect("/Assignment_war_exploded/cart");
+        } else {
+            update(request, response);
+        }
     }
 
     private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -128,8 +131,9 @@ public class GioHangServlet extends HttpServlet {
             UUID idSP = UUID.fromString(request.getParameter("id"));
             UUID idGH = gioHangService.getById(khachHang.getId());
             int soLuong = Integer.parseInt(request.getParameter("soLuong"));
+            System.out.println(soLuong);
 
-            gioHangChiTietService.update(idSP, idGH, soLuong);
+            gioHangChiTietService.updateCart(idSP, idGH, soLuong);
         } catch (Exception e) {
             e.printStackTrace();
         }

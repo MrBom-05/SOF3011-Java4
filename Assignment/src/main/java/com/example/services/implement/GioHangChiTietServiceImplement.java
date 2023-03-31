@@ -33,8 +33,13 @@ public class GioHangChiTietServiceImplement implements GioHangChiTietService {
     }
 
     @Override
-    public boolean update(UUID idSP, UUID idGH, int soLuong) {
-        return gioHangChiTietRepository.update(idSP, idGH, soLuong);
+    public boolean updateProduct(UUID idSP, UUID idGH, int soLuong) {
+        return gioHangChiTietRepository.updateProduct(idSP, idGH, soLuong);
+    }
+
+    @Override
+    public boolean updateCart(UUID idSP, UUID idGH, int soLuong) {
+        return gioHangChiTietRepository.updateCart(idSP, idGH, soLuong);
     }
 
     @Override
