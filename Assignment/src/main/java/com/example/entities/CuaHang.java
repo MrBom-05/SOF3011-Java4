@@ -37,6 +37,6 @@ public class CuaHang implements Serializable {
     @Column(name = "QuocGia", columnDefinition = "Nvarchar(MAX)")
     private String quocGia;
 
-    @OneToMany(mappedBy = "chucVu", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cuaHang", fetch = FetchType.LAZY)
     private List<NhanVien> listNhanVien;
 }
