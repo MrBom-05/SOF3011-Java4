@@ -23,26 +23,32 @@
                                 <span class="text-decoration-none text-black">${status.index + 1}</span>
                             </div>
                             <div class="col-2">
-                                <img src="${sanPham.anh}" class="img-fluid d-flex" alt="Ảnh sản phẩm">
+                                <span>Mã Đơn Hàng:</span>
+                                <a href="/Assignment_war_exploded/bill-detail?id=${hoaDon.id}"
+                                   class="text-decoration-none text-black" scroll-to-top>${hoaDon.ma}</a>
                             </div>
                             <div class="col-3">
-                                <a href="/Assignment_war_exploded/product-detail?id=${sanPham.id}"
-                                   class="text-decoration-none text-black" scroll-to-top>${sanPham.ten}</a>
+                                <span>Ngày Tạo:</span>
+                                <span class="text-decoration-none text-black">${hoaDon.ngayTao}</span>
                             </div>
 
                             <div class="col-2">
-                                <span class="text-center text-truncate">${sanPham.soLuong}</span>
+                                <span>Số Lượng Sản Phẩm:</span>
+                                <span class="text-center text-truncate">${hoaDon.tongSoLuong}</span>
                             </div>
 
                             <div class="col-2">
-                                <span class="text-center text-truncate">$${sanPham.giaBan}</span>
+                                <span>Tổng Tiền</span>
+                                <span class="text-center text-truncate text-danger">$${hoaDon.tongTien}</span>
                             </div>
 
                             <div class="col-2">
-                                <span class="text-center text-truncate text-danger">$${sanPham.giaBan * sanPham.soLuong}</span>
+                                <span>Trạng Thái</span>
+                                <span class="text-center text-truncate text-danger">${hoaDon.trangThai}</span>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </c:forEach>
         </c:if>

@@ -11,7 +11,7 @@
 
 <h2 class="mt-3 text-center">Thêm Mới Nhân Viên</h2>
 
-<form class="row g-3 needs-validation col-10 offset-1 mt-3 border p-4" novalidate method="POST"
+<form class="row g-3 col-10 offset-1 mt-3 border p-4" novalidate method="POST"
       action="/Assignment_war_exploded/admin/nhan-vien/store" id="form">
 
     <div class="col-md-4">

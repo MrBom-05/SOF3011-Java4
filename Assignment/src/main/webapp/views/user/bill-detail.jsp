@@ -27,7 +27,7 @@
                             <span class="text-decoration-none text-black">${status.index + 1}</span>
                         </div>
                         <div class="col-2">
-                            <span>:</span>
+                            <span>Mã Đơn Hàng:</span>
                             <a href="/Assignment_war_exploded/bill-detail?id=${hoaDon.id}"
                                class="text-decoration-none text-black" scroll-to-top>${hoaDon.ma}</a>
                         </div>
