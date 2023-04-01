@@ -6,5 +6,15 @@
         <language minSize="100" name="Java" />
       </Languages>
     </inspection_tool>
+    <inspection_tool class="MavenPackageUpdate" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="excludeList">
+        <list>
+          <option value="com.microsoft.sqlserver:mssql-jdbc" />
+          <option value="org.hibernate:hibernate-core-jakarta" />
+          <option value="org.junit.jupiter:junit-jupiter-api" />
+          <option value="org.projectlombok:lombok" />
+        </list>
+      </option>
+    </inspection_tool>
   </profile>
 </component>
