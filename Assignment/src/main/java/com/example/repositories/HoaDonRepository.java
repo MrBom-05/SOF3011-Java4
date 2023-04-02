@@ -2,6 +2,7 @@ package com.example.repositories;
 
 import com.example.entities.HoaDon;
 import com.example.models.HoaDonAdminCustom;
+import com.example.models.HoaDonCustom;
 import com.example.models.HoaDonUserCustom;
 import com.example.utilities.HibernateUtil;
 import org.hibernate.Session;
@@ -50,5 +51,11 @@ public class HoaDonRepository {
         query.setParameter("id", id);
         List<HoaDonUserCustom> list = query.getResultList();
         return list;
+    }
+
+    public HoaDonCustom getByID(UUID id){
+        Query query = session.createQuery("select new com.example.models.HoaDonCustom(hdct.hoaDon.id, hdct.hoaDon.ma, hdct.hoaDon.trangThai, hdct.hoaDon.khachHang.ten, hdct.hoaDon.khachHang.sdt, hdct.hoaDon.khachHang.diaChi, sum(hdct.donGia)) from com.example.entities.HoaDonChiTiet hdct left join hdct.hoaDon hd where hdct.hoaDon.id =: id group by hdct.hoaDon.id, hdct.hoaDon.ma, hdct.hoaDon.ngayTao, hdct.hoaDon.trangThai, hdct.hoaDon.khachHang.ten, hdct.hoaDon.khachHang.sdt, hdct.hoaDon.khachHang.diaChi");
+        query.setParameter("id", id);
+        return (HoaDonCustom) query.getSingleResult();
     }
 }

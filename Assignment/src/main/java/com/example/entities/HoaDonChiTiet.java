@@ -28,7 +28,7 @@ public class HoaDonChiTiet implements Serializable {
     private ChiTietSP chiTietSP;
 
     @Column(name = "SoLuong")
-    private int soLuongTon;
+    private int soLuong;
 
     @Column(name = "DonGia", columnDefinition = "Decimal(20,0)")
     private BigDecimal donGia;

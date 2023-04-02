@@ -2,6 +2,7 @@ package com.example.services;
 
 import com.example.entities.HoaDon;
 import com.example.models.HoaDonAdminCustom;
+import com.example.models.HoaDonCustom;
 import com.example.models.HoaDonUserCustom;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface HoaDonService {
     public UUID insert(HoaDon hoaDon);
 
     public List<HoaDonUserCustom> getListHoaDonByUser(UUID id);
+
+    public HoaDonCustom getByID(UUID id);
 }

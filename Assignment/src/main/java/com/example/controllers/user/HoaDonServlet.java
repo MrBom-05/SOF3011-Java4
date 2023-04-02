@@ -5,6 +5,7 @@ import com.example.entities.HoaDon;
 import com.example.entities.HoaDonChiTiet;
 import com.example.entities.KhachHang;
 import com.example.models.GioHangChiTietCustom;
+import com.example.models.HoaDonChiTietCustom;
 import com.example.models.HoaDonUserCustom;
 import com.example.services.*;
 import com.example.services.implement.*;
@@ -42,7 +43,7 @@ public class HoaDonServlet extends HttpServlet {
         } else if (uri.contains("bill-all")) {
             insertAll(request, response);
         } else if (uri.contains("bill-detail")) {
-
+            getBillDetail(request, response);
         } else {
             getListBill(request, response);
         }
@@ -81,6 +82,42 @@ public class HoaDonServlet extends HttpServlet {
         request.setAttribute("list", list);
 
         request.setAttribute("view", "/views/user/bill.jsp");
+        request.getRequestDispatcher("/views/user/home.jsp").forward(request, response);
+    }
+
+    private void getBillDetail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession();
+        KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
+        if (khachHang == null) {
+            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
+            response.sendRedirect("/Assignment_war_exploded/login");
+            return;
+        }
+
+
+        if (khachHang != null) {
+            request.setAttribute("index", gioHangChiTietService.index(khachHang.getId()));
+            // Tiếp tục thực hiện đoạn code của bạn ở đây
+        } else {
+            // Xử lý trường hợp khachHang là null ở đây (ví dụ: ghi log, trả về lỗi, ...)
+            request.setAttribute("index", 0);
+        }
+
+        UUID idHD = UUID.fromString(request.getParameter("id"));
+
+        request.setAttribute("hoaDon", hoaDonService.getByID(idHD));
+
+        List<HoaDonChiTietCustom> list = hoaDonChiTietService.getListByID(idHD);
+        for (HoaDonChiTietCustom hoaDonChiTietCustom : list) {
+            String fileName = hoaDonChiTietCustom.getAnh();
+            if (fileName != null) {
+                hoaDonChiTietCustom.setAnh(request.getContextPath() + "/images/" + fileName);
+            }
+        }
+
+        request.setAttribute("list", list);
+
+        request.setAttribute("view", "/views/user/bill-detail.jsp");
         request.getRequestDispatcher("/views/user/home.jsp").forward(request, response);
     }
 

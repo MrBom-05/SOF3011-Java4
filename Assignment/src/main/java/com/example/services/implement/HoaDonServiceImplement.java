@@ -2,6 +2,7 @@ package com.example.services.implement;
 
 import com.example.entities.HoaDon;
 import com.example.models.HoaDonAdminCustom;
+import com.example.models.HoaDonCustom;
 import com.example.models.HoaDonUserCustom;
 import com.example.repositories.HoaDonRepository;
 import com.example.services.HoaDonService;
@@ -26,5 +27,10 @@ public class HoaDonServiceImplement implements HoaDonService {
     @Override
     public List<HoaDonUserCustom> getListHoaDonByUser(UUID id) {
         return hoaDonRepository.getListHoaDonByUser(id);
+    }
+
+    @Override
+    public HoaDonCustom getByID(UUID id) {
+        return hoaDonRepository.getByID(id);
     }
 }

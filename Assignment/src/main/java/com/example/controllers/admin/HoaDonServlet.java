@@ -1,17 +1,24 @@
 package com.example.controllers.admin;
 
+import com.example.models.HoaDonChiTietCustom;
+import com.example.services.HoaDonChiTietService;
 import com.example.services.HoaDonService;
+import com.example.services.implement.HoaDonChiTietServiceImplement;
 import com.example.services.implement.HoaDonServiceImplement;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
 
 @WebServlet({"/admin/hoa-don/index", "/admin/hoa-don/detail", "/admin/hoa-don/edit", "/admin/hoa-don/update"})
 public class HoaDonServlet extends HttpServlet {
 
     private HoaDonService hoaDonService = new HoaDonServiceImplement();
+
+    private HoaDonChiTietService hoaDonChiTietService = new HoaDonChiTietServiceImplement();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -51,14 +58,22 @@ public class HoaDonServlet extends HttpServlet {
     }
 
     public void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            String id = request.getParameter("id");
+        UUID idHD = UUID.fromString(request.getParameter("id"));
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        request.setAttribute("hoaDon", hoaDonService.getByID(idHD));
+
+        List<HoaDonChiTietCustom> list = hoaDonChiTietService.getListByID(idHD);
+        for (HoaDonChiTietCustom hoaDonChiTietCustom : list) {
+            String fileName = hoaDonChiTietCustom.getAnh();
+            if (fileName != null) {
+                hoaDonChiTietCustom.setAnh(request.getContextPath() + "/images/" + fileName);
+            }
         }
 
-        response.sendRedirect("/Assignment_war_exploded/admin/chi-tiet-sp/index");
+        request.setAttribute("list", list);
+
+        request.setAttribute("view", "/views/admin/hoa-don/bill-detail.jsp");
+        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,9 +1,12 @@
 package com.example.services.implement;
 
 import com.example.entities.HoaDonChiTiet;
+import com.example.models.HoaDonChiTietCustom;
 import com.example.repositories.HoaDonChiTietRepository;
 import com.example.services.HoaDonChiTietService;
-import com.example.services.HoaDonService;
+
+import java.util.List;
+import java.util.UUID;
 
 public class HoaDonChiTietServiceImplement implements HoaDonChiTietService {
 
@@ -12,5 +15,10 @@ public class HoaDonChiTietServiceImplement implements HoaDonChiTietService {
     @Override
     public boolean insert(HoaDonChiTiet hoaDonChiTiet) {
         return hoaDonChiTietRepository.insert(hoaDonChiTiet);
+    }
+
+    @Override
+    public List<HoaDonChiTietCustom> getListByID(UUID id) {
+        return hoaDonChiTietRepository.getListByID(id);
     }
 }
