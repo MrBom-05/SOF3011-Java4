@@ -106,7 +106,8 @@
     </div>
 
     <div class="col-12 mt-5">
-        <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">
+        <%--        onclick="return validateForm(event, 'form')"--%>
+        <button class="btn btn-primary col-2 offset-5" type="submit">
             Update
         </button>
     </div>

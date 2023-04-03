@@ -28,8 +28,8 @@
                onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" name="ngaySinh" value="${khachHang.ngaySinh}">
+        <label class="form-label">Ngày Sinh<span class="text-danger">*</span></label>
+        <input type="date" class="form-control" name="ngaySinh" required value="${khachHang.ngaySinh}">
     </div>
     <div class="col-md-4">
         <label class="form-label">SDT<span class="text-danger">*</span></label>

@@ -1,5 +1,6 @@
 package com.example.controllers.admin;
 
+import com.example.entities.KhachHang;
 import com.example.models.HoaDonChiTietCustom;
 import com.example.services.HoaDonChiTietService;
 import com.example.services.HoaDonService;
@@ -10,23 +11,30 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 import java.util.UUID;
 
-@WebServlet({"/admin/hoa-don/index", "/admin/hoa-don/detail", "/admin/hoa-don/edit", "/admin/hoa-don/update"})
+@WebServlet({"/admin/hoa-don/index", "/admin/hoa-don/detail", "/admin/hoa-don/update"})
 public class HoaDonServlet extends HttpServlet {
 
     private HoaDonService hoaDonService = new HoaDonServiceImplement();
 
     private HoaDonChiTietService hoaDonChiTietService = new HoaDonChiTietServiceImplement();
 
+    private Date getDateNow() {
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
+        return date;
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURI();
-        if (url.contains("edit")) {
-            edit(request, response);
-        } else if (url.contains("detail")) {
+        if (url.contains("detail")) {
             detail(request, response);
+        } else if (url.contains("update")) {
+            update(request, response);
         } else {
             index(request, response);
         }
@@ -34,26 +42,13 @@ public class HoaDonServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        update(request, response);
+
     }
 
     public void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        HttpSession session = request.getSession();
-//        Boolean check = (Boolean) session.getAttribute("check");
-//        if (check == null){
-//            check = true;
-//        }
-//        request.setAttribute("check", check);
-
         request.setAttribute("listHoaDon", hoaDonService.getListHoaDon());
 
         request.setAttribute("view", "/views/admin/hoa-don/index.jsp");
-        request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
-    }
-
-    public void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        request.setAttribute("view", "/views/admin/chi-tiet-sp/update.jsp");
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
@@ -76,12 +71,24 @@ public class HoaDonServlet extends HttpServlet {
         request.getRequestDispatcher("/views/admin/admin.jsp").forward(request, response);
     }
 
-    public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            UUID idHD = UUID.fromString(request.getParameter("id"));
+            int trangThai = Integer.parseInt(request.getParameter("trangThai"));
 
-        } catch (Exception e) {
+
+            if (trangThai == 1){
+                hoaDonService.updateHoaDonNgayShip(idHD, 1, getDateNow());
+            } else {
+                hoaDonService.updateHoaDonNgayThanhToan(idHD, 3, getDateNow());
+            }
+
+        } catch (Exception e){
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/admin/chi-tiet-sp/index");
+
+
+
+        response.sendRedirect("/Assignment_war_exploded/admin/hoa-don/index");
     }
 }

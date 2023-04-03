@@ -22,12 +22,14 @@ public class HoaDonUserCustom {
     private int trangThai;
 
     public String getTrangThai() {
-        if (trangThai == 1){
+        if (trangThai == 1) {
             return "Đã Ship";
         } else if (trangThai == 2) {
             return "Đã Nhận";
         } else if (trangThai == 3) {
             return "Đã Thanh Toán";
+        } else if (trangThai == 4){
+            return "Đã Hủy";
         }
         return "Chưa Thanh Toán";
     }

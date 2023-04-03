@@ -26,8 +26,8 @@
         <input type="text" class="form-control" name="ho" required onblur="validateRed(this)">
     </div>
     <div class="col-md-4">
-        <label class="form-label">Ngày Sinh</label>
-        <input type="date" class="form-control" name="ngaySinh">
+        <label class="form-label">Ngày Sinh<span class="text-danger">*</span></label>
+        <input type="date" class="form-control" name="ngaySinh" required>
     </div>
     <div class="col-md-4">
         <label class="form-label">SDT<span class="text-danger">*</span></label>
@@ -55,16 +55,16 @@
                onblur="validateRed(this)">
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 offset-3">
         <label class="form-label">Mật Khẩu<span class="text-danger">*</span></label>
         <input type="password" class="form-control" name="matKhau" required
                onblur="validateRed(this)">
     </div>
 
-    <div class="col-md-6">
-        <label class="form-label">Mã</label>
-        <input type="text" class="form-control" name="ma" disabled>
-    </div>
+<%--    <div class="col-md-6">--%>
+<%--        <label class="form-label">Mã</label>--%>
+<%--        <input type="text" class="form-control" name="ma" disabled>--%>
+<%--    </div>--%>
     <div class="col-12 mt-5">
         <button class="btn btn-primary col-2 offset-5" type="submit" onclick="return validateForm(event, 'form')">Add
         </button>

@@ -51,4 +51,15 @@
         </c:forEach>
     </c:if>
     <h6 class="mt-3">Tổng Tiền: ${hoaDon.tongTien}</h6>
+    <c:if test="${hoaDon.trangThai eq 'Chưa Thanh Toán'}">
+        <div class="row mt-5">
+            <a type="button" class="btn btn-success mt-4 col-4 offset-4" href="/Assignment_war_exploded/bill-update?id=${hoaDon.id}&trangThai=4">Hủy Đơn Hàng</a>
+        </div>
+    </c:if>
+
+    <c:if test="${hoaDon.trangThai eq 'Đã Ship'}">
+        <div class="row mt-5">
+            <a type="button" class="btn btn-danger mt-4 col-2 offset-2" href="/Assignment_war_exploded/bill-update?id=${hoaDon.id}&trangThai=2">Đã Nhận</a>
+        </div>
+    </c:if>
 </div>

@@ -7,6 +7,7 @@ import com.example.models.HoaDonUserCustom;
 import com.example.repositories.HoaDonRepository;
 import com.example.services.HoaDonService;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,4 +34,20 @@ public class HoaDonServiceImplement implements HoaDonService {
     public HoaDonCustom getByID(UUID id) {
         return hoaDonRepository.getByID(id);
     }
+
+    @Override
+    public boolean updateHoaDonNgayShip(UUID id, int trangThai, Date date) {
+        return hoaDonRepository.updateHoaDon(id, trangThai, date, hoaDonRepository.ngayShip);
+    }
+
+    @Override
+    public boolean updateHoaDonNgayNhan(UUID id, int trangThai, Date date) {
+        return hoaDonRepository.updateHoaDon(id, trangThai, date, hoaDonRepository.ngayNhan);
+    }
+
+    @Override
+    public boolean updateHoaDonNgayThanhToan(UUID id, int trangThai, Date date) {
+        return hoaDonRepository.updateHoaDon(id, trangThai, date, hoaDonRepository.ngayThanhToan);
+    }
+
 }

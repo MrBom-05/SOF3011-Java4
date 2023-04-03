@@ -39,7 +39,7 @@ public class HoaDonServlet extends HttpServlet {
         if (uri.contains("bill-add")) {
             insert(request, response);
         } else if (uri.contains("bill-update")) {
-
+            update(request, response);
         } else if (uri.contains("bill-all")) {
             insertAll(request, response);
         } else if (uri.contains("bill-detail")) {
@@ -126,7 +126,7 @@ public class HoaDonServlet extends HttpServlet {
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
         if (khachHang == null) {
             // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
+            response.sendRedirect("/Assignment_war_exploded/login");
             return;
         }
 
@@ -164,7 +164,7 @@ public class HoaDonServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/cart");
+        response.sendRedirect("/Assignment_war_exploded/bill");
     }
 
 
@@ -173,7 +173,7 @@ public class HoaDonServlet extends HttpServlet {
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
         if (khachHang == null) {
             // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
+            response.sendRedirect("/Assignment_war_exploded/login");
             return;
         }
 
@@ -206,7 +206,7 @@ public class HoaDonServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        response.sendRedirect("/Assignment_war_exploded/cart");
+        response.sendRedirect("/Assignment_war_exploded/bill");
 
 //        1. Lấy thông tin khách hàng từ session.
 //        2. Kiểm tra nếu khách hàng chưa đăng nhập thì yêu cầu họ đăng nhập.
@@ -219,5 +219,42 @@ public class HoaDonServlet extends HttpServlet {
 //        8. Thêm hóa đơn chi tiết vào cơ sở dữ liệu.
 //        9. Xóa tất cả các sản phẩm trong giỏ hàng của khách hàng.
 //        10. Chuyển hướng khách hàng đến trang giỏ hàng.
+    }
+
+    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
+        if (khachHang == null) {
+            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
+            response.sendRedirect("/Assignment_war_exploded/login");
+            return;
+        }
+
+
+        if (khachHang != null) {
+            request.setAttribute("index", gioHangChiTietService.index(khachHang.getId()));
+            // Tiếp tục thực hiện đoạn code của bạn ở đây
+        } else {
+            // Xử lý trường hợp khachHang là null ở đây (ví dụ: ghi log, trả về lỗi, ...)
+            request.setAttribute("index", 0);
+        }
+
+        try {
+            UUID idHD = UUID.fromString(request.getParameter("id"));
+            int trangThai = Integer.parseInt(request.getParameter("trangThai"));
+
+
+            if (trangThai == 4){
+                hoaDonService.updateHoaDonNgayShip(idHD, 4, null);
+                // Hủy Hóa Đơn
+            } else {
+                hoaDonService.updateHoaDonNgayNhan(idHD, 2, getDateNow());
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        response.sendRedirect("/Assignment_war_exploded/bill");
     }
 }
