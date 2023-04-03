@@ -29,6 +29,8 @@ public class GioHangChiTietRepository {
     }
 
     public boolean insert(GioHangChiTiet gioHangChiTiet) {
+        Session session = HibernateUtil.getFACTORY().openSession();
+
         try {
             transaction = session.beginTransaction();
             session.save(gioHangChiTiet);
@@ -140,6 +142,18 @@ public class GioHangChiTietRepository {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    public int getSoluongGioHangByID(UUID idSP, UUID idGH) {
+        Session session = HibernateUtil.getFACTORY().openSession();
+        Query query = session.createQuery("select soLuong from GioHangChiTiet where chiTietSP.id =: idSP and gioHang.id =: idGH");
+        query.setParameter("idSP", idSP);
+        query.setParameter("idGH", idGH);
+        List<Integer> list = query.getResultList();
+        if (list == null || list.isEmpty()) {
+            return 0;
+        }
+        return list.get(0);
     }
 
 

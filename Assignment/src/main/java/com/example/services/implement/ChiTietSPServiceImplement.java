@@ -74,4 +74,14 @@ public class ChiTietSPServiceImplement implements ChiTietSPService {
     public BigDecimal getGiaBanById(UUID id) {
         return chiTietSPRepository.getGiaBanById(id);
     }
+
+    @Override
+    public boolean updateProductQuantity(UUID id, int newQuantity, int oldQuantity) {
+        return chiTietSPRepository.updateProductQuantity(id, newQuantity, oldQuantity);
+    }
+
+    @Override
+    public boolean updateProductQuantityByDeleteGioHang(UUID id, int oldQuantity) {
+        return chiTietSPRepository.updateProductQuantityByDeleteGioHang(id, oldQuantity);
+    }
 }

@@ -22,4 +22,6 @@ public interface GioHangChiTietService {
     public boolean check(UUID idSP, UUID idGH);
 
     public int index(UUID id);
+
+    public int getSoluongGioHangByID(UUID idSP, UUID idGH);
 }

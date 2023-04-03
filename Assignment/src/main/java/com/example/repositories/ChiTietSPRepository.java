@@ -116,4 +116,66 @@ public class ChiTietSPRepository {
         query.setParameter("id", id);
         return (BigDecimal) query.getSingleResult();
     }
+
+    public boolean updateProductQuantity(UUID id, int newQuantity, int oldQuantity) {
+
+        try {
+            System.out.println(newQuantity);
+            System.out.println(oldQuantity);
+            transaction = session.beginTransaction();
+
+            // Lấy sản phẩm theo id
+            ChiTietSP chiTietSP = session.get(ChiTietSP.class, id);
+
+            // Tính toán số lượng mới
+            int quantity = chiTietSP.getSoLuongTon();
+            int updatedQuantity = quantity - (newQuantity - oldQuantity);
+
+            // Cập nhật số lượng mới vào sản phẩm
+            chiTietSP.setSoLuongTon(updatedQuantity);
+            session.update(chiTietSP);
+
+            // Cập nhật số lượng mới vào bảng khác nếu cần thiết
+
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean updateProductQuantityByDeleteGioHang(UUID id, int oldQuantity) {
+
+        try {
+            System.out.println(oldQuantity);
+            transaction = session.beginTransaction();
+
+            // Lấy sản phẩm theo id
+            ChiTietSP chiTietSP = session.get(ChiTietSP.class, id);
+
+            // Tính toán số lượng mới
+            int quantity = chiTietSP.getSoLuongTon();
+            int updatedQuantity = quantity + oldQuantity;
+
+            // Cập nhật số lượng mới vào sản phẩm
+            chiTietSP.setSoLuongTon(updatedQuantity);
+            session.update(chiTietSP);
+
+            // Cập nhật số lượng mới vào bảng khác nếu cần thiết
+
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

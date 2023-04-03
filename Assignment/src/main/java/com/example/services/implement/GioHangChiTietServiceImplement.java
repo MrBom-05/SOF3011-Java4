@@ -51,4 +51,9 @@ public class GioHangChiTietServiceImplement implements GioHangChiTietService {
     public int index(UUID id) {
         return gioHangChiTietRepository.index(id);
     }
+
+    @Override
+    public int getSoluongGioHangByID(UUID idSP, UUID idGH) {
+        return gioHangChiTietRepository.getSoluongGioHangByID(idSP, idGH);
+    }
 }

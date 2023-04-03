@@ -84,6 +84,7 @@ public class GioHangServlet extends HttpServlet {
                 UUID idGH = gioHangService.getById(khachHang.getId());
                 int soLuong = Integer.parseInt(request.getParameter("soLuong"));
                 BigDecimal giaBan = chiTietSPService.getGiaBanById(idSP);
+                int soLuongCu = gioHangChiTietService.getSoluongGioHangByID(idSP, idGH);
 
                 if (gioHangChiTietService.check(idSP, idGH)) {
                     ChiTietSP chiTietSP = new ChiTietSP();
@@ -97,6 +98,7 @@ public class GioHangServlet extends HttpServlet {
                 } else {
                     gioHangChiTietService.updateProduct(idSP, idGH, soLuong);
                 }
+                chiTietSPService.updateProductQuantity(idSP, soLuong, soLuongCu);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -114,7 +116,7 @@ public class GioHangServlet extends HttpServlet {
         try {
             UUID idSP = UUID.fromString(request.getParameter("id"));
             UUID idGH = gioHangService.getById(khachHang.getId());
-
+            chiTietSPService.updateProductQuantityByDeleteGioHang(idSP, gioHangChiTietService.getSoluongGioHangByID(idSP, idGH));
             gioHangChiTietService.deleteOne(idSP, idGH);
         } catch (Exception e) {
             e.printStackTrace();
@@ -132,8 +134,11 @@ public class GioHangServlet extends HttpServlet {
             UUID idGH = gioHangService.getById(khachHang.getId());
             int soLuong = Integer.parseInt(request.getParameter("soLuong"));
             System.out.println(soLuong);
+            int soLuongCu = gioHangChiTietService.getSoluongGioHangByID(idSP, idGH);
 
             gioHangChiTietService.updateCart(idSP, idGH, soLuong);
+
+            chiTietSPService.updateProductQuantity(idSP, soLuong, soLuongCu);
         } catch (Exception e) {
             e.printStackTrace();
         }

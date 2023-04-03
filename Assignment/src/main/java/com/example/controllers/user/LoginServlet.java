@@ -72,7 +72,6 @@ public class LoginServlet extends HttpServlet {
             }
             HttpSession session = request.getSession();
             session.setAttribute("khachHang", khachHang);
-//            request.setAttribute("view", "/views/user/home.jsp");
             response.sendRedirect(request.getContextPath() + "/home");
         } else {
             HttpSession session = request.getSession();

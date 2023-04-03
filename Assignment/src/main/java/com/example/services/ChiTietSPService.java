@@ -33,4 +33,8 @@ public interface ChiTietSPService {
     public SanPhamChiTietCustom getProductById(UUID id);
 
     public BigDecimal getGiaBanById(UUID id);
+
+    public boolean updateProductQuantity(UUID id, int newQuantity, int oldQuantity);
+
+    public boolean updateProductQuantityByDeleteGioHang(UUID id, int oldQuantity);
 }

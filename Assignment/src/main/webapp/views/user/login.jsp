@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="f" uri="jakarta.tags.functions" %>
 <html>
 <head>
     <title>Đăng Nhập</title>
@@ -89,6 +91,7 @@
     </div>
 </div>
 
+
 <c:if test="${checkLogin eq false}">
     <script>
         alert("Sai tài khoản hoặc mật khẩu!");
@@ -105,7 +108,7 @@
         const email = document.querySelector('input[name="email"]');
         const password = document.querySelector('input[name="password"]');
 
-        if (!email.value || !password.value) {
+        if (!email.value.track === '' || !password.value.trim() === '') {
             alert("Không được để trống!");
             event.preventDefault();
         }
