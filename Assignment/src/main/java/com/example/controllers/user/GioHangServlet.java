@@ -38,11 +38,6 @@ public class GioHangServlet extends HttpServlet {
         } else {
             HttpSession session = request.getSession();
             KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-            if (khachHang == null) {
-                // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-                response.sendRedirect("/Assignment_war_exploded/login");
-                return;
-            }
 
             List<GioHangChiTietCustom> list = gioHangChiTietService.getList(khachHang.getId());
             for (GioHangChiTietCustom gioHangChiTietCustom : list) {
@@ -73,11 +68,6 @@ public class GioHangServlet extends HttpServlet {
         if (uri.contains("cart-add")) {
             HttpSession session = request.getSession();
             KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-            if (khachHang == null) {
-                // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-                request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
-                return;
-            }
 
             try {
                 UUID idSP = UUID.fromString(request.getParameter("id"));

@@ -53,22 +53,22 @@
     </div>
     <div class="col-md-3">
         <label class="form-label">Năm Sản Xuất<span class="text-danger">*</span></label>
-        <input type="number" class="form-control" id="validationCustom04" name="namSX" value="${chiTietSP.namSX}"
+        <input type="number" class="form-control" min="1" name="namSX" value="${chiTietSP.namSX}"
                required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">
         <label class="form-label">Số Lượng<span class="text-danger">*</span></label>
-        <input type="number" class="form-control" id="validationCustom05" name="soLuongTon"
+        <input type="number" class="form-control" min="1" name="soLuongTon"
                value="${chiTietSP.soLuongTon}" required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">
-        <label for="validationCustom05" class="form-label">Giá Nhập<span class="text-danger">*</span></label>
-        <input type="number" class="form-control" id="validationCustom06" name="giaNhap" value="${chiTietSP.giaNhap}"
+        <label class="form-label">Giá Nhập<span class="text-danger">*</span></label>
+        <input type="number" class="form-control" min="1" name="giaNhap" value="${chiTietSP.giaNhap}"
                required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">
         <label class="form-label">Giá Bán<span class="text-danger">*</span></label>
-        <input type="number" class="form-control" id="validationCustom07" name="giaBan" value="${chiTietSP.giaBan}"
+        <input type="number" class="form-control" min="1" name="giaBan" value="${chiTietSP.giaBan}"
                required onblur="validateRed(this)">
     </div>
 

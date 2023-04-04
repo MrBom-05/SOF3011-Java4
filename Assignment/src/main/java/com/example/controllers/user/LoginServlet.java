@@ -34,12 +34,6 @@ public class LoginServlet extends HttpServlet {
         if (uri.contains("sign-up")) {
             request.getRequestDispatcher("/views/user/sign-up.jsp").forward(request, response);
         } else {
-            HttpSession session = request.getSession();
-            Boolean checkLogin = (Boolean) session.getAttribute("checkLogin");
-            if (checkLogin == null){
-                checkLogin = true;
-            }
-            request.setAttribute("checkLogin", checkLogin);
             request.getRequestDispatcher("/views/user/login.jsp").forward(request, response);
         }
 
@@ -58,7 +52,7 @@ public class LoginServlet extends HttpServlet {
     private void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String email = request.getParameter("email");
         String matKhau = request.getParameter("password");
-
+        HttpSession session = request.getSession();
 
         KhachHang khachHang = khachHangService.login(email, matKhau);
         if (khachHang != null) {
@@ -70,11 +64,11 @@ public class LoginServlet extends HttpServlet {
                 gioHang.setTrangThai(1);
                 gioHangService.insert(gioHang);
             }
-            HttpSession session = request.getSession();
+
             session.setAttribute("khachHang", khachHang);
+            session.setAttribute("checkLogin", true);
             response.sendRedirect(request.getContextPath() + "/home");
         } else {
-            HttpSession session = request.getSession();
             session.setAttribute("checkLogin", false);
             response.sendRedirect(request.getContextPath() + "/login");
         }

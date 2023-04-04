@@ -69,7 +69,7 @@
     </div>
     <div class="card-body">
         <form method="POST"
-              action="/Assignment_war_exploded/login" id="form">
+              action="/Assignment_war_exploded/admin/login" id="form">
             <div class="mb-3">
                 <label for="username" class="form-label">Email</label>
                 <input type="email" class="form-control" id="username" name="email" required>
@@ -81,13 +81,13 @@
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
-            <div class="form-text text-center mt-3">
-                Don't have an account yet? <a href="/Assignment_war_exploded/sign-up">Register now</a>
-            </div>
-            <div class="form-text text-center mt-3">
-                Forgot your password? <a href="#">Reset it here</a>
-            </div>
-            <c:if test="${checkLogin eq false}">
+<%--            <div class="form-text text-center mt-3">--%>
+<%--                Don't have an account yet? <a href="/Assignment_war_exploded/sign-up">Register now</a>--%>
+<%--            </div>--%>
+<%--            <div class="form-text text-center mt-3">--%>
+<%--                Forgot your password? <a href="#">Reset it here</a>--%>
+<%--            </div>--%>
+            <c:if test="${errorMessage eq false}">
                 <div class="alert alert-danger text-center mt-3">
                     Sai tài khoản mật khẩu
                 </div>
@@ -95,6 +95,7 @@
         </form>
     </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/Assignment_war_exploded/js/bootstrap.min.js"></script>

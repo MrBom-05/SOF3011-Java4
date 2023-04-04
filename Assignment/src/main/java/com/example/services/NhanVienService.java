@@ -21,4 +21,6 @@ public interface NhanVienService {
     public UUID getIdChucVuByMa(String ma);
 
     public NhanVien getByMa(String ma);
+
+    public NhanVien login(String email, String matKhau);
 }

@@ -63,11 +63,6 @@ public class HoaDonServlet extends HttpServlet {
     private void getListBill(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-        if (khachHang == null) {
-            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            response.sendRedirect("/Assignment_war_exploded/login");
-            return;
-        }
 
         List<HoaDonUserCustom> list = hoaDonService.getListHoaDonByUser(khachHang.getId());
 
@@ -88,12 +83,6 @@ public class HoaDonServlet extends HttpServlet {
     private void getBillDetail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-        if (khachHang == null) {
-            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            response.sendRedirect("/Assignment_war_exploded/login");
-            return;
-        }
-
 
         if (khachHang != null) {
             request.setAttribute("index", gioHangChiTietService.index(khachHang.getId()));
@@ -124,11 +113,6 @@ public class HoaDonServlet extends HttpServlet {
     private void insert(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-        if (khachHang == null) {
-            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            response.sendRedirect("/Assignment_war_exploded/login");
-            return;
-        }
 
         try {
             // Tạo mã ngẫu nhiên cho hóa đơn
@@ -171,11 +155,6 @@ public class HoaDonServlet extends HttpServlet {
     private void insertAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-        if (khachHang == null) {
-            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            response.sendRedirect("/Assignment_war_exploded/login");
-            return;
-        }
 
         try {
             Random random = new Random();
@@ -224,12 +203,6 @@ public class HoaDonServlet extends HttpServlet {
     private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         KhachHang khachHang = (KhachHang) session.getAttribute("khachHang");
-        if (khachHang == null) {
-            // Nếu chưa đăng nhập, yêu cầu người dùng đăng nhập
-            response.sendRedirect("/Assignment_war_exploded/login");
-            return;
-        }
-
 
         if (khachHang != null) {
             request.setAttribute("index", gioHangChiTietService.index(khachHang.getId()));

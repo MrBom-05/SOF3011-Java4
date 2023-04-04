@@ -1,8 +1,10 @@
 package com.example.repositories;
 
+import com.example.entities.KhachHang;
 import com.example.entities.NhanVien;
 import com.example.models.NhanVienCustom;
 import com.example.utilities.HibernateUtil;
+import jakarta.persistence.NoResultException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
@@ -106,5 +108,21 @@ public class NhanVienRepository {
         query.setParameter("ma", ma);
         NhanVien nhanVien = (NhanVien) query.getSingleResult();
         return nhanVien;
+    }
+
+    public NhanVien login(String email, String matKhau) {
+        try {
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("from NhanVien where email = :email and matKhau = :matKhau");
+            query.setParameter("email", email);
+            query.setParameter("matKhau", matKhau);
+            NhanVien nhanVien = (NhanVien) query.getSingleResult();
+            transaction.commit();
+            return nhanVien;
+        } catch (NoResultException e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        }
     }
 }
