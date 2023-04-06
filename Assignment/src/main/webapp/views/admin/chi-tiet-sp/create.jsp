@@ -12,7 +12,7 @@
 <h2 class="mt-3 text-center">Thêm Mới Chi Tiết Sản Phẩm</h2>
 
 <form class="row g-3 col-10 offset-1 mt-3 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/chi-tiet-sp/store" id="form">
+      action="/Assignment_war_exploded/admin/chi-tiet-sp/store" id="form" onsubmit="return validateNumber(event)">
 
     <div class="col-md-6">
         <label class="form-label">Sản Phẩm<span class="text-danger">*</span></label>
@@ -60,7 +60,7 @@
         <input type="number" class="form-control" min="1" name="soLuongTon" required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">
-        <label for="validationCustom05" class="form-label">Giá Nhập<span class="text-danger">*</span></label>
+        <label class="form-label">Giá Nhập<span class="text-danger">*</span></label>
         <input type="number" class="form-control" min="1" name="giaNhap" required onblur="validateRed(this)">
     </div>
     <div class="col-md-3">

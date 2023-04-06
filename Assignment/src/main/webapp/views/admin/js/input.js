@@ -53,3 +53,15 @@ function validateForm(event, formId) {
     return isValid;
 }
 
+function validateNumber(event) {
+    var namSX = document.getElementsByName("namSX")[0];
+    var soLuongTon = document.getElementsByName("soLuongTon")[0];
+    var giaNhap = document.getElementsByName("giaNhap")[0];
+    var giaBan = document.getElementsByName("giaBan")[0];
+    if (namSX.value < 1 || soLuongTon.value < 1 || giaNhap.value < 1 || giaBan.value < 1) {
+        alert("Giá trị số phải lớn hơn hoặc bằng 1!");
+        event.preventDefault();
+        return false;
+    }
+    return true;
+}

@@ -11,8 +11,8 @@
 
 <h2 class="mt-3 text-center">Cập Nhật Chi Tiết Sản Phẩm</h2>
 
-<form class="row g-3 needs-validation col-10 offset-1 mt-5 border p-4" novalidate method="POST"
-      action="/Assignment_war_exploded/admin/chi-tiet-sp/update?id=${chiTietSP.id}" id="form">
+<form class="row g-3 col-10 offset-1 mt-5 border p-4" novalidate method="POST"
+      action="/Assignment_war_exploded/admin/chi-tiet-sp/update?id=${chiTietSP.id}" id="form" onsubmit="return validateNumber(event)">
 
     <div class="col-md-6">
         <label class="form-label">Sản Phẩm<span class="text-danger">*</span></label>
