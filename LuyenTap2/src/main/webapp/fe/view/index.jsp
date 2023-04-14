@@ -15,36 +15,42 @@
 </head>
 <body>
 <a type="button" href="/LuyenTap2_war_exploded/cua-hang/view-add">Add</a>
-<a type="button" href="/LuyenTap2_war_exploded/cua-hang/hien-thi">Hien Thi</a>
+<a type="button" href="/LuyenTap2_war_exploded/cua-hang/hie n-thi">Hien Thi</a>
 
 
-<table>
-    <thead>
-    <tr>
-        <th>#</th>
-        <th>Ma</th>
-        <th>Ten</th>
-        <th>Dia Chi</th>
-        <th>Thanh Pho</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="cuaHang" items="${list}" varStatus="status">
+<c:if test="${f:length(list) == 0}">
+    <h2>Khong co du lieu</h2>
+</c:if>
+<c:if test="${f:length(list) != 0}">
+    <table>
+        <thead>
         <tr>
-            <td>${status.index +1}</td>
-            <td>${cuaHang.ma}</td>
-            <td>${cuaHang.ten}</td>
-            <td>${cuaHang.diaChi}</td>
-            <td>${cuaHang.thanhPho}</td>
-            <td>
-                <a type="button" href="/LuyenTap2_war_exploded/cua-hang/view-update?ma=${cuaHang.ma}">Update</a>
-                <a type="button" href="/LuyenTap2_war_exploded/cua-hang/detail?ma=${cuaHang.ma}">Detail</a>
-                <a type="button" href="/LuyenTap2_war_exploded/cua-hang/delete?ma=${cuaHang.ma}" onclick="return confirm('Ban co muon xoa khong')">Delete</a>
-            </td>
+            <th>#</th>
+            <th>Ma</th>
+            <th>Ten</th>
+            <th>Dia Chi</th>
+            <th>Thanh Pho</th>
+            <th>Action</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="cuaHang" items="${list}" varStatus="status">
+            <tr>
+                <td>${status.index +1}</td>
+                <td>${cuaHang.ma}</td>
+                <td>${cuaHang.ten}</td>
+                <td>${cuaHang.diaChi}</td>
+                <td>${cuaHang.thanhPho}</td>
+                <td>
+                    <a type="button" href="/LuyenTap2_war_exploded/cua-hang/view-update?ma=${cuaHang.ma}">Update</a>
+                    <a type="button" href="/LuyenTap2_war_exploded/cua-hang/detail?ma=${cuaHang.ma}">Detail</a>
+                    <a type="button" href="/LuyenTap2_war_exploded/cua-hang/delete?ma=${cuaHang.ma}" onclick="return confirm('Ban co muon xoa khong')">Delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
+
 </body>
 </html>

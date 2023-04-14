@@ -53,6 +53,12 @@ public class CuaHangServlet extends HttpServlet {
         String thanhPho = request.getParameter("thanhPho");
         String diaChi = request.getParameter("diaChi");
 
+        if(ma.trim().isEmpty() || ten.trim().isEmpty() || thanhPho.trim().isEmpty() || diaChi.trim().isEmpty()){
+            response.sendRedirect(request.getContextPath() + "/cua-hang/hien-thi");
+            return;
+        }
+
+
         if (uri.contains("update")) {
 
 

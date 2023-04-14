@@ -43,34 +43,40 @@
     <button type="submit">Add</button>
 </form>
 
-<table>
-    <thead>
-    <tr>
-        <th>#</th>
-        <th>Ma</th>
-        <th>Ten</th>
-        <th>Gioi Tinh</th>
-        <th>Dia Chi</th>
-        <th>Action</th>
+<c:if test="${f:length(list) == 0}">
+<h3>Khong co du lieu</h3>
+</c:if>
 
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="nhanVien" items="${list}" varStatus="status">
+<c:if test="${f:length(list) != 0}">
+    <table>
+        <thead>
         <tr>
-            <td>${status.index + 1}</td>
-            <td>${nhanVien.ma}</td>
-            <td>${nhanVien.ten}</td>
-            <td>${nhanVien.gioiTinh}</td>
-            <td>${nhanVien.diaChi}</td>
-            <td>
-                <a type="button" href="/pe_war_exploded/nhan-vien/detail?ma=${nhanVien.ma}">Detail</a>
-                <a type="button" href="/pe_war_exploded/nhan-vien/delete?ma=${nhanVien.ma}" onclick="return confirm('Ban co muon xoa khong')">Delete</a>
-            </td>
+            <th>#</th>
+            <th>Ma</th>
+            <th>Ten</th>
+            <th>Gioi Tinh</th>
+            <th>Dia Chi</th>
+            <th>Action</th>
+
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="nhanVien" items="${list}" varStatus="status">
+            <tr>
+                <td>${status.index + 1}</td>
+                <td>${nhanVien.ma}</td>
+                <td>${nhanVien.ten}</td>
+                <td>${nhanVien.gioiTinh}</td>
+                <td>${nhanVien.diaChi}</td>
+                <td>
+                    <a type="button" href="/pe_war_exploded/nhan-vien/detail?ma=${nhanVien.ma}">Detail</a>
+                    <a type="button" href="/pe_war_exploded/nhan-vien/delete?ma=${nhanVien.ma}" onclick="return confirm('Ban co muon xoa khong')">Delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
 
 </body>
 </html>

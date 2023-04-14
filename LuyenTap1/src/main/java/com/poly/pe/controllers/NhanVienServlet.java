@@ -51,6 +51,14 @@ public class NhanVienServlet extends HttpServlet {
         String gioiTinh = request.getParameter("gioiTinh");
         String diaChi = request.getParameter("diaChi");
 
+
+        if (ma.trim().isEmpty() || ten.trim().isEmpty() || gioiTinh.trim().isEmpty() || diaChi.trim().isEmpty()){
+            session.setAttribute("thongBao", "Khong duoc de trong");
+            response.sendRedirect(request.getContextPath() + "/nhan-vien/hien-thi");
+            return;
+        }
+
+
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMa(ma);
         nhanVien.setTen(ten);

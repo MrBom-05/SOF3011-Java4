@@ -48,34 +48,40 @@
     <button type="submit">Add</button>
 </form>
 
-<table>
-    <thead>
-    <tr>
-        <th>#</th>
-        <th>Ma</th>
-        <th>Ten</th>
-        <th>Dia Chi</th>
-        <th>Quoc Gia</th>
-        <th>Action</th>
-    </tr>
-    </thead>
+<c:if test="${f:length(list) == 0}">
+    <h2>khong co du lieu</h2>
+</c:if>
 
-    <tbody>
-    <c:forEach var="khachHang" items="${list}" varStatus="status">
+<c:if test="${f:length(list) != 0}">
+    <table>
+        <thead>
         <tr>
-            <td>${status.index + 1}</td>
-            <td>${khachHang.ma}</td>
-            <td>${khachHang.ten}</td>
-            <td>${khachHang.diaChi}</td>
-            <td>${khachHang.quocGia}</td>
-            <td>
-                <a type="button" href="/LuyenTap3_war_exploded/khach-hang/detail?ma=${khachHang.ma}">Detail</a>
-                <a type="button" href="/LuyenTap3_war_exploded/khach-hang/delete?ma=${khachHang.ma}"
-                   onclick="return confirm('Ban co muon xoa khong')">Delete</a>
-            </td>
+            <th>#</th>
+            <th>Ma</th>
+            <th>Ten</th>
+            <th>Dia Chi</th>
+            <th>Quoc Gia</th>
+            <th>Action</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+
+        <tbody>
+        <c:forEach var="khachHang" items="${list}" varStatus="status">
+            <tr>
+                <td>${status.index + 1}</td>
+                <td>${khachHang.ma}</td>
+                <td>${khachHang.ten}</td>
+                <td>${khachHang.diaChi}</td>
+                <td>${khachHang.quocGia}</td>
+                <td>
+                    <a type="button" href="/LuyenTap3_war_exploded/khach-hang/detail?ma=${khachHang.ma}">Detail</a>
+                    <a type="button" href="/LuyenTap3_war_exploded/khach-hang/delete?ma=${khachHang.ma}"
+                       onclick="return confirm('Ban co muon xoa khong')">Delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
 </body>
 </html>
