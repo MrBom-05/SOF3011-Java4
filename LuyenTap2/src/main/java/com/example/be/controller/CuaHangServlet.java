@@ -61,7 +61,7 @@ public class CuaHangServlet extends HttpServlet {
             cuaHang.setThanhPho(thanhPho);
             cuaHang.setDiaChi(diaChi);
 
-            cuaHangRepository.insert(cuaHang);
+            cuaHangRepository.update(cuaHang);
         } else {
 
 
